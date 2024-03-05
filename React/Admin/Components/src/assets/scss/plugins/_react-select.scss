@@ -1,0 +1,50 @@
+//
+// _react-select.scss
+//
+
+.css-b62m3t-container{
+    .css-13cymwt-control {
+        background-color: var(--#{$prefix}secondary-bg);
+        color: var(--#{$prefix}body-color);
+        border-color: var(--#{$prefix}border-color);
+        &:hover {
+            border-color: var(--#{$prefix}primary);
+        }
+        
+        .css-1p3m7a8-multiValue {
+            color: var(--#{$prefix}white);
+            background-color: var(--#{$prefix}primary);
+            .css-wsp0cs-MultiValueGeneric{
+                color: var(--#{$prefix}white);
+            }
+
+            .css-1u9des2-indicatorSeparator{
+                border-color: var(--#{$prefix}border-color);
+            }
+        }
+    }
+
+    .css-t3ipsp-control{
+        background-color: var(--#{$prefix}secondary-bg);
+        color: var(--#{$prefix}body-color);
+        border-color: var(--#{$prefix}border-color);
+
+        .css-1p3m7a8-multiValue {
+            color: var(--#{$prefix}white);
+            background-color: var(--#{$prefix}primary);
+            .css-wsp0cs-MultiValueGeneric{
+                color: var(--#{$prefix}white);
+            }
+
+            .css-1u9des2-indicatorSeparator{
+                border-color: var(--#{$prefix}border-color);
+            }
+        }
+    }
+
+    .css-1nmdiq5-menu{
+        background-color: var(--#{$prefix}secondary-bg);
+        color: var(--#{$prefix}body-color);
+        border-color: var(--#{$prefix}border-color);
+    }
+}

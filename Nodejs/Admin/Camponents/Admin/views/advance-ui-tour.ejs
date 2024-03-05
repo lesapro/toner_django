@@ -1,0 +1,13 @@
+<%- contentFor('HeaderCss') %>
+<%-include("partials/title-meta", {"title": "Tour" }) %>
+<!-- shepherd.js css -->
+<link rel="stylesheet" href="/assets/libs/shepherd.js/css/shepherd.css">
+<%- contentFor('body') %>
+<%-include("partials/page-title", {"pagetitle":"Advance UI", "title": "Tour"}) %>
+
+<%- contentFor('FooterJs') %>
+<!-- shepherd js -->
+<script src="/assets/libs/shepherd.js/js/shepherd.min.js"></script>
+
+<!-- tour init -->
+<script src="/assets/js/pages/tour.init.js"></script>

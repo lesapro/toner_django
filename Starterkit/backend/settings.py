@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     
     # Crispy Forms
     "crispy_forms",
+    "crispy_bootstrap4",
     
     
     # Google Providers
@@ -97,7 +98,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -106,6 +107,12 @@ DATABASES = {
         'PASSWORD': 'Lamgiau@123!',
         'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
         'PORT': '5432',       # Cổng mặc định của PostgreSQL
+    }
+}'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
