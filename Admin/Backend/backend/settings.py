@@ -55,8 +55,9 @@ INSTALLED_APPS = [
     
     
     # Google Providers
-    'allauth.socialaccount.providers.google',
+   
     'multiselectfield',
+    'allauth.socialaccount.providers.google',
     
 ]
 
@@ -102,10 +103,15 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'toner2',
+        'USER': 'root',
+        'PASSWORD': 'Lamgiau@123!',
+        'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+        'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
+
 
 
 # Password validation
@@ -169,7 +175,12 @@ SITE_ID = 1
 # Provider Configurations
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
-        'SCOPE': [
+        'APP':{
+            'client_id':"",
+            'secret':"",
+            'key':""
+        },
+        'SCOPE':[ 
             'profile',
             'email',
         ],
