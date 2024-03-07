@@ -6,79 +6,79 @@ Website: https://Themesbrand.com/
 Contact: Themesbrand@gmail.com
 File: product category init File
 */
-var subCategoriesData = [
-    {
-        "id": 1,
-        "subcategory": "Wireless",
-        "category": "Headphone",
-        "createby": "Admin",
-        "description": "Headphones are a pair of small speakers used for listening to sound from a computer, music player or other such electronic device."
-    }, {
-        "id": 2,
-        "subcategory": "Leather Shoes",
-        "category": "Footwear",
-        "createby": "Admin",
-        "description": "It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend"
-    }, {
-        "id": 3,
-        "subcategory": "Bags",
-        "category": "Other Accessories",
-        "createby": "Admin",
-        "description": "For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words."
-    },{
-        "id": 4,
-        "subcategory": "Cabinets",
-        "category": "Furniture",
-        "createby": "Admin",
-        "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores"
-    }, {
-        "id": 5,
-        "subcategory": "Digital Watches",
-        "category": "Watch",
-        "createby": "Admin",
-        "description": "A watch is a symbol of time and wearing a watch implies that you respect the importance of time."
-    }, {
-        "id": 6,
-        "subcategory": "Supra-aural (on-ear)",
-        "category": "Headphone",
-        "createby": "Admin",
-    },{
-        "id": 7,
-        "subcategory": "Sportswear",
-        "category": "Clothing",
-        "createby": "Admin",
-        "description": "Headphones are a pair of small speakers used for listening to sound from a computer, music player or other such electronic device."
-    }, {
-        "id": 8,
-        "subcategory": "Casual Wear",
-        "category": "Clothing",
-        "createby": "Admin",
-        "description": "In enim justo rhoncus ut imperdiet a venenatis vitae justo. Nullam dictum felis eu pede mollis pretium integer tincidunt aenean vulputate eleifend tellus."
-    }, {
-        "id": 9,
-        "subcategory": "Ambient",
-        "category": "Lighting",
-        "createby": "Admin",
-    },{
-        "id": 10,
-        "subcategory": "Chairs & Seating",
-        "category": "Furniture",
-        "createby": "Admin",
-        "description": "To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting."
-    }, {
-        "id": 11,
-        "subcategory": "Feminine Care",
-        "category": "Beauty & Personal Care",
-        "createby": "Admin",
-        "description": "Beauty Care is basically the science of beauty treatment that involves skin Care, hair Care, manicure, pedicure, Anti- aging treatments, facials, styling and so on."
-    }, {
-        "id": 12,
-        "subcategory": "Horror",
-        "category": "Books",
-        "createby": "Admin",
-        "description": "Books are portable and compact, and thus have an advantage over other media forms. Unlike other print media, books most often deal with a single subject."
-    }
-];
+// var subCategoriesData = [
+//     {
+//         "id": 1,
+//         "subcategory": "Wireless",
+//         "category": "Headphone",
+//         "createby": "Admin",
+//         "description": "Headphones are a pair of small speakers used for listening to sound from a computer, music player or other such electronic device."
+//     }, {
+//         "id": 2,
+//         "subcategory": "Leather Shoes",
+//         "category": "Footwear",
+//         "createby": "Admin",
+//         "description": "It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend"
+//     }, {
+//         "id": 3,
+//         "subcategory": "Bags",
+//         "category": "Other Accessories",
+//         "createby": "Admin",
+//         "description": "For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words."
+//     },{
+//         "id": 4,
+//         "subcategory": "Cabinets",
+//         "category": "Furniture",
+//         "createby": "Admin",
+//         "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores"
+//     }, {
+//         "id": 5,
+//         "subcategory": "Digital Watches",
+//         "category": "Watch",
+//         "createby": "Admin",
+//         "description": "A watch is a symbol of time and wearing a watch implies that you respect the importance of time."
+//     }, {
+//         "id": 6,
+//         "subcategory": "Supra-aural (on-ear)",
+//         "category": "Headphone",
+//         "createby": "Admin",
+//     },{
+//         "id": 7,
+//         "subcategory": "Sportswear",
+//         "category": "Clothing",
+//         "createby": "Admin",
+//         "description": "Headphones are a pair of small speakers used for listening to sound from a computer, music player or other such electronic device."
+//     }, {
+//         "id": 8,
+//         "subcategory": "Casual Wear",
+//         "category": "Clothing",
+//         "createby": "Admin",
+//         "description": "In enim justo rhoncus ut imperdiet a venenatis vitae justo. Nullam dictum felis eu pede mollis pretium integer tincidunt aenean vulputate eleifend tellus."
+//     }, {
+//         "id": 9,
+//         "subcategory": "Ambient",
+//         "category": "Lighting",
+//         "createby": "Admin",
+//     },{
+//         "id": 10,
+//         "subcategory": "Chairs & Seating",
+//         "category": "Furniture",
+//         "createby": "Admin",
+//         "description": "To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting."
+//     }, {
+//         "id": 11,
+//         "subcategory": "Feminine Care",
+//         "category": "Beauty & Personal Care",
+//         "createby": "Admin",
+//         "description": "Beauty Care is basically the science of beauty treatment that involves skin Care, hair Care, manicure, pedicure, Anti- aging treatments, facials, styling and so on."
+//     }, {
+//         "id": 12,
+//         "subcategory": "Horror",
+//         "category": "Books",
+//         "createby": "Admin",
+//         "description": "Books are portable and compact, and thus have an advantage over other media forms. Unlike other print media, books most often deal with a single subject."
+//     }
+// ];
 
 var editList = false;
 
@@ -87,10 +87,10 @@ if (document.getElementById("product-sub-categories")) {
     var categoryList = new gridjs.Grid({
         columns: [
             {
-                name: 'Id', 
+                name: 'Id',
                 width: '80px',
                 data: (function (row) {
-                    return gridjs.html('<div class="fw-medium">#TBSC' + row.id + '</div>');
+                    return gridjs.html('<div class="fw-medium">#' + row.id + '</div>');
                 })
             },
             {
@@ -104,16 +104,16 @@ if (document.getElementById("product-sub-categories")) {
             {
                 name: 'Createby',
                 width: '60px'
-            },{
+            }, {
                 name: 'Action',
                 width: '80px',
                 data: (function (row) {
                     return gridjs.html('<ul class="hstack gap-2 list-unstyled mb-0">\
                     <li>\
-                        <a href="#" class="badge bg-success-subtle text-success" onClick="editCategoryList('+ row.id + ')">Edit</a>\
+                        <a href="#" class="badge bg-success-subtle text-success" onClick="editCategoryList(' + row.id + ')">Edit</a>\
                     </li>\
                     <li>\
-                        <a href="#removeItemModal" data-bs-toggle="modal" class="badge bg-danger-subtle text-danger" onClick="removeItem('+ row.id + ')">Delete</a>\
+                        <a href="#removeItemModal" data-bs-toggle="modal" class="badge bg-danger-subtle text-danger" onClick="removeItem(' + row.id + ')">Delete</a>\
                     </li>\
                 </ul>');
                 })
@@ -125,13 +125,15 @@ if (document.getElementById("product-sub-categories")) {
         },
         data: subCategoriesData,
     }).render(document.getElementById("product-sub-categories"));
-};
+}
+;
 
 
 // Search result list
 var searchResultList = document.getElementById("searchResultList");
 searchResultList.addEventListener("keyup", function () {
     var inputVal = searchResultList.value.toLowerCase();
+
     function filterItems(arr, query) {
         return arr.filter(function (el) {
             return el.subcategory.toLowerCase().indexOf(query.toLowerCase()) !== -1 || el.category.toLowerCase().indexOf(query.toLowerCase()) !== -1 || el.createby.toLowerCase().indexOf(query.toLowerCase()) !== -1
@@ -174,14 +176,14 @@ Array.prototype.slice.call(createCategoryForm).forEach(function (form) {
                 };
 
                 subCategoriesData.push(newCategory);
-                
+
                 categoryList.updateConfig({
                     data: subCategoriesData
                 }).forceRender();
                 clearVal();
                 form.classList.remove('was-validated');
-                
-            }else if(subcategoryTitle !== "" && categoryInputVal !== "" && categoryDesc !== "" && editList){
+
+            } else if (subcategoryTitle !== "" && categoryInputVal !== "" && categoryDesc !== "" && editList) {
                 var getEditid = document.getElementById("categoryid-input").value;
 
                 subCategoriesData = subCategoriesData.map(function (item) {
@@ -244,17 +246,18 @@ function sortElementsById() {
 sortElementsById();
 
 
-function editCategoryList(elem){
+function editCategoryList(elem) {
     var getEditid = elem;
     subCategoriesData = subCategoriesData.map(function (item) {
         if (item.id == getEditid) {
             editList = true;
+            var form = document.getElementById('form_category');
             document.getElementById("addCategoryLabel").innerHTML = "Edit Sub Categories";
             document.getElementById("addNewCategory").innerHTML = "Save";
             document.getElementById("categoryid-input").value = item.id;
-            document.getElementById("SubcategoryTitle").value = item.subcategory;
+            document.getElementById("id_title").value = item.subcategory;
             categoryInput.setChoiceByValue(item.category);
-            document.getElementById("descriptionInput").value = item.description;
+            document.getElementById("id_description").value = item.description;
         }
         return item;
     });
@@ -263,18 +266,64 @@ function editCategoryList(elem){
 // removeItem event
 function removeItem(elem) {
     var getid = elem;
+
     document.getElementById("remove-category").addEventListener("click", function () {
         function arrayRemove(arr, value) {
             return arr.filter(function (ele) {
                 return ele.id != value;
             });
         }
+        // console.log("hello");
         var filtered = arrayRemove(subCategoriesData, getid);
+
 
         subCategoriesData = filtered;
         categoryList.updateConfig({
             data: subCategoriesData
         }).forceRender();
+        // Tạo một đối tượng chứa dữ liệu cần gửi đi
+        // Lấy CSRF token từ cookie
+        function getCSRFToken() {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Tìm cookie có tên 'csrftoken'
+                    if (cookie.substring(0, 10) === 'csrftoken=') {
+                        cookieValue = decodeURIComponent(cookie.substring(10));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+// Gửi yêu cầu DELETE với CSRF token
+        function deleteItem(idToDelete) {
+            var csrfToken = getCSRFToken(); // Lấy CSRF token
+            var url = '/product/sub_categories'; // Thay thế bằng URL của endpoint DELETE
+            fetch(url, {
+                method: 'DELETE', // Phương thức DELETE
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken // Thêm CSRF token vào tiêu đề
+                },
+                body: JSON.stringify({id: idToDelete}) // Truyền dữ liệu (id) cần xóa
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    console.log('Xóa thành công');
+                    // Thực hiện các hành động cần thiết sau khi xóa thành công
+                })
+                .catch(error => {
+                    console.error('Lỗi khi xóa:', error);
+                    // Xử lý lỗi nếu có
+                });
+        }
+        deleteItem(getid);
 
         document.getElementById("close-removecategoryModal").click();
     });

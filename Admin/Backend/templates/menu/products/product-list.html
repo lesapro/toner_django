@@ -36,75 +36,15 @@
                         <div>
                             <p class="text-muted text-uppercase fs-13 mb-3">Products</p>
                             <ul class="list-unstyled mb-0 filter-list">
+                                {% for category in categories %}
                                 <li>
                                     <a href="#" class="d-flex py-1 align-items-center">
                                         <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Grocery</h6>
+                                            <h6 class="mb-0 listname">{{ category.title }}</h6>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Fashion</h6>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <span class="badge bg-light text-muted">5</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Watches</h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Electronics</h6>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <span class="badge bg-light text-muted">5</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Furniture</h6>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <span class="badge bg-light text-muted">6</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Automotive Accessories</h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Appliances</h6>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <span class="badge bg-light text-muted">7</span>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" class="d-flex py-1 align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-0 listname">Kids</h6>
-                                        </div>
-                                    </a>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -450,15 +390,15 @@
                 'id': {{product.id}},
                 "productImg": "/static/images/products/img-10.png",
                 "productTitle": "{{ product.title}}",
-                "category": "Fashion",
-                "price": "{{product.price}}",
-                "discount": "25%",
+                "category": "{{product.category}}",
+                "price": "{{ product.price }}",
+                "discount": "{{product.discount}}",
                 "rating": "4.9",
                 "color": ["secondary", "light", "dark"],
                 "size": ["s", "m", "l"],
-                "stock": "12",
-                "orders": "48",
-                "publish": "12 Oct, 2021",
+                "stock": "{{product.stock}}",
+                "orders": "{{product.orders}}",
+                "publish": "{{product.publish_date}}",
             },   {% endfor %}
         ];
     </script>

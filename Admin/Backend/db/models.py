@@ -239,3 +239,21 @@ class CustomUser(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.email}"
+class Attribute(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+class AttributeValue(models.Model):
+    attribute = models.ForeignKey(Attribute, related_name='values', on_delete=models.CASCADE)
+    value = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.attribute.name}: {self.value}"
+class ProductAttributeDetail(models.Model):
+    product = models.ForeignKey(Product, related_name='attribute_details', on_delete=models.CASCADE)
+    attribute_value = models.ForeignKey(AttributeValue, related_name='product_details', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.product.title} - {self.attribute_value}"
