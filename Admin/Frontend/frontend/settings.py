@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'dashboard',
     'shop',
     'pages',
+    'db',
     
     # all auth
     'allauth',
@@ -105,8 +106,12 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'toner2',
+        'USER': 'root',
+        'PASSWORD': 'Lamgiau@123!',
+        'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+        'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
 
@@ -168,6 +173,23 @@ AUTHENTICATION_BACKENDS = [
 
 
 SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP':{
+            'client_id':"",
+            'secret':"",
+            'key':""
+        },
+        'SCOPE':[
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
 
 MESSAGE_TAGS = {
     messages.DEBUG: "alert-info",
