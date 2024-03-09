@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0002_attribute_attributevalue_subcategory_code_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0003_remove_subcategory_code.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0004_country_notification_order_orderitem_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/menu/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/templates/menu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/templates/menu/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Backend/templates/menu/products/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/templates/menu/products/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/db/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/frontend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/frontend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/dashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/partials/topbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/partials/topbar.html" afterDir="false" />
-    </list>
+    <list default="true" id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +114,7 @@
       <workItem from="1709659489919" duration="6254000" />
       <workItem from="1709708548769" duration="3540000" />
       <workItem from="1709816454193" duration="3272000" />
-      <workItem from="1709972373783" duration="8733000" />
+      <workItem from="1709972373783" duration="9059000" />
     </task>
     <servers />
   </component>
