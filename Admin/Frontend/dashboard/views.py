@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from db.models import Product
+from db.models import Product, Category
 # Create your views here.
 
 class DashboardView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Truy vấn dữ liệu từ model của ứng dụng khác
-        context['products'] = Product.objects.all()
+        # context['products'] = Product.objects.all()
+        context['categories']= Category.objects.all()
+        # print(context['categories'][0].subcategories.all()[0].title)
         return context
     pass
 

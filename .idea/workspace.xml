@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0002_attribute_attributevalue_subcategory_code_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0003_remove_subcategory_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/0004_country_notification_order_orderitem_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/menu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/templates/menu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/templates/menu/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Backend/templates/menu/products/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Backend/templates/menu/products/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/db/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/frontend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/frontend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/dashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/partials/topbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/partials/topbar.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2dGQ4L6oLpdZocn9AZaOFZM1Vvj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "sa__develop",
+    "last_opened_file_path": "/Users/copv/Documents/NCS/Code/toner_django",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+    ],
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="toner_django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="toner_django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Admin/Backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Admin/Backend/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="" />
+      <created>1709631742976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709631742976</updated>
+      <workItem from="1709631744241" duration="7448000" />
+      <workItem from="1709657433798" duration="1430000" />
+      <workItem from="1709659489919" duration="6254000" />
+      <workItem from="1709708548769" duration="3540000" />
+      <workItem from="1709816454193" duration="3272000" />
+      <workItem from="1709972373783" duration="8733000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:react" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:styled-components" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:prettier" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:ejs" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:webpack" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:postcss" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/toner_django$main.coverage" NAME="main Coverage Results" MODIFIED="1709632217055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/toner_django$manage.coverage" NAME="manage Coverage Results" MODIFIED="1709660150291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Admin/Backend" />
+  </component>
+</project>

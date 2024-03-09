@@ -409,7 +409,7 @@
     var categoryListData=[
         {% for category in categories %}{
         'id': {{ category.id }},
-        "categoryImg": "/static/images/ecommerce/headphone.png",
+        "categoryImg": "/media/{{ category.image }}",
         "categoryTitle": "{{category.title}}",
         "subCategory":[
         {% for subcategory in category.subcategories.all %}

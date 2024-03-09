@@ -4,11 +4,18 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from db.models import Product, Category,SubCategory
+from db.models import Product, Category,SubCategory, Order
 from .forms import *
 # Create your views here.
 
 class MenuView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['counts'] ={
+            'PRODUCTS': Product.objects.count(),
+            'ORDERS': Order.objects.count()
+        }
+        return context
     pass
 
 dashboard_view = MenuView.as_view(template_name = "menu/index.html") 

@@ -108,8 +108,8 @@ DATABASES = {
         'NAME': 'toner1',
         'USER': 'root',
         'PASSWORD': 'Lamgiau@123!',
-        'HOST': '169.254.171.50',
-#        'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+        # 'HOST': '169.254.171.50',
+       'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
         'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
