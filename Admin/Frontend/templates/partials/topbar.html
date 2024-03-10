@@ -51,11 +51,26 @@
                                         <nav class="navigation sw-megamenu " role="navigation">
                                             <ul class="sw-megamenu-desktop">
                                                 {% for category in categories %}
-                                                    <li class="ui-menu-item level0 fullwidth parent ">
+                                                    <li class="ui-menu-item level{{ category.id }} fullwidth parent ">
                                                         <div class="open-children-toggle"></div><a
                                                         href="#"
                                                         class="level-top" title="Phones &amp; Telecommunications"><span >{{ category.title }}</span></a>
+                                                        <div class="level{{ category.id }} submenu">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <ul class="subchildmenu mega-columns columns4">
+                                                                        {% for subcategory in category.subcategories.all %}
+                                                                        <li class="ui-menu-item ">
+                                                                            <a href="{% url 'catalog:clothing_view' %}" class="nav-link"
+                                                                               data-key="">{{ subcategory.title }}
+                                                                            </a>
+                                                                        </li>
+                                                                        {% endfor %}
 
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </li>
                                                 {% endfor %}
 
