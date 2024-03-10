@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="" />
+    <list default="true" id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Admin/Frontend/static/css/megamemu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/Frontend/static/js/custommegamenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/Frontend/static/js/megamenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/toner_django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toner_django.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/partials/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/partials/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/partials/topbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/partials/topbar.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -19,38 +33,22 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
   <component name="ProjectId" id="2dGQ4L6oLpdZocn9AZaOFZM1Vvj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "copv",
-    "last_opened_file_path": "/Users/copv/Documents/NCS/Code/toner_django",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-    ],
-    "DatabaseDriversLRU": [
-      "postgresql"
-    ]
-  }
-}]]></component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="toner_django" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,13 +93,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.manage" />
-      </list>
-    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="" />
@@ -115,11 +111,12 @@
       <workItem from="1709708548769" duration="3540000" />
       <workItem from="1709816454193" duration="3272000" />
       <workItem from="1709972373783" duration="10064000" />
+      <workItem from="1710079581438" duration="4638000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="javascript:npm:react" />
@@ -129,8 +126,10 @@
     <option featureType="dependencySupport" implementationName="javascript:npm:webpack" />
     <option featureType="dependencySupport" implementationName="javascript:npm:postcss" />
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/toner_django$main.coverage" NAME="main Coverage Results" MODIFIED="1709632217055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/toner_django$manage.coverage" NAME="manage Coverage Results" MODIFIED="1710000127523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Admin/Backend" />
+  <component name="WindowStateProjectService">
+    <state x="-1264" y="252" width="607" height="536" key="find.popup" timestamp="1710080403951">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1264" y="252" width="607" height="536" key="find.popup/0.0.1280.984/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1710080403951" />
   </component>
 </project>
