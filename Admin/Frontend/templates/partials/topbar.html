@@ -26,138 +26,7 @@
                                  class="card-logo-light mx-auto">
                         </a>
                     </li>
-                    <li class="nav-item dropdown dropdown-hover page-header">
-                        <div class="sections nav-sections">
-                            <div class="section-items nav-sections-items" role="tablist">
 
-                                <div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content"
-                                     role="tabpanel" aria-hidden="false">
-                                    <div class="menu-leftt">
-                                        <div class="header-module-megaMenuBtn">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M15 7H1C0.4 7 0 7.4 0 8C0 8.6 0.4 9 1 9H15C15.6 9 16 8.6 16 8C16 7.4 15.6 7 15 7Z"
-                                                    fill="#212121"></path>
-                                                <path
-                                                    d="M15 1H1C0.4 1 0 1.4 0 2C0 2.6 0.4 3 1 3H15C15.6 3 16 2.6 16 2C16 1.4 15.6 1 15 1Z"
-                                                    fill="#212121"></path>
-                                                <path
-                                                    d="M15 13H1C0.4 13 0 13.4 0 14C0 14.6 0.4 15 1 15H15C15.6 15 16 14.6 16 14C16 13.4 15.6 13 15 13Z"
-                                                    fill="#212121"></path>
-                                            </svg>
-                                            <span class="header-textDropdown">All Categories</span>
-                                        </div>
-                                        <nav class="navigation sw-megamenu " role="navigation">
-                                            <ul class="sw-megamenu-desktop">
-                                                {% for category in categories %}
-                                                    <li class="ui-menu-item level{{ category.id }} fullwidth parent ">
-                                                        <div class="open-children-toggle"></div><a
-                                                        href="#"
-                                                        class="level-top" title="Phones &amp; Telecommunications"><span >{{ category.title }}</span></a>
-                                                        <div class="level{{ category.id }} submenu">
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    <ul class="subchildmenu mega-columns columns4">
-                                                                        {% for subcategory in category.subcategories.all %}
-                                                                        <li class="ui-menu-item ">
-                                                                            <a href="{% url 'catalog:clothing_view' %}" class="nav-link"
-                                                                               data-key="">{{ subcategory.title }}
-                                                                            </a>
-                                                                        </li>
-                                                                        {% endfor %}
-
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                {% endfor %}
-
-                                            </ul>
-                                            <ul class="sw-megamenu-mobile" style="display: none">
-
-
-                                                <li class="ui-menu-item level0 fullwidth parent " data-cateid="3"><a href=""
-                                                                                                                     class="level-top" title="Accessories"><img class="menu-thumb-icon"
-                                                                                                                                                                src="/media/catalog/category/accessories/accessories.png"
-                                                                                                                                                                alt="Accessories"><span>Accessories</span></a></li>
-
-                                                </li>
-                                            </ul>
-                                            <div class="mobile-megamenu-parent">
-                                                <ul class="mobile-megamenu-children submenu-cate-225" style="display: none">
-                                                    <li class="ui-menu-item level0 fullwidth parent ">
-                                                        <div class="open-children-toggle"></div><img class="menu-thumb-icon"
-                                                                                                     src="/media/catalog/category/phones-and-telecommunications/phones-and-telecommunications.png"
-                                                                                                     alt="Phones &amp; Telecommunications"><span>Phones &amp;
-                                            Telecommunications</span>
-                                                        <div class="level0 submenu-mobile">
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    <ul class="subchildmenu mega-columns columns4">
-                                                                        <li class="ui-menu-item level1 "><a
-                                                                            href="en/catalog/category/view/s/communication-equipment/id/226/"
-                                                                            title="Communication Equipment"><img
-                                                                            class="menu-thumb-icon"
-                                                                            src="/media/catalog/category/phones-and-telecommunications/communication-equipment.png"
-                                                                            alt="Communication Equipment"><span>Communication
-                                                                    Equipment</span></a></li>
-
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="mobile-megamenu-child">
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                                <div class="row"></div>
-                                            </div>
-                                        </nav>
-                                    </div>
-                                    <style>
-                                        #html-body [data-pb-style=U5CWCTS] {
-                                            justify-content: flex-start;
-                                            display: flex;
-                                            flex-direction: column;
-                                            background-position: left top;
-                                            background-size: cover;
-                                            background-repeat: no-repeat;
-                                            background-attachment: scroll
-                                        }
-                                    </style>
-
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </li>
 
                     <li class="nav-item dropdown dropdown-hover">
                         <a class="nav-link dropdown-toggle" data-key="t-home" href="#" role="button"
@@ -208,13 +77,27 @@
                                         <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
                                             <li>
                                                 <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                                   data-key="">{{ category.title }}
+                                                   data-key="">{{ category.title }}{{ category.id }}
                                                     </p>
+                                                <ul class="dropdown-menu">
+                                                    {% for subcategory in category.subcategories.all %}
+                                                        {% if subcategory.category_id == category.id %}
+                                                        <li class="dropdown-submenu custommenu">
+                                                            <a class="dropdown-item" data-key="">
+                                                                {{ subcategory.title }}{{ subcategory.category_id }}
+                                                            </a>
+                                                        </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+<!--                                                    <li class="dropdown-submenu">-->
+<!--                                                        <a class="dropdown-item" href="#">Danh mục con 1</a>-->
+<!--                                                    </li>-->
+                                                </ul>
                                             </li>
                                             {% for subcategory in category.subcategories.all %}
                                                 <li class="nav-item">
                                                     <a href="{% url 'catalog:clothing_view' %}" class="nav-link"
-                                                       data-key="">{{ subcategory.title }}
+                                                       data-key="">{{ subcategory.title }}{{subcategory.category_id}}
                                                         </a>
                                                 </li>
                                             {% endfor %}

@@ -6,7 +6,9 @@
 
     <!--Swiper slider css-->
     <link href="{% static 'libs/swiper/swiper-bundle.min.css' %}" rel="stylesheet" type="text/css" />
-
+<!-- megamenu Css-->
+<link href="{% static 'css/custommenu.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 {% endblock extra_css %}
 
 {% block content %}
@@ -73,7 +75,18 @@
                 </button>
             </div>
         </section>
-
+        <div class="categories-list">
+            <div class="nav-center-images-only">
+                {% for category in categories %}
+                <div class="categories-items">
+                    <a href="#">
+                        <img src="{{ category.image }}" alt="{{ category.title }}">
+                        <div class="categories-name">{{ category.title }}</div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
         <section class="section">
             <div class="container">
                 <div class="row gy-4 gy-lg-0">
@@ -1002,6 +1015,11 @@
     <script src="{% static 'js/frontend/landing-index.init.js' %}"></script>
 
     <script src="{% static 'js/frontend/menu.init.js' %}"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="{% static 'js/frontend/megamenu.js' %}"></script>
 
 {% endblock extra_js%}
   

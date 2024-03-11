@@ -1,0 +1,105 @@
+.categories-list {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .categories-list {
+    display: block;
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
+    padding-right: 12px;
+    padding-left: 12px;
+    width: 100%;
+    margin: 14px 0 0;
+  }
+  .categories-list .categories-items a {
+    color: #000000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: 4px;
+  }
+  .categories-list .categories-items a img {
+    -o-object-fit: contain;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    width: 61px;
+    height: 61px;
+  }
+  .categories-list .categories-items a .categories-name {
+    color: #000000;
+    /* word-break: break-all; */
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    /* text-overflow: ellipsis; */
+    height: 60px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .categories-list .slick-dots {
+    position: absolute;
+    bottom: -10px;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    gap: 8px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: 10;
+    padding: 0;
+    margin-lef: 20vh;
+  }
+  .categories-list .slick-dots li {
+    height: 3px;
+    margin: 0;
+    padding: 0;
+    width: 16px;
+  }
+  .categories-list .slick-dots li button {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    color: transparent;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    outline: none;
+  }
+  .categories-list .slick-dots li button:before {
+    color: #000;
+    font-family: slick;
+    font-size: 6px;
+    right: 0;
+    line-height: 20px;
+    opacity: 0.25;
+    text-align: center;
+    top: 0;
+    --tw-content:
+            "";
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0/var(--tw-bg-opacity));
+    border-radius: 10px;
+    content: var(--tw-content);
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+  .categories-list .slick-dots li.slick-active button:before {
+    color: #000;
+    opacity: 0.75;
+  }
+}
