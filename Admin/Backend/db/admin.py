@@ -1,11 +1,13 @@
 from django.contrib import admin
-from .models import (Country, ShippingLocation, ShippingCost, ShippingTime, 
-                     ShippingMethod, ShippingDetail, Company, Invoice, 
-                     Category, SubCategory, Attribute, AttributeValue, 
-                     Product, ProductRelationship, ProductGalleryImage, 
-                     ProductAttributeDetail, PaymentDetail, CurrencyRate, 
-                     Transaction, Seller, Shipment, Brand, EventOrder, 
-                     Coupon, Review, ReviewImage, ReviewDetail, CustomUser, 
+from decimal import Decimal
+from django.core.validators import MinValueValidator
+from django.forms import CheckboxSelectMultiple
+from .models import (Company, Invoice, 
+                     Category, SubCategory, PaymentDetail, CurrencyRate, 
+                     Product, ProductRelationship,
+                     Seller, Shipment, Brand, EventOrder, 
+                     Coupon, Review, ReviewImage, ReviewDetail, CustomUser,
+                     Store, Stock, Sold, Price, SpecialPrice, Color, Size, Type, Option, Details,
                      Order, OrderItem, Notification)
 
 class CompanyAdmin(admin.ModelAdmin):
@@ -28,39 +30,48 @@ class SubCategoryAdmin(admin.ModelAdmin):
     list_filter = ['category']
     prepopulated_fields = {'slug': ('title',)}
 
-class AttributeAdmin(admin.ModelAdmin):
-    list_display = ['name']
-
-class AttributeValueAdmin(admin.ModelAdmin):
-    list_display = ['attribute', 'value']
-    list_filter = ['attribute']
-    search_fields = ['value']
-
+class ProductRelationshipInline(admin.TabularInline):
+    model = ProductRelationship
+    fk_name = 'parent'  # Specify the foreign key used to relate to the parent Product
+    extra = 1  # How many rows to show by default
+    verbose_name = "Child Product"
+    verbose_name_plural = "Child Products"
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title', 'sku', 'status', 'product_type', 'visibility', 'price']  # Thêm 'visibility' vào list_display
-    list_filter = ['status', 'product_type', 'visibility']  # Thêm 'visibility' vào list_filter để cho phép lọc theo trường này
-    search_fields = ['title', 'sku']
-    date_hierarchy = 'publish_date'
+    list_display = ['title', 'sku', 'status', 'product_type', 'visibility', 'display_price', 'display_special_price', 'display_stock_quantity', 'display_sold_quantity', 'shipping_status', 'color', 'size', 'type']
+    list_filter = ['status', 'product_type', 'visibility', 'shipping_status', 'color', 'size', 'type']
+    search_fields = ['title', 'sku', 'color__name', 'size__name', 'type__name']
+    
+    def display_price(self, obj):
+        return obj.price.value if obj.price else 'No Price'
+    display_price.short_description = 'Price'
+
+    def display_special_price(self, obj):
+        special_price_obj = SpecialPrice.objects.filter(product=obj).first()  # Adjust based on your model relationship
+        return special_price_obj.value if special_price_obj else 'No Special Price'
+    display_special_price.short_description = 'Special Price'
+
+    def display_stock_quantity(self, obj):
+        stock = Stock.objects.filter(product=obj).first()  # Adjust the filter based on your model's relationship
+        return stock.quantity if stock else 'No Stock'
+    display_stock_quantity.short_description = 'Stock'
+
+    def display_sold_quantity(self, obj):
+        sold = Sold.objects.filter(product=obj).first()  # Adjust the filter based on your model's relationship
+        return sold.quantity if sold else 'No Sold'
+    display_sold_quantity.short_description = 'Sold'
     
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'brand':
-            kwargs["queryset"] = Brand.objects.order_by('name')  # Custom queryset for the dropdown
+            kwargs["queryset"] = Brand.objects.order_by('name')
+        elif db_field.name == 'color':
+            kwargs["queryset"] = Color.objects.order_by('name')
+        elif db_field.name == 'size':
+            kwargs["queryset"] = Size.objects.order_by('name')
+        elif db_field.name == 'type':
+            kwargs["queryset"] = Type.objects.order_by('name')
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
-
-class ProductRelationshipAdmin(admin.ModelAdmin):
-    list_display = ['parent', 'child']
-    search_fields = ['parent__title', 'child__title']
-
-class ProductGalleryImageAdmin(admin.ModelAdmin):
-    list_display = ['product', 'image']
-    search_fields = ['product__title']
-
-class ProductAttributeDetailAdmin(admin.ModelAdmin):
-    list_display = ['product', 'attribute_value']
-    list_filter = ['product']
-    search_fields = ['attribute_value__value']
 
 class PaymentDetailAdmin(admin.ModelAdmin):
     list_display = ['payment_method', 'cardholder_name', 'total_pay', 'invoice']
@@ -70,10 +81,6 @@ class CurrencyRateAdmin(admin.ModelAdmin):
     list_display = ['currency_name', 'usd_rate', 'exchange_type']
     list_filter = ['currency_name', 'exchange_type']
 
-class TransactionAdmin(admin.ModelAdmin):
-    list_display = ['transaction_id', 'amount', 'payment_method', 'transaction_date', 'status']
-    list_filter = ['status', 'transaction_date']
-    search_fields = ['transaction_id', 'client_name']
 
 class SellerAdmin(admin.ModelAdmin):
     list_display = ['name', 'web_url', 'contact_email']
@@ -131,48 +138,17 @@ class OrderAdmin(admin.ModelAdmin):
 class NotificationAdmin(admin.ModelAdmin):
     list_display = ('message', 'user', 'created_at')
     search_fields = ('user__username', 'message')
-class CountryAdmin(admin.ModelAdmin):
-    list_display = ['country_code', 'country_name']
-    search_fields = ['country_name', 'country_code']
+# Admin classes
 
-class ShippingLocationAdmin(admin.ModelAdmin):
-    list_display = ['location_name', 'address', 'city', 'country']
-    search_fields = ['location_name', 'city']
-    list_filter = ['country']
 
-class ShippingCostAdmin(admin.ModelAdmin):
-    list_display = ['amount']
-
-class ShippingTimeAdmin(admin.ModelAdmin):
-    list_display = ['duration']
-
-class ShippingMethodAdmin(admin.ModelAdmin):
-    list_display = ['method_name', 'description']
-    search_fields = ['method_name']
-
-class ShippingDetailAdmin(admin.ModelAdmin):
-    list_display = ['product', 'country', 'shipping_from', 'cost', 'time', 'method']
-    search_fields = ['product__title', 'country__country_name']
-    list_filter = ['country', 'method']
-admin.site.register(Country)
-admin.site.register(ShippingLocation)
-admin.site.register(ShippingCost)
-admin.site.register(ShippingTime)
-admin.site.register(ShippingMethod)
-admin.site.register(ShippingDetail)
 admin.site.register(Company)
 admin.site.register(Invoice)
 admin.site.register(Category)
 admin.site.register(SubCategory)
-admin.site.register(Attribute)
-admin.site.register(AttributeValue)
 admin.site.register(Product)
 admin.site.register(ProductRelationship)
-admin.site.register(ProductGalleryImage)
-admin.site.register(ProductAttributeDetail)
 admin.site.register(PaymentDetail)
 admin.site.register(CurrencyRate)
-admin.site.register(Transaction)
 admin.site.register(Seller)
 admin.site.register(Shipment)
 admin.site.register(Brand)
@@ -185,3 +161,13 @@ admin.site.register(CustomUser)
 admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(Notification)
+admin.site.register(Store)
+admin.site.register(Stock)
+admin.site.register(Sold)
+admin.site.register(Price)
+admin.site.register(SpecialPrice)
+admin.site.register(Color)
+admin.site.register(Size)
+admin.site.register(Type)
+admin.site.register(Option)
+admin.site.register(Details)
