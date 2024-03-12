@@ -395,6 +395,7 @@ class Product(models.Model):
     type = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     option = models.ForeignKey('Option', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     details = models.ForeignKey('Details', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    #ALTER TABLE db_product ADD COLUMN detail_id INT;
     stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     publish_date = models.DateTimeField(null=True, blank=True)
