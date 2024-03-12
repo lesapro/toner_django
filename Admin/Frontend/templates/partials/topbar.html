@@ -1,697 +1,815 @@
 {% load static %}
 {% block topbar %}
 
-    <nav class="navbar navbar-expand-lg ecommerce-navbar" id="navbar">
-        <div class="container">
-            <a class="navbar-brand d-none d-lg-block" href="{% url 'dashboard:dashboard' %}">
-                <div class="logo-dark">
-                    <img src="{% static 'images/logo-dark.png' %}" alt="" height="25">
-                </div>
-                <div class="logo-light">
-                    <img src="{% static 'images/logo-light.png' %}" alt="" height="25">
-                </div>
-            </a>
-            <button class="btn btn-soft-primary btn-icon d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list fs-20"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0" id="navigation-menu">
-                    <li class="nav-item d-block d-lg-none">
-                        <a class="d-block p-3 h-auto text-center" href="{% url 'dashboard:dashboard' %}">
-                            <img src="{% static 'images/logo-dark.png' %}" alt="" height="25"
-                                 class="card-logo-dark mx-auto">
-                            <img src="{% static 'images/logo-light.png' %}" alt="" height="25"
-                                 class="card-logo-light mx-auto">
-                        </a>
-                    </li>
+<nav class="navbar navbar-expand-lg ecommerce-navbar" id="navbar">
+    <div class="container">
+        <a class="navbar-brand d-none d-lg-block" href="{% url 'dashboard:dashboard' %}">
+            <div class="logo-dark">
+                <img src="{% static 'images/logo-dark.png' %}" alt="" height="25">
+            </div>
+            <div class="logo-light">
+                <img src="{% static 'images/logo-light.png' %}" alt="" height="25">
+            </div>
+        </a>
+        <button class="btn btn-soft-primary btn-icon d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="bi bi-list fs-20"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0" id="navigation-menu">
+                <li class="nav-item d-block d-lg-none">
+                    <a class="d-block p-3 h-auto text-center" href="{% url 'dashboard:dashboard' %}">
+                        <img src="{% static 'images/logo-dark.png' %}" alt="" height="25"
+                            class="card-logo-dark mx-auto">
+                        <img src="{% static 'images/logo-light.png' %}" alt="" height="25"
+                            class="card-logo-light mx-auto">
+                    </a>
+                </li>
 
 
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" data-key="t-home" href="#" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Demos
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
-                            <li class="nav-item">
-                                <a href="{% url 'dashboard:dashboard' %}" class="nav-link" data-key="t-main-layout">Main
-                                    Layout</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'dashboard:watch_main_layout' %}" class="nav-link"
-                                   data-key="t-unique-watches">Unique Watches</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'dashboard:modern_fashion' %}" class="nav-link"
-                                   data-key="t-modern-fashion">Modern Fashion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'dashboard:trend_fashion' %}" class="nav-link"
-                                   data-key="t-trend-fashion">Trend Fashion</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover dropdown-mega-full">
-                        <a class="nav-link dropdown-toggle" data-key="t-catalog" href="#" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Catalog
-                        </a>
-                        <div class="dropdown-menu p-0">
-                            <div class="row g-0 g-lg-4">
-                                <div class="col-lg-2 d-none d-lg-block">
-                                    <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden"
-                                         style="background-image: url('{% static 'images/ecommerce/img-1.jpg' %}');background-size: cover;">
-                                        <div class="bg-overlay bg-light bg-opacity-25"></div>
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <div class="text-center">
-                                                <a href="#!" class="btn btn-secondary btn-hover"><i
-                                                        class="ph-storefront align-middle me-1"></i> <span
-                                                        data-key="t-shop-now">Shop Now</span></a>
-                                            </div>
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" data-key="t-home" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Demos
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
+                        <li class="nav-item">
+                            <a href="{% url 'dashboard:dashboard' %}" class="nav-link" data-key="t-main-layout">Main
+                                Layout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'dashboard:watch_main_layout' %}" class="nav-link"
+                                data-key="t-unique-watches">Unique Watches</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'dashboard:modern_fashion' %}" class="nav-link"
+                                data-key="t-modern-fashion">Modern Fashion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'dashboard:trend_fashion' %}" class="nav-link"
+                                data-key="t-trend-fashion">Trend Fashion</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-hover dropdown-mega-full">
+                    <a class="nav-link dropdown-toggle" data-key="t-catalog" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Catalog
+                    </a>
+                    <div class="dropdown-menu p-0">
+                        <div class="row g-0 g-lg-4">
+                            <div class="col-lg-2 d-none d-lg-block">
+                                <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden"
+                                    style="background-image: url('{% static 'images/ecommerce/img-1.jpg' %}');background-size: cover;">
+                                    <div class="bg-overlay bg-light bg-opacity-25"></div>
+                                    <div class="card-body d-flex align-items-center justify-content-center">
+                                        <div class="text-center">
+                                            <a href="#!" class="btn btn-secondary btn-hover"><i
+                                                    class="ph-storefront align-middle me-1"></i> <span
+                                                    data-key="t-shop-now">Shop Now</span></a>
                                         </div>
                                     </div>
                                 </div>
-                                {% for category in categories %}
-                                    <div class="col-lg-2">
-                                        <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
-                                            <li>
-                                                <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                                   data-key="">{{ category.title }}{{ category.id }}
-                                                    </p>
-                                                <ul class="dropdown-menu">
-                                                    {% for subcategory in category.subcategories.all %}
-                                                        {% if subcategory.category_id == category.id %}
-                                                        <li class="dropdown-submenu custommenu">
-                                                            <a class="dropdown-item" data-key="">
-                                                                {{ subcategory.title }}{{ subcategory.category_id }}
-                                                            </a>
-                                                        </li>
-                                                        {% endif %}
-                                                    {% endfor %}
-<!--                                                    <li class="dropdown-submenu">-->
-<!--                                                        <a class="dropdown-item" href="#">Danh mục con 1</a>-->
-<!--                                                    </li>-->
-                                                </ul>
-                                            </li>
-                                            {% for subcategory in category.subcategories.all %}
-                                                <li class="nav-item">
-                                                    <a href="{% url 'catalog:clothing_view' %}" class="nav-link"
-                                                       data-key="">{{ subcategory.title }}{{subcategory.category_id}}
-                                                        </a>
-                                                </li>
-                                            {% endfor %}
-                                            {#                                    <li class="nav-item">#}
-                                            {#                                        <a href="{% url 'catalog:clothing_view' %}" class="nav-link" data-key="t-clothing">Clothing</a>#}
-                                            {#                                    </li>#}
-                                            {#                                    <li class="nav-item">#}
-                                            {#                                        <a href="{% url 'catalog:watches_view' %}" class="nav-link" data-key="t-watches">Watches</a>#}
-                                            {#                                    </li>#}
-                                            {#                                    <li class="nav-item">#}
-                                            {#                                        <a href="{% url 'catalog:bag_luggage_view' %}" class="nav-link" data-key="t-bags-Luggage">Bags & Luggage</a>#}
-                                            {#                                    </li>#}
-                                            {#                                    <li class="nav-item">#}
-                                            {#                                        <a href="{% url 'catalog:footwear_view' %}" class="nav-link" data-key="t-footwear">Footwear</a>#}
-                                            {#                                    </li>#}
-                                            {#                                    <li class="nav-item">#}
-                                            {#                                        <a href="{% url 'catalog:innerwear_view' %}" class="nav-link" data-key="t-innerwear">Innerwear</a>#}
-                                            {#                                    </li>#}
-                                            {#                                    <li class="nav-item">#}
-                                            {#                                        <a href="{% url 'catalog:other_accessories_view' %}" class="nav-link" data-key="t-other-accessories">Other Accessories</a>#}
-                                            {#                                    </li>#}
-                                        </ul>
-                                    </div>
-                                {% endfor %}
-                                {#                            <div class="col-lg-2">#}
-                                {#                                <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
-                                {#                                    <li>#}
-                                {#                                        <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title" data-key="t-women">Women</p>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:western_wear_view' %}" class="nav-link" data-key="t-western-wear">Western Wear</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:handbags_clutches_view' %}" class="nav-link" data-key="t-handbags-clutches">Handbags & Clutches</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:lingerie_nightwear_view' %}" class="nav-link" data-key="t-lingerie-nightwear">Lingerie & Nightwear</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:women_footwear_view' %}" class="nav-link" data-key="t-footwear">Footwear</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:fashion_silver_Jewellery_view' %}" class="nav-link" data-key="t-fashion-silver-jewellery">Fashion & Silver Jewellery</a>#}
-                                {#                                    </li>#}
-                                {#                                </ul>#}
-                                {#                            </div>#}
-                                {#                            <div class="col-lg-2">#}
-                                {#                                <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
-                                {#                                    <li>#}
-                                {#                                        <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title" data-key="t-accessories-others">Accessories & Others</p>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:home_kitchen_pets_view' %}" class="nav-link" data-key="t-home-kitchen-pets">Home, Kitchen, Pets</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:beauty_health_grocery_view' %}" class="nav-link" data-key="t-beauty-health-grocery">Beauty, Health, Grocery</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:sports_fitness_bags_luggage_view' %}" class="nav-link" data-key="t-sports-fitness-bags-luggage">Sports, Fitness, Bags, Luggage</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:car_motorbike_industrial_view' %}" class="nav-link" data-key="t-car-motorbike-industrial">Car, Motorbike, Industrial</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:books_view' %}" class="nav-link" data-key="t-books">Books</a>#}
-                                {#                                    </li>#}
-                                {#                                </ul>#}
-                                {#                            </div>#}
-                                {#                            <div class="col-lg-2">#}
-                                {#                                <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
-                                {#                                    <li>#}
-                                {#                                        <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title" data-key="t-others">Others</p>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:sign_up_view' %}" class="nav-link" data-key="t-sign-up">Sign Up</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:sign_in_view'%}" class="nav-link" data-key="t-sign-in">Sign In</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:password_reset_view' %}" class="nav-link" data-key="t-passowrd-reset">Reset Password</a>#}
-                                {#                                    </li>#}
-                                {#                                    <li class="nav-item">#}
-                                {#                                        <a href="{% url 'catalog:error404_view' %}" class="nav-link" data-key="t-error-404">Error 404</a>#}
-                                {#                                    </li>#}
-                                {#                                </ul>#}
-                                {#                            </div>#}
-                                {#                            <div class="col-lg-2 d-none d-lg-block">#}
-                                {#                                <div class="p-3">#}
-                                {#                                    <p class="mb-3 text-uppercase fs-11 fw-medium text-muted" data-key="t-top-brands">Top Brands</p>#}
-                                {#                                    <div class="row g-2">#}
-                                {#                                        <div class="col-lg-4">#}
-                                {#                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                {#                                                <img src="{% static 'images/brands/img-8.png' %}" alt="" class="avatar-sm">#}
-                                {#                                            </a>#}
-                                {#                                        </div>#}
-                                {#                                        <div class="col-lg-4">#}
-                                {#                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                {#                                                <img src="{% static 'images/brands/img-2.png' %}" alt="" class="avatar-sm">#}
-                                {#                                            </a>#}
-                                {#                                        </div>#}
-                                {#                                        <div class="col-lg-4">#}
-                                {#                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                {#                                                <img src="{% static 'images/brands/img-3.png' %}" alt="" class="avatar-sm">#}
-                                {#                                            </a>#}
-                                {#                                        </div>#}
-                                {#                                        <div class="col-lg-4">#}
-                                {#                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                {#                                                <img src="{% static 'images/brands/img-4.png' %}" alt="" class="avatar-sm">#}
-                                {#                                            </a>#}
-                                {#                                        </div>#}
-                                {#                                        <div class="col-lg-4">#}
-                                {#                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                {#                                                <img src="{% static 'images/brands/img-5.png' %}" alt="" class="avatar-sm">#}
-                                {#                                            </a>#}
-                                {#                                        </div>#}
-                                {#                                        <div class="col-lg-4">#}
-                                {#                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                {#                                                <img src="{% static 'images/brands/img-6.png' %}" alt="" class="avatar-sm">#}
-                                {#                                            </a>#}
-                                {#                                        </div>#}
-                                {#                                    </div>#}
-                                {#                                </div>#}
-                                {#                            </div>#}
-                                {#                        </div>#}
                             </div>
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false" data-key="t-shop">
-                            Shop
-                        </a>
-                        <div class="dropdown-menu dropdown-mega-menu-xl dropdown-menu-center p-0">
-                            <div class="row g-0 g-lg-4">
-                                <div class="col-lg-5 d-none d-lg-block">
-                                    <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden"
-                                         style="background-image: url('{% static 'images/ecommerce/img-2.jpg' %}'); background-size: cover;">
-                                        <div class="bg-overlay bg-primary" style="opacity: 0.90;"></div>
-                                        <div class="card-body d-flex align-items-center justify-content-center position-relative">
-                                            <div class="text-center">
-                                                <h6 class="card-title text-white">Welcome to Toner</h6>
-                                                <p class="text-white-75">See all the products at once.</p>
-                                                <a href="#!" class="btn btn-light btn-sm btn-hover">Shop Now <i
-                                                        class="ph-arrow-right align-middle"></i></a>
-                                            </div>
+                            {% for category in categories %}
+                            <div class="col-lg-2">
+                                <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
+                                    <li>
+                                        <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
+                                            data-key="">{{ category.title }}{{ category.id }}
+                                        </p>
+                                        <ul class="dropdown-menu">
+                                            {% for subcategory in category.subcategories.all %}
+                                            {% if subcategory.category_id == category.id %}
+                                            <li class="dropdown-submenu custommenu">
+                                                <a class="dropdown-item" data-key="">
+                                                    {{ subcategory.title }}{{ subcategory.category_id }}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            <!--                                                    <li class="dropdown-submenu">-->
+                                            <!--                                                        <a class="dropdown-item" href="#">Danh mục con 1</a>-->
+                                            <!--                                                    </li>-->
+                                        </ul>
+                                    </li>
+                                    {% for subcategory in category.subcategories.all %}
+                                    <li class="nav-item">
+                                        <a href="{% url 'catalog:clothing_view' %}" class="nav-link" data-key="">{{
+                                            subcategory.title }}{{subcategory.category_id}}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:clothing_view' %}" class="nav-link"
+                                            data-key="t-clothing">Clothing</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:watches_view' %}" class="nav-link"
+                                            data-key="t-watches">Watches</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:bag_luggage_view' %}" class="nav-link"
+                                            data-key="t-bags-Luggage">Bags & Luggage</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:footwear_view' %}" class="nav-link"
+                                            data-key="t-footwear">Footwear</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:innerwear_view' %}" class="nav-link"
+                                            data-key="t-innerwear">Innerwear</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:other_accessories_view' %}" class="nav-link"
+                                            data-key="t-other-accessories">Other Accessories</a>#}
+                                        {# </li>#}
+                                </ul>
+                            </div>
+                            {% endfor %}
+                            {# <div class="col-lg-2">#}
+                                {# <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
+                                    {# <li>#}
+                                        {# <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
+                                            data-key="t-women">Women</p>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:western_wear_view' %}" class="nav-link"
+                                            data-key="t-western-wear">Western Wear</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:handbags_clutches_view' %}" class="nav-link"
+                                            data-key="t-handbags-clutches">Handbags & Clutches</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:lingerie_nightwear_view' %}" class="nav-link"
+                                            data-key="t-lingerie-nightwear">Lingerie & Nightwear</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:women_footwear_view' %}" class="nav-link"
+                                            data-key="t-footwear">Footwear</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:fashion_silver_Jewellery_view' %}" class="nav-link"
+                                            data-key="t-fashion-silver-jewellery">Fashion & Silver Jewellery</a>#}
+                                        {# </li>#}
+                                    {# </ul>#}
+                                {# </div>#}
+                            {# <div class="col-lg-2">#}
+                                {# <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
+                                    {# <li>#}
+                                        {# <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
+                                            data-key="t-accessories-others">Accessories & Others</p>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:home_kitchen_pets_view' %}" class="nav-link"
+                                            data-key="t-home-kitchen-pets">Home, Kitchen, Pets</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:beauty_health_grocery_view' %}" class="nav-link"
+                                            data-key="t-beauty-health-grocery">Beauty, Health, Grocery</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:sports_fitness_bags_luggage_view' %}"
+                                            class="nav-link" data-key="t-sports-fitness-bags-luggage">Sports, Fitness,
+                                            Bags, Luggage</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:car_motorbike_industrial_view' %}" class="nav-link"
+                                            data-key="t-car-motorbike-industrial">Car, Motorbike, Industrial</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:books_view' %}" class="nav-link"
+                                            data-key="t-books">Books</a>#}
+                                        {# </li>#}
+                                    {# </ul>#}
+                                {# </div>#}
+                            {# <div class="col-lg-2">#}
+                                {# <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
+                                    {# <li>#}
+                                        {# <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
+                                            data-key="t-others">Others</p>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:sign_up_view' %}" class="nav-link"
+                                            data-key="t-sign-up">Sign Up</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:sign_in_view'%}" class="nav-link"
+                                            data-key="t-sign-in">Sign In</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:password_reset_view' %}" class="nav-link"
+                                            data-key="t-passowrd-reset">Reset Password</a>#}
+                                        {# </li>#}
+                                    {# <li class="nav-item">#}
+                                        {# <a href="{% url 'catalog:error404_view' %}" class="nav-link"
+                                            data-key="t-error-404">Error 404</a>#}
+                                        {# </li>#}
+                                    {# </ul>#}
+                                {# </div>#}
+                            {# <div class="col-lg-2 d-none d-lg-block">#}
+                                {# <div class="p-3">#}
+                                    {# <p class="mb-3 text-uppercase fs-11 fw-medium text-muted"
+                                        data-key="t-top-brands">Top Brands</p>#}
+                                    {# <div class="row g-2">#}
+                                        {# <div class="col-lg-4">#}
+                                            {# <a href="#!"
+                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
+                                                {# <img src="{% static 'images/brands/img-8.png' %}" alt=""
+                                                    class="avatar-sm">#}
+                                                {# </a>#}
+                                            {# </div>#}
+                                        {# <div class="col-lg-4">#}
+                                            {# <a href="#!"
+                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
+                                                {# <img src="{% static 'images/brands/img-2.png' %}" alt=""
+                                                    class="avatar-sm">#}
+                                                {# </a>#}
+                                            {# </div>#}
+                                        {# <div class="col-lg-4">#}
+                                            {# <a href="#!"
+                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
+                                                {# <img src="{% static 'images/brands/img-3.png' %}" alt=""
+                                                    class="avatar-sm">#}
+                                                {# </a>#}
+                                            {# </div>#}
+                                        {# <div class="col-lg-4">#}
+                                            {# <a href="#!"
+                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
+                                                {# <img src="{% static 'images/brands/img-4.png' %}" alt=""
+                                                    class="avatar-sm">#}
+                                                {# </a>#}
+                                            {# </div>#}
+                                        {# <div class="col-lg-4">#}
+                                            {# <a href="#!"
+                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
+                                                {# <img src="{% static 'images/brands/img-5.png' %}" alt=""
+                                                    class="avatar-sm">#}
+                                                {# </a>#}
+                                            {# </div>#}
+                                        {# <div class="col-lg-4">#}
+                                            {# <a href="#!"
+                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
+                                                {# <img src="{% static 'images/brands/img-6.png' %}" alt=""
+                                                    class="avatar-sm">#}
+                                                {# </a>#}
+                                            {# </div>#}
+                                        {# </div>#}
+                                    {# </div>#}
+                                {# </div>#}
+                            {#
+                        </div>#}
+                    </div>
+                </li>
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" data-key="t-shop">
+                        Shop
+                    </a>
+                    <div class="dropdown-menu dropdown-mega-menu-xl dropdown-menu-center p-0">
+                        <div class="row g-0 g-lg-4">
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden"
+                                    style="background-image: url('{% static 'images/ecommerce/img-2.jpg' %}'); background-size: cover;">
+                                    <div class="bg-overlay bg-primary" style="opacity: 0.90;"></div>
+                                    <div
+                                        class="card-body d-flex align-items-center justify-content-center position-relative">
+                                        <div class="text-center">
+                                            <h6 class="card-title text-white">Welcome to Toner</h6>
+                                            <p class="text-white-75">See all the products at once.</p>
+                                            <a href="#!" class="btn btn-light btn-sm btn-hover">Shop Now <i
+                                                    class="ph-arrow-right align-middle"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row g-0 g-lg-4">
-                                        <div class="col-lg-6">
-                                            <div class="py-3">
-                                                <ul class="dropdown-menu-list list-unstyled mb-0">
-                                                    <li>
-                                                        <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                                           data-key="t-checkout-pages">Checkout Pages</p>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'shop:address_view' %}" class="nav-link"
-                                                           data-key="t-address"> Address</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'shop:track_order_view' %}" class="nav-link"
-                                                           data-key="t-track-order">Track Order</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'shop:payment_view' %}" class="nav-link"
-                                                           data-key="t-payment">Payment</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'shop:review_view' %}" class="nav-link"
-                                                           data-key="t-review">Review</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'shop:confirmation_view' %}" class="nav-link"
-                                                           data-key="t-confirmation">Confirmation</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'shop:order_history_view' %}" class="nav-link"
-                                                           data-key="t-my-orders-order-history">My Orders / Order
-                                                            History</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row g-0 g-lg-4">
+                                    <div class="col-lg-6">
+                                        <div class="py-3">
+                                            <ul class="dropdown-menu-list list-unstyled mb-0">
                                                 <li>
                                                     <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                                       data-key="t-support">Support</p>
+                                                        data-key="t-checkout-pages">Checkout Pages</p>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="{% url 'shop:shop_cart_view' %}" class="nav-link"
-                                                       data-key="t-shopping-cart">Shopping Cart</a>
+                                                    <a href="{% url 'shop:address_view' %}" class="nav-link"
+                                                        data-key="t-address"> Address</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="{% url 'shop:checkout_view' %}" class="nav-link"
-                                                       data-key="t-checkout">Checkout</a>
+                                                    <a href="{% url 'shop:track_order_view' %}" class="nav-link"
+                                                        data-key="t-track-order">Track Order</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="{% url 'shop:wishlist_view' %}" class="nav-link"
-                                                       data-key="t-wishlist">Wishlist</a>
+                                                    <a href="{% url 'shop:payment_view' %}" class="nav-link"
+                                                        data-key="t-payment">Payment</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{% url 'shop:review_view' %}" class="nav-link"
+                                                        data-key="t-review">Review</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{% url 'shop:confirmation_view' %}" class="nav-link"
+                                                        data-key="t-confirmation">Confirmation</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{% url 'shop:order_history_view' %}" class="nav-link"
+                                                        data-key="t-my-orders-order-history">My Orders / Order
+                                                        History</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" data-key="t-pages" href="#" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Pages
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
-                            <li class="nav-item dropdown dropdown-hover">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                   aria-expanded="false" data-key="t-products">Products</a>
-                                <ul class="dropdown-menu submenu">
-                                    <li class="dropdown dropdown-hover">
-                                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                           aria-expanded="false" data-key="t-grid-view">Grid View</a>
-                                        <ul class="dropdown-menu submenu">
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.gridview.defualt_grid' %}"
-                                                   data-key="t-defualt">Defualt</a></li>
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.gridview.sidebar_with_banner' %}"
-                                                   data-key="t-sidebar-with-banner">Sidebar with Banner</a></li>
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.gridview.right_sidebar_grid' %}"
-                                                   data-key="t-right-sidebar">Right Sidebar</a></li>
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.gridview.no_sidebar_grid' %}"
-                                                   data-key="t-no-sidebar">No Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-hover">
-                                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                           aria-expanded="false" data-key="t-list-view">List View</a>
-                                        <ul class="dropdown-menu submenu">
-                                            <li><a class="nav-link" href="{% url 'pages:products.listview.defualt' %}"
-                                                   data-key="t-defualt">Defualt</a></li>
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.listview.left_sidebar' %}"
-                                                   data-key="t-left-sidebar">Left Sidebar</a></li>
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.listview.right_sidebar' %}"
-                                                   data-key="t-right-sidebar">Right Sidebar</a></li>
-                                            <li><a class="nav-link"
-                                                   href="{% url 'pages:products.listview.no_sidebar' %}"
-                                                   data-key="t-no-sidebar">No Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="nav-link" href="{% url 'pages:products.product_details' %}"
-                                           data-key="t-product-details">Product Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown dropdown-hover">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                   aria-expanded="false" data-key="t-users">Users</a>
-                                <ul class="dropdown-menu submenu">
-                                    <li><a class="nav-link" href="{% url 'pages:users.account' %}"
-                                           data-key="t-my-account">My Account</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.sign_in' %}" data-key="t-sign-in">Sign
-                                        In</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.sign_up' %}" data-key="t-sign-up">Sign
-                                        Up</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.password_reset' %}"
-                                           data-key="t-passowrd-reset">Password Reset</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.password_change' %}"
-                                           data-key="t-create-password">Password Create</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.success_msg' %}"
-                                           data-key="t-success-message">Success Message</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.twostep' %}"
-                                           data-key="t-two-step-verify">Two Step Verify</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.logout' %}" data-key="t-logout">Logout</a>
-                                    </li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.error404' %}"
-                                           data-key="t-error-404">Error 404</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.error500' %}"
-                                           data-key="t-error-500">Error 500</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:users.coming_soon' %}"
-                                           data-key="t-coming-soon">Coming Soon</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:category' %}" class="nav-link"
-                                   data-key="t-categories">Categories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:about_us' %}" class="nav-link" data-key="t-about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:purchase_guide' %}" class="nav-link" data-key="t-purchase-guide">Purchase
-                                    Guide</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:terms_condition' %}" class="nav-link"
-                                   data-key="t-terms-of-service">Terms of Service</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:privacy_policy' %}" class="nav-link" data-key="t-privacy-policy">Privacy
-                                    Policy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:store_locator' %}" class="nav-link" data-key="t-store-locator">Store
-                                    Locator</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:ecommerce_faq' %}" class="nav-link" data-key="t-faq">FAQ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'pages:invoice_view' %}" class="nav-link"
-                                   data-key="t-invoice">Invoice</a>
-                            </li>
-                            <li class="nav-item dropdown dropdown-hover">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                   aria-expanded="false" data-key="t-email-template">Email Template</a>
-                                <ul class="dropdown-menu submenu">
-                                    <li><a class="nav-link" href="{% url 'pages:email-template.email_black_friday' %}"
-                                           data-key="t-black-friday">Black Friday</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:email-template.email_flash_sale' %}"
-                                           data-key="t-flash-sale">Flash Sale</a></li>
-                                    <li><a class="nav-link" href="{% url 'pages:email-template.email_order_success' %}"
-                                           data-key="t-order-success">Order Success</a></li>
-                                    <li><a class="nav-link"
-                                           href="{% url 'pages:email-template.email_order_success_2' %}"
-                                           data-key="t-order-success-2">Order Success 2</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item dropdown dropdown-hover">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                   aria-expanded="false" data-key="t-multi-level">Multi Level</a>
-                                <ul class="dropdown-menu submenu">
-                                    <li><a class="nav-link" href="#" data-key="t-level-1.1">Level 1.1</a></li>
-                                    <li><a class="nav-link" href="#" data-key="t-level-1.2">Level 1.2</a></li>
-                                    <li class="dropdown dropdown-hover">
-                                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                           aria-expanded="false" data-key="t-level-1.3">Level 1.3</a>
-                                        <ul class="dropdown-menu submenu">
-                                            <li><a class="nav-link" href="#" data-key="t-level-2.1">Level 2.1</a></li>
-                                            <li><a class="nav-link" href="#" data-key="t-level-2.2">Level 2.2</a></li>
-                                            <li class="dropdown dropdown-hover">
-                                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                                   aria-expanded="false" data-key="t-level-2.3">Level 2.3</a>
-                                                <ul class="dropdown-menu submenu">
-                                                    <li><a class="nav-link" href="#" data-key="t-level-3.1">Level
-                                                        3.1</a></li>
-                                                    <li><a class="nav-link" href="#" data-key="t-level-3.2">Level
-                                                        3.2</a></li>
-                                                </ul>
+                                    <div class="col-lg-6">
+                                        <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
+                                            <li>
+                                                <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
+                                                    data-key="t-support">Support</p>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{% url 'shop:shop_cart_view' %}" class="nav-link"
+                                                    data-key="t-shopping-cart">Shopping Cart</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{% url 'shop:checkout_view' %}" class="nav-link"
+                                                    data-key="t-checkout">Checkout</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{% url 'shop:wishlist_view' %}" class="nav-link"
+                                                    data-key="t-wishlist">Wishlist</a>
                                             </li>
                                         </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'dashboard:contact_us' %}" data-key="t-contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-overlay navbar-overlay" data-bs-toggle="collapse"
-                 data-bs-target="#navbarSupportedContent.show"></div>
-
-            <div class="d-flex align-items-center">
-                <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
-                        data-bs-toggle="modal" data-bs-target="#searchModal">
-                    <i class="bx bx-search fs-22"></i>
-                </button>
-                <div class="topbar-head-dropdown ms-1 header-item">
-                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
-                            data-bs-toggle="offcanvas" data-bs-target="#ecommerceCart" aria-controls="ecommerceCart">
-                        <i class="ph-shopping-cart fs-18"></i>
-                        <span class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-danger">4</span>
-                    </button>
-                </div>
-
-                <div class="dropdown topbar-head-dropdown ms-2 header-item dropdown-hover-end">
-                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-sun align-middle fs-20"></i>
-                    </button>
-                    <div class="dropdown-menu p-2 dropdown-menu-end" id="light-dark-mode">
-                        <a href="#!" class="dropdown-item" data-mode="light"><i class="bi bi-sun align-middle me-2"></i>
-                            Defualt (light mode)</a>
-                        <a href="#!" class="dropdown-item" data-mode="dark"><i class="bi bi-moon align-middle me-2"></i>
-                            Dark</a>
-                        <a href="#!" class="dropdown-item" data-mode="auto"><i
-                                class="bi bi-moon-stars align-middle me-2"></i> Auto (system defualt)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </li>
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" data-key="t-pages" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-key="t-products">Products</a>
+                            <ul class="dropdown-menu submenu">
+                                <li class="dropdown dropdown-hover">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false" data-key="t-grid-view">Grid View</a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a class="nav-link" href="{% url 'pages:products.gridview.defualt_grid' %}"
+                                                data-key="t-defualt">Defualt</a></li>
+                                        <li><a class="nav-link"
+                                                href="{% url 'pages:products.gridview.sidebar_with_banner' %}"
+                                                data-key="t-sidebar-with-banner">Sidebar with Banner</a></li>
+                                        <li><a class="nav-link"
+                                                href="{% url 'pages:products.gridview.right_sidebar_grid' %}"
+                                                data-key="t-right-sidebar">Right Sidebar</a></li>
+                                        <li><a class="nav-link"
+                                                href="{% url 'pages:products.gridview.no_sidebar_grid' %}"
+                                                data-key="t-no-sidebar">No Sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-hover">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false" data-key="t-list-view">List View</a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a class="nav-link" href="{% url 'pages:products.listview.defualt' %}"
+                                                data-key="t-defualt">Defualt</a></li>
+                                        <li><a class="nav-link" href="{% url 'pages:products.listview.left_sidebar' %}"
+                                                data-key="t-left-sidebar">Left Sidebar</a></li>
+                                        <li><a class="nav-link" href="{% url 'pages:products.listview.right_sidebar' %}"
+                                                data-key="t-right-sidebar">Right Sidebar</a></li>
+                                        <li><a class="nav-link" href="{% url 'pages:products.listview.no_sidebar' %}"
+                                                data-key="t-no-sidebar">No Sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-link" href="{% url 'pages:products.product_details' %}"
+                                        data-key="t-product-details">Product Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-key="t-users">Users</a>
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="nav-link" href="{% url 'pages:users.account' %}"
+                                        data-key="t-my-account">My Account</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.sign_in' %}" data-key="t-sign-in">Sign
+                                        In</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.sign_up' %}" data-key="t-sign-up">Sign
+                                        Up</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.password_reset' %}"
+                                        data-key="t-passowrd-reset">Password Reset</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.password_change' %}"
+                                        data-key="t-create-password">Password Create</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.success_msg' %}"
+                                        data-key="t-success-message">Success Message</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.twostep' %}"
+                                        data-key="t-two-step-verify">Two Step Verify</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.logout' %}"
+                                        data-key="t-logout">Logout</a>
+                                </li>
+                                <li><a class="nav-link" href="{% url 'pages:users.error404' %}"
+                                        data-key="t-error-404">Error 404</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.error500' %}"
+                                        data-key="t-error-500">Error 500</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:users.coming_soon' %}"
+                                        data-key="t-coming-soon">Coming Soon</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:category' %}" class="nav-link" data-key="t-categories">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:about_us' %}" class="nav-link" data-key="t-about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:purchase_guide' %}" class="nav-link"
+                                data-key="t-purchase-guide">Purchase
+                                Guide</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:terms_condition' %}" class="nav-link"
+                                data-key="t-terms-of-service">Terms of Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:privacy_policy' %}" class="nav-link"
+                                data-key="t-privacy-policy">Privacy
+                                Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:store_locator' %}" class="nav-link" data-key="t-store-locator">Store
+                                Locator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:ecommerce_faq' %}" class="nav-link" data-key="t-faq">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'pages:invoice_view' %}" class="nav-link" data-key="t-invoice">Invoice</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-key="t-email-template">Email Template</a>
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="nav-link" href="{% url 'pages:email-template.email_black_friday' %}"
+                                        data-key="t-black-friday">Black Friday</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:email-template.email_flash_sale' %}"
+                                        data-key="t-flash-sale">Flash Sale</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:email-template.email_order_success' %}"
+                                        data-key="t-order-success">Order Success</a></li>
+                                <li><a class="nav-link" href="{% url 'pages:email-template.email_order_success_2' %}"
+                                        data-key="t-order-success-2">Order Success 2</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-key="t-multi-level">Multi Level</a>
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="nav-link" href="#" data-key="t-level-1.1">Level 1.1</a></li>
+                                <li><a class="nav-link" href="#" data-key="t-level-1.2">Level 1.2</a></li>
+                                <li class="dropdown dropdown-hover">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false" data-key="t-level-1.3">Level 1.3</a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a class="nav-link" href="#" data-key="t-level-2.1">Level 2.1</a></li>
+                                        <li><a class="nav-link" href="#" data-key="t-level-2.2">Level 2.2</a></li>
+                                        <li class="dropdown dropdown-hover">
+                                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                                aria-expanded="false" data-key="t-level-2.3">Level 2.3</a>
+                                            <ul class="dropdown-menu submenu">
+                                                <li><a class="nav-link" href="#" data-key="t-level-3.1">Level
+                                                        3.1</a></li>
+                                                <li><a class="nav-link" href="#" data-key="t-level-3.2">Level
+                                                        3.2</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard:contact_us' %}" data-key="t-contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bg-overlay navbar-overlay" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent.show">
+        </div>
+
+        <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
+                data-bs-toggle="modal" data-bs-target="#searchModal">
+                <i class="bx bx-search fs-22"></i>
+            </button>
+            <div class="topbar-head-dropdown ms-1 header-item">
+                <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
+                    data-bs-toggle="offcanvas" data-bs-target="#ecommerceCart" aria-controls="ecommerceCart">
+                    <i class="ph-shopping-cart fs-18"></i>
+                    <span
+                        class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-danger">4</span>
+                </button>
+            </div>
+
+            <div class="dropdown topbar-head-dropdown ms-2 header-item dropdown-hover-end">
+                <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-sun align-middle fs-20"></i>
+                </button>
+                <div class="dropdown-menu p-2 dropdown-menu-end" id="light-dark-mode">
+                    <a href="#!" class="dropdown-item" data-mode="light"><i class="bi bi-sun align-middle me-2"></i>
+                        Defualt (light mode)</a>
+                    <a href="#!" class="dropdown-item" data-mode="dark"><i class="bi bi-moon align-middle me-2"></i>
+                        Dark</a>
+                    <a href="#!" class="dropdown-item" data-mode="auto"><i
+                            class="bi bi-moon-stars align-middle me-2"></i> Auto (system defualt)</a>
                 </div>
-                <div class="dropdown header-item dropdown-hover-end">
-                    <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="{% static 'images/users/avatar-1.jpg' %}"
-                             alt="Header Avatar">
-                    </button>
-                    <!-- <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </div>
+            <div class="dropdown header-item dropdown-hover-end">
+                <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="{% static 'images/users/avatar-1.jpg' %}"
+                        alt="Header Avatar">
+                </button>
+                <!-- <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ph-user-circle fs-22"></i>
                     </button>    -->
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <!-- item-->
-                        <h6 class="dropdown-header">Welcome Diana!</h6>
-                        <a class="dropdown-item" href="{% url 'shop:order_history_view' %}"><i
-                                class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Order History</span></a>
-                        <a class="dropdown-item" href="{% url 'shop:track_order_view' %}"><i
-                                class="bi bi-truck text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Track Orders</span></a>
-                        <a class="dropdown-item" href="#"><i
-                                class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i> <span
-                                class="align-middle">Dashboard</span></a>
-                        <a class="dropdown-item" href="{% url 'pages:ecommerce_faq' %}"><i
-                                class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
-                                class="align-middle">Help</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'pages:users.account' %}"><i
-                                class="bi bi-coin text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance : <b>$8451.36</b></span></a>
-                        <a class="dropdown-item" href="{% url 'pages:users.account' %}"><span
-                                class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
-                                class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
-                                class="align-middle">Settings</span></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <h6 class="dropdown-header">Welcome Diana!</h6>
+                    <a class="dropdown-item" href="{% url 'shop:order_history_view' %}"><i
+                            class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Order
+                            History</span></a>
+                    <a class="dropdown-item" href="{% url 'shop:track_order_view' %}"><i
+                            class="bi bi-truck text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Track
+                            Orders</span></a>
+                    <a class="dropdown-item" href="#"><i
+                            class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i> <span
+                            class="align-middle">Dashboard</span></a>
+                    <a class="dropdown-item" href="{% url 'pages:ecommerce_faq' %}"><i
+                            class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
+                            class="align-middle">Help</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'pages:users.account' %}"><i
+                            class="bi bi-coin text-muted fs-16 align-middle me-1"></i> <span
+                            class="align-middle">Balance : <b>$8451.36</b></span></a>
+                    <a class="dropdown-item" href="{% url 'pages:users.account' %}"><span
+                            class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
+                            class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
+                            class="align-middle">Settings</span></a>
 
-                        {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}
 
-                            <a class="dropdown-item" href="{% url 'account_change_password' %}">
-                                <i class="bi bi-key text-muted fs-16 align-middle me-1">
-                                </i> <span class="align-middle" data-key="t-change passowrd">Change Password</span></a>
+                    <a class="dropdown-item" href="{% url 'account_change_password' %}">
+                        <i class="bi bi-key text-muted fs-16 align-middle me-1">
+                        </i> <span class="align-middle" data-key="t-change passowrd">Change Password</span></a>
 
-                            <a class="dropdown-item" href="{% url 'account_logout' %}">
-                                <i class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1">
-                                </i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                    <a class="dropdown-item" href="{% url 'account_logout' %}">
+                        <i class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1">
+                        </i> <span class="align-middle" data-key="t-logout">Logout</span></a>
 
-                        {% endif %}
+                    {% endif %}
 
 
-                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+<!--nav bottom-->
+<div class="navbar-bottom">
+    <span class="action nav-toggle1">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M9.01877 10.729H1.71327C1.25974 10.7285 0.824884 10.5484 0.503817 10.228C0.18275 9.90772 0.00158453 9.47329 0 9.01976V1.71425C0.000528191 1.25994 0.181201 0.824379 0.502354 0.50304C0.823506 0.1817 1.25896 0.000793018 1.71327 0H9.01877C9.47308 0.000793018 9.90853 0.1817 10.2297 0.50304C10.5508 0.824379 10.7315 1.25994 10.732 1.71425V9.01976C10.7305 9.47329 10.5493 9.90772 10.2282 10.228C9.90716 10.5484 9.4723 10.7285 9.01877 10.729ZM1.71327 0.931052C1.50687 0.931581 1.30909 1.01387 1.16324 1.15991C1.01738 1.30596 0.93534 1.50385 0.935077 1.71025V9.01976C0.93534 9.22616 1.01738 9.42406 1.16324 9.5701C1.30909 9.71614 1.50687 9.79843 1.71327 9.79896H9.01877C9.22535 9.7987 9.4234 9.71652 9.56947 9.57045C9.71555 9.42438 9.79774 9.22634 9.798 9.01976V1.71425C9.79774 1.50767 9.71555 1.30963 9.56947 1.16356C9.4234 1.01749 9.22535 0.93531 9.01877 0.935046L1.71327 0.931052Z"
+                fill="black"></path>
+            <path
+                d="M9.01877 23.3267H1.71327C1.25896 23.3259 0.823506 23.1451 0.502354 22.8237C0.181201 22.5024 0.000528191 22.0668 0 21.6125V14.307C0.000528776 13.8528 0.181234 13.4173 0.502415 13.0961C0.823595 12.7749 1.25905 12.5943 1.71327 12.5938H9.01877C9.47299 12.5943 9.90844 12.7749 10.2296 13.0961C10.5508 13.4173 10.7315 13.8528 10.732 14.307V21.6085C10.7326 22.0635 10.5524 22.5001 10.2311 22.8223C9.90982 23.1445 9.47377 23.3259 9.01877 23.3267ZM1.71327 13.5278C1.50687 13.5283 1.30909 13.6106 1.16324 13.7567C1.01738 13.9027 0.93534 14.1006 0.935076 14.307V21.6085C0.93534 21.8149 1.01738 22.0128 1.16324 22.1588C1.30909 22.3049 1.50687 22.3872 1.71327 22.3877H9.01877C9.22534 22.3874 9.4234 22.3053 9.56947 22.1592C9.71554 22.0131 9.79773 21.8151 9.798 21.6085V14.303C9.79773 14.0964 9.71554 13.8984 9.56947 13.7523C9.4234 13.6062 9.22534 13.5241 9.01877 13.5238L1.71327 13.5278Z"
+                fill="black"></path>
+            <path
+                d="M17.9632 23.3267C16.5404 23.3251 15.1763 22.7593 14.1703 21.7532C13.1642 20.7471 12.5983 19.383 12.5967 17.9602C12.5983 16.5374 13.1642 15.1734 14.1703 14.1673C15.1763 13.1612 16.5404 12.5953 17.9632 12.5938C19.386 12.5953 20.75 13.1612 21.7561 14.1673C22.7622 15.1734 23.3281 16.5374 23.3297 17.9602C23.3278 19.383 22.7618 20.7469 21.7558 21.7529C20.7498 22.7589 19.3859 23.3249 17.9632 23.3267ZM17.9632 13.5278C16.7881 13.5288 15.6615 13.996 14.8305 14.8268C13.9995 15.6576 13.532 16.7842 13.5307 17.9592C13.532 19.1344 13.9995 20.261 14.8304 21.092C15.6614 21.923 16.788 22.3904 17.9632 22.3917C19.1382 22.3901 20.2645 21.9226 21.0953 21.0916C21.926 20.2607 22.3933 19.1342 22.3946 17.9592C22.3933 16.7843 21.926 15.658 21.0952 14.8272C20.2645 13.9964 19.1381 13.5291 17.9632 13.5278Z"
+                fill="black"></path>
+            <path
+                d="M21.6204 10.729H14.3149C13.8606 10.7298 13.4244 10.5503 13.1023 10.2298C12.7801 9.90935 12.5983 9.47415 12.5967 9.01976V1.71425C12.5972 1.25994 12.7779 0.824379 13.099 0.50304C13.4202 0.1817 13.8556 0.000793018 14.31 0H21.6154C22.0699 0.000528777 22.5057 0.181305 22.827 0.502674C23.1484 0.824042 23.3292 1.25976 23.3297 1.71425V9.01976C23.3279 9.47251 23.1472 9.9062 22.827 10.2263C22.5069 10.5465 22.0732 10.7272 21.6204 10.729ZM14.3149 0.931052C14.1084 0.931317 13.9103 1.01349 13.7642 1.15956C13.6182 1.30563 13.536 1.50368 13.5357 1.71025V9.01976C13.536 9.22633 13.6182 9.42438 13.7642 9.57045C13.9103 9.71652 14.1084 9.79869 14.3149 9.79896H21.6204C21.827 9.79869 22.0251 9.71652 22.1712 9.57045C22.3172 9.42438 22.3994 9.22633 22.3996 9.01976V1.71425C22.3994 1.50767 22.3172 1.30963 22.1712 1.16356C22.0251 1.01748 21.827 0.93531 21.6204 0.935046L14.3149 0.931052Z"
+                fill="black"></path>
+        </svg>
+        <span>Menu</span>
+    </span>
+    <a href="/en/freeship/" class="my-account m-l-xs mr-1 mr-lg-2" title="Freeshop">
+        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M25.5575 10.5382C25.0757 10.0406 24.8539 9.36229 24.9521 8.67452L25.0409 8.04696C25.3071 6.16747 24.052 4.43695 22.182 4.1105L21.5576 3.99956C20.8762 3.87912 20.2962 3.46076 19.9729 2.84905L19.675 2.29123C18.7844 0.614581 16.7527 -0.047836 15.0476 0.788901L14.4771 1.06464C13.8559 1.36891 13.1396 1.36891 12.5183 1.06464L11.951 0.785732C10.2458 -0.0478361 8.21422 0.611411 7.3236 2.28806L7.02567 2.84588C6.69921 3.45759 6.12237 3.87912 5.44094 3.99639L4.81656 4.10733C2.94657 4.43378 1.69147 6.16431 1.9577 8.04379L2.04645 8.67135C2.1447 9.35912 1.92284 10.0374 1.44108 10.535L1.00053 10.9882C-0.321139 12.3511 -0.321139 14.4905 1.00053 15.8533L1.44108 16.3097C1.92284 16.8074 2.1447 17.4856 2.04645 18.1734L1.9577 18.8009C1.69147 20.6804 2.94657 22.411 4.81656 22.7374L5.44094 22.8483C6.12237 22.9688 6.70238 23.3871 7.02567 23.9989L7.3236 24.5567C7.95432 25.7421 9.15238 26.4203 10.4075 26.4203C10.9241 26.4203 11.4534 26.3031 11.951 26.059L12.5183 25.7864C13.1396 25.4822 13.8559 25.4822 14.4771 25.7864L15.0444 26.0653C16.7496 26.8989 18.7812 26.2397 19.6718 24.563L19.9697 24.0052C20.2962 23.3935 20.873 22.972 21.5545 22.8547L22.1789 22.7437C24.0488 22.4173 25.3039 20.6868 25.0377 18.8073L24.949 18.1797C24.8507 17.492 25.0726 16.8137 25.5543 16.3161L25.9949 15.8629C27.3166 14.5 27.3166 12.3606 25.9949 10.9977L25.5575 10.5382ZM25.0853 14.9786L24.6447 15.4318C23.8904 16.2115 23.5417 17.2796 23.6939 18.354L23.7826 18.9816C23.9538 20.1797 23.1519 21.2826 21.9602 21.4918L21.3358 21.6027C20.2645 21.7897 19.358 22.449 18.8509 23.4093L18.553 23.9672C17.9857 25.0353 16.6894 25.46 15.6022 24.9275L15.0349 24.6486C14.0587 24.17 12.9367 24.17 11.9605 24.6486L11.3932 24.9275C10.3061 25.46 9.00975 25.0384 8.44242 23.9672L8.14449 23.4093C7.63421 22.449 6.72774 21.7897 5.65963 21.6027L5.03525 21.4918C3.84353 21.2826 3.04166 20.1797 3.21281 18.9816L3.30155 18.354C3.45369 17.2764 3.10822 16.2115 2.35072 15.4318L1.91016 14.9754C1.06708 14.1038 1.06708 12.7441 1.91016 11.8725L2.35072 11.4193C3.10505 10.6396 3.45369 9.57147 3.30155 8.49703L3.21281 7.86947C3.04166 6.67142 3.84353 5.56845 5.03525 5.35926L5.65963 5.24833C6.73091 5.06133 7.63737 4.40209 8.14449 3.44174L8.44242 2.88391C8.84494 2.12641 9.60878 1.69537 10.4075 1.69537C10.7371 1.69537 11.0731 1.76826 11.3932 1.92357L11.9605 2.20248C12.9367 2.68107 14.0587 2.68107 15.0349 2.20248L15.6022 1.92357C16.6894 1.3911 17.9857 1.81264 18.553 2.88391L18.8509 3.44174C19.3612 4.40209 20.2677 5.06133 21.3358 5.24833L21.9602 5.35926C23.1519 5.56845 23.9538 6.67142 23.7826 7.86947L23.6939 8.49703C23.5417 9.57464 23.8872 10.6396 24.6447 11.4193L25.0853 11.8757C25.9283 12.7441 25.9283 14.107 25.0853 14.9786Z"
+                fill="#E73F1D"></path>
+            <path
+                d="M18.5407 8.38292C18.2934 8.13571 17.8909 8.13571 17.6437 8.38292L8.45543 17.5712C8.20822 17.8184 8.20822 18.2209 8.45543 18.4681C8.57904 18.5918 8.74068 18.6551 8.90233 18.6551C9.06397 18.6551 9.22561 18.5918 9.34922 18.4681L18.5375 9.27988C18.7879 9.03266 18.7879 8.63014 18.5407 8.38292Z"
+                fill="#E73F1D"></path>
+            <path
+                d="M10.9211 11.7487C11.612 11.7487 12.2998 11.4857 12.8259 10.9595C13.875 9.91046 13.875 8.19895 12.8259 7.14986C11.7768 6.10076 10.0653 6.10076 9.01625 7.14986C8.50596 7.65697 8.22705 8.33523 8.22705 9.0547C8.22705 9.77417 8.50596 10.4524 9.01625 10.9595C9.54238 11.4857 10.2301 11.7487 10.9211 11.7487ZM9.9132 8.04681C10.1921 7.7679 10.5566 7.62844 10.9211 7.62844C11.2856 7.62844 11.6501 7.7679 11.929 8.04681C12.4836 8.60147 12.4836 9.50793 11.929 10.0626C11.3712 10.6172 10.4679 10.6172 9.9132 10.0626C9.6438 9.79318 9.49483 9.43504 9.49483 9.0547C9.49483 8.67437 9.6438 8.31622 9.9132 8.04681Z"
+                fill="#E73F1D"></path>
+            <path
+                d="M14.1701 15.8912C13.121 16.9403 13.121 18.6518 14.1701 19.7009C14.6962 20.2271 15.384 20.4901 16.075 20.4901C16.7659 20.4901 17.4537 20.2271 17.9798 19.7009C18.4901 19.1907 18.769 18.5156 18.769 17.7961C18.769 17.0766 18.4901 16.3984 17.9798 15.8912C16.9307 14.839 15.2224 14.839 14.1701 15.8912ZM17.0829 18.804C16.5282 19.3586 15.6217 19.3586 15.0671 18.804C14.5124 18.2493 14.5124 17.3429 15.0671 16.7882C15.346 16.5093 15.7105 16.3698 16.075 16.3698C16.4395 16.3698 16.8039 16.5093 17.0829 16.7882C17.3523 17.0576 17.5012 17.4158 17.5012 17.7961C17.5012 18.1764 17.3523 18.5346 17.0829 18.804Z"
+                fill="#E73F1D"></path>
+        </svg>
+        <span>Freeship</span>
+    </a>
+    <strong class="logo home">
+        <img src="/media/logo/stores/1/logo.png" alt="Magento Commerce" width="170" height="44">
+        <span>Home</span>
+    </strong>
 
-    <!--cart -->
-    <div class="offcanvas offcanvas-end product-list" tabindex="-1" id="ecommerceCart"
-         aria-labelledby="ecommerceCartLabel">
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="ecommerceCartLabel">My Cart <span
-                    class="badge bg-danger align-middle ms-1 cartitem-badge">4</span></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body px-0">
-            <div data-simplebar class="h-100">
-                <ul class="list-group list-group-flush cartlist">
-                    <li class="list-group-item product">
-                        <div class="d-flex gap-3">
-                            <div class="flex-shrink-0">
-                                <div class="avatar-md" style="height: 100%;">
-                                    <div class="avatar-title bg-warning-subtle rounded-3">
-                                        <img src="{% static 'images/products/img-4.png' %}" alt="" class="avatar-sm">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <a href="#!">
-                                    <h5 class="fs-15">Borosil Paper Cup</h5>
-                                </a>
-                                <div class="d-flex mb-3 gap-2">
-                                    <div class="text-muted fw-medium mb-0">$<span class="product-price">24.00</span>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <span class="text-success fw-medium">In Stock</span>
-                                </div>
-                                <div class="input-step">
-                                    <button type="button" class="minus">–</button>
-                                    <input type="number" class="product-quantity" value="2" min="0" max="100" readonly>
-                                    <button type="button" class="plus">+</button>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
-                                <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
-                                        data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
-                                        class="ri-close-fill fs-16"></i></button>
-                                <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">48.00</span></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item product">
-                        <div class="d-flex gap-3">
-                            <div class="flex-shrink-0">
-                                <div class="avatar-md" style="height: 100%;">
-                                    <div class="avatar-title bg-info-subtle rounded-3">
-                                        <img src="{% static 'images/products/img-1.png' %}" alt="" class="avatar-sm">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <a href="#!">
-                                    <h5 class="fs-15">Rockerz Ear Bluetooth Hea...</h5>
-                                </a>
-                                <div class="d-flex mb-3 gap-2">
-                                    <div class="text-muted fw-medium mb-0">$<span class="product-price">160.00</span>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <span class="text-success fw-medium">In Stock</span>
-                                </div>
-                                <div class="input-step">
-                                    <button type="button" class="minus">–</button>
-                                    <input type="number" class="product-quantity" value="1" min="0" max="100" readonly>
-                                    <button type="button" class="plus">+</button>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
-                                <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
-                                        data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
-                                        class="ri-close-fill fs-16"></i></button>
-                                <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">160.00</span></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item product">
-                        <div class="d-flex gap-3">
-                            <div class="flex-shrink-0">
-                                <div class="avatar-md" style="height: 100%;">
-                                    <div class="avatar-title bg-danger-subtle rounded-3">
-                                        <img src="{% static 'images/products/img-6.png' %}" alt="" class="avatar-sm">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <a href="#!">
-                                    <h5 class="fs-15">Monte Carlo Sweaters</h5>
-                                </a>
-                                <div class="d-flex mb-3 gap-2">
-                                    <div class="text-muted fw-medium mb-0">$ <span class="product-price">244.99</span>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <span class="text-success fw-medium">In Stock</span>
-                                </div>
-                                <div class="input-step">
-                                    <button type="button" class="minus">–</button>
-                                    <input type="number" class="product-quantity" value="3" min="0" max="100" readonly>
-                                    <button type="button" class="plus">+</button>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
-                                <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
-                                        data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
-                                        class="ri-close-fill fs-16"></i></button>
-                                <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">734.97</span></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item product">
-                        <div class="d-flex gap-3">
-                            <div class="flex-shrink-0">
-                                <div class="avatar-md" style="height: 100%;">
-                                    <div class="avatar-title bg-primary-subtle rounded-3">
-                                        <img src="{% static 'images/products/img-8.png' %}" alt="" class="avatar-sm">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <a href="#!">
-                                    <h5 class="fs-15">Men's Running Shoes Act...</h5>
-                                </a>
-                                <div class="d-flex mb-3 gap-2">
-                                    <div class="text-muted fw-medium mb-0">$<span class="product-price">120.30</span>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <span class="text-success fw-medium">In Stock</span>
-                                </div>
-                                <div class="input-step">
-                                    <button type="button" class="minus">–</button>
-                                    <input type="number" class="product-quantity" value="2" min="0" max="100" readonly>
-                                    <button type="button" class="plus">+</button>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
-                                <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
-                                        data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
-                                        class="ri-close-fill fs-16"></i></button>
-                                <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">240.60</span></div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+    <div data-block="minicart" class="minicart-wrapper cart-design-2">
+        <a class="action showcart" href="/en/checkout/cart/" data-bind="scope: 'minicart_content'">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M8 31C9.65685 31 11 29.6569 11 28C11 26.3431 9.65685 25 8 25C6.34315 25 5 26.3431 5 28C5 29.6569 6.34315 31 8 31Z"
+                    stroke="#212121" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"></path>
+                <path
+                    d="M27 31C28.6569 31 30 29.6569 30 28C30 26.3431 28.6569 25 27 25C25.3431 25 24 26.3431 24 28C24 29.6569 25.3431 31 27 31Z"
+                    stroke="#212121" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"></path>
+                <path
+                    d="M5.706 7H30L27.508 18.629C27.212 20.012 25.989 21 24.575 21H9.715C8.174 21 6.883 19.832 6.73 18.299L5 1H1"
+                    stroke="#212121" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"></path>
+            </svg>
+            <span class="text">Cart</span>
+            <span class="counter qty empty"
+                data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+                <span class="counter-number">
+                    <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+                    <!-- ko ifnot: getCartParam('summary_count') -->0<!-- /ko -->
+                </span>
+                <span class="counter-label">
+                    <!-- ko i18n: 'items' --><span>items</span><!-- /ko -->
+                </span>
+            </span>
+        </a>
+        <script>
+            window.checkout = { "shoppingCartUrl": "https:\/\/backup.bacodo.com\/en\/checkout\/cart\/", "checkoutUrl": "https:\/\/backup.bacodo.com\/en\/checkout\/", "updateItemQtyUrl": "https:\/\/backup.bacodo.com\/en\/checkout\/sidebar\/updateItemQty\/", "removeItemUrl": "https:\/\/backup.bacodo.com\/en\/checkout\/sidebar\/removeItem\/", "imageTemplate": "Magento_Catalog\/product\/image_with_borders", "baseUrl": "https:\/\/backup.bacodo.com\/en\/", "minicartMaxItemsVisible": 5, "websiteId": "1", "maxItemsToDisplay": 10, "storeId": "1", "storeGroupId": "1", "customerLoginUrl": "https:\/\/backup.bacodo.com\/en\/customer\/account\/login\/referer\/aHR0cHM6Ly9iYWNrdXAuYmFjb2RvLmNvbS9lbi8%2C\/", "isRedirectRequired": false, "autocomplete": "off", "captcha": { "user_login": { "isCaseSensitive": false, "imageHeight": 50, "imageSrc": "", "refreshUrl": "https:\/\/backup.bacodo.com\/en\/captcha\/refresh\/", "isRequired": false, "timestamp": 1710207000 } } };
+        </script>
 
-                <div class="table-responsive mx-2 border-top border-top-dashed">
-                    <table class="table table-borderless mb-0 fs-14 fw-semibold">
-                        <tbody>
+    </div>
+    <a href="/en//customer/account" class="trackingorder m-l-xs mr-1 mr-lg-2" title="Tracking Order">
+        <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M21.7 11.7948V11.7956V21.3747C21.6983 22.7887 21.1483 24.1429 20.1726 25.1408C19.1972 26.1384 17.8761 26.6983 16.4996 26.7H5.50036C4.12385 26.6983 2.80278 26.1384 1.82734 25.1408C0.851717 24.143 0.301701 22.7888 0.3 21.3748V5.6252C0.301701 4.21126 0.851717 2.85706 1.82734 1.85926C2.80275 0.861685 4.12374 0.301758 5.50019 0.300026L10.4665 0.300027L10.4673 0.300025C11.4383 0.297469 12.4003 0.491782 13.2977 0.87191C14.1952 1.25204 15.0106 1.81055 15.6965 2.51548L15.6969 2.51595L19.5293 6.43769L19.53 6.43841C20.2197 7.1394 20.7668 7.97375 21.1394 8.89328C21.512 9.81283 21.7026 10.7991 21.7 11.7948ZM6.03668 19.6642L5.82218 19.4545L6.03668 19.6642C6.18725 19.5103 6.39002 19.425 6.59999 19.425H12.1C12.31 19.425 12.5127 19.5103 12.6633 19.6642C12.8141 19.8185 12.9 20.0291 12.9 20.25C12.9 20.471 12.8141 20.6815 12.6633 20.8358C12.5127 20.9898 12.31 21.075 12.1 21.075H6.59999C6.39002 21.075 6.18725 20.9898 6.03668 20.8358C5.88588 20.6815 5.79999 20.471 5.79999 20.25C5.79999 20.0291 5.88588 19.8185 6.03668 19.6642ZM14.5706 3.68735L14.5707 3.68732L14.5672 3.68389C14.2024 3.32248 13.7926 3.0114 13.3483 2.75874L12.9 2.50381V3.01952V7.87502C12.9 8.2508 13.0459 8.61252 13.3077 8.88025C13.5697 9.14821 13.9265 9.30002 14.3 9.30002H19.0476H19.5524L19.3111 8.85662C19.0643 8.40308 18.76 7.98461 18.4059 7.61209L18.406 7.61207L18.403 7.60909L14.5706 3.68735ZM20.0471 11.223L20.0223 10.95H19.7483H14.3C13.5065 10.95 12.7442 10.6277 12.181 10.0518C11.6177 9.47558 11.3 8.69271 11.3 7.87502V2.3029V2.02997L11.0283 2.00423C10.9721 1.99891 10.9195 1.99192 10.861 1.98414C10.8329 1.9804 10.8033 1.97647 10.7714 1.97247C10.6792 1.9609 10.5757 1.95002 10.4665 1.95002H5.49999C4.54301 1.95002 3.62663 2.33889 2.95204 3.0288C2.27768 3.71849 1.9 4.6525 1.9 5.62502V21.375C1.9 22.3475 2.27768 23.2815 2.95204 23.9712C3.62663 24.6611 4.54301 25.05 5.49999 25.05H16.5C17.457 25.05 18.3733 24.6611 19.0479 23.9712C19.7223 23.2815 20.1 22.3475 20.1 21.375V11.7956C20.1 11.6847 20.0895 11.5798 20.0782 11.4858C20.0743 11.4534 20.0705 11.4234 20.0668 11.3947C20.0592 11.3349 20.0523 11.2808 20.0471 11.223ZM16.2 15.75C16.2 15.971 16.1141 16.1815 15.9633 16.3358C15.8127 16.4898 15.61 16.575 15.4 16.575H6.59999C6.39002 16.575 6.18725 16.4898 6.03668 16.3358C5.88588 16.1815 5.79999 15.971 5.79999 15.75C5.79999 15.5291 5.88588 15.3185 6.03668 15.1643C6.18725 15.0103 6.39002 14.925 6.59999 14.925H15.4C15.61 14.925 15.8127 15.0103 15.9633 15.1643C16.1141 15.3185 16.2 15.5291 16.2 15.75Z"
+                fill="black" stroke="white" stroke-width="0.6"></path>
+        </svg>
+        <span>My Account</span>
+    </a>
+</div>
+<!--end-->
+<!--cart -->
+<div class="offcanvas offcanvas-end product-list" tabindex="-1" id="ecommerceCart" aria-labelledby="ecommerceCartLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="ecommerceCartLabel">My Cart <span
+                class="badge bg-danger align-middle ms-1 cartitem-badge">4</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <div data-simplebar class="h-100">
+            <ul class="list-group list-group-flush cartlist">
+                <li class="list-group-item product">
+                    <div class="d-flex gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="avatar-md" style="height: 100%;">
+                                <div class="avatar-title bg-warning-subtle rounded-3">
+                                    <img src="{% static 'images/products/img-4.png' %}" alt="" class="avatar-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <a href="#!">
+                                <h5 class="fs-15">Borosil Paper Cup</h5>
+                            </a>
+                            <div class="d-flex mb-3 gap-2">
+                                <div class="text-muted fw-medium mb-0">$<span class="product-price">24.00</span>
+                                </div>
+                                <div class="vr"></div>
+                                <span class="text-success fw-medium">In Stock</span>
+                            </div>
+                            <div class="input-step">
+                                <button type="button" class="minus">–</button>
+                                <input type="number" class="product-quantity" value="2" min="0" max="100" readonly>
+                                <button type="button" class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
+                                data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
+                                    class="ri-close-fill fs-16"></i></button>
+                            <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">48.00</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item product">
+                    <div class="d-flex gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="avatar-md" style="height: 100%;">
+                                <div class="avatar-title bg-info-subtle rounded-3">
+                                    <img src="{% static 'images/products/img-1.png' %}" alt="" class="avatar-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <a href="#!">
+                                <h5 class="fs-15">Rockerz Ear Bluetooth Hea...</h5>
+                            </a>
+                            <div class="d-flex mb-3 gap-2">
+                                <div class="text-muted fw-medium mb-0">$<span class="product-price">160.00</span>
+                                </div>
+                                <div class="vr"></div>
+                                <span class="text-success fw-medium">In Stock</span>
+                            </div>
+                            <div class="input-step">
+                                <button type="button" class="minus">–</button>
+                                <input type="number" class="product-quantity" value="1" min="0" max="100" readonly>
+                                <button type="button" class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
+                                data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
+                                    class="ri-close-fill fs-16"></i></button>
+                            <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">160.00</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item product">
+                    <div class="d-flex gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="avatar-md" style="height: 100%;">
+                                <div class="avatar-title bg-danger-subtle rounded-3">
+                                    <img src="{% static 'images/products/img-6.png' %}" alt="" class="avatar-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <a href="#!">
+                                <h5 class="fs-15">Monte Carlo Sweaters</h5>
+                            </a>
+                            <div class="d-flex mb-3 gap-2">
+                                <div class="text-muted fw-medium mb-0">$ <span class="product-price">244.99</span>
+                                </div>
+                                <div class="vr"></div>
+                                <span class="text-success fw-medium">In Stock</span>
+                            </div>
+                            <div class="input-step">
+                                <button type="button" class="minus">–</button>
+                                <input type="number" class="product-quantity" value="3" min="0" max="100" readonly>
+                                <button type="button" class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
+                                data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
+                                    class="ri-close-fill fs-16"></i></button>
+                            <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">734.97</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item product">
+                    <div class="d-flex gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="avatar-md" style="height: 100%;">
+                                <div class="avatar-title bg-primary-subtle rounded-3">
+                                    <img src="{% static 'images/products/img-8.png' %}" alt="" class="avatar-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <a href="#!">
+                                <h5 class="fs-15">Men's Running Shoes Act...</h5>
+                            </a>
+                            <div class="d-flex mb-3 gap-2">
+                                <div class="text-muted fw-medium mb-0">$<span class="product-price">120.30</span>
+                                </div>
+                                <div class="vr"></div>
+                                <span class="text-success fw-medium">In Stock</span>
+                            </div>
+                            <div class="input-step">
+                                <button type="button" class="minus">–</button>
+                                <input type="number" class="product-quantity" value="2" min="0" max="100" readonly>
+                                <button type="button" class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"
+                                data-bs-toggle="modal" data-bs-target="#removeItemModal"><i
+                                    class="ri-close-fill fs-16"></i></button>
+                            <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">240.60</span></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="table-responsive mx-2 border-top border-top-dashed">
+                <table class="table table-borderless mb-0 fs-14 fw-semibold">
+                    <tbody>
                         <tr>
                             <td>Sub Total :</td>
                             <td class="text-end cart-subtotal">$1183.57</td>
@@ -708,326 +826,329 @@
                             <td>Estimated Tax (12.5%) :</td>
                             <td class="text-end cart-tax">$147.95</td>
                         </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas-footer border-top p-3 text-center">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="m-0 fs-16 text-muted">Total:</h6>
-                <div class="px-2">
-                    <h6 class="m-0 fs-16 cart-total">$1218.98</h6>
-                </div>
-            </div>
-            <div class="row g-2">
-                <div class="col-6">
-                    <button type="button" class="btn btn-light w-100" id="reset-layout">View Cart</button>
-                </div>
-                <div class="col-6">
-                    <a href="#!" target="_blank" class="btn btn-info w-100">Continue to Checkout</a>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+    <div class="offcanvas-footer border-top p-3 text-center">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="m-0 fs-16 text-muted">Total:</h6>
+            <div class="px-2">
+                <h6 class="m-0 fs-16 cart-total">$1218.98</h6>
+            </div>
+        </div>
+        <div class="row g-2">
+            <div class="col-6">
+                <button type="button" class="btn btn-light w-100" id="reset-layout">View Cart</button>
+            </div>
+            <div class="col-6">
+                <a href="#!" target="_blank" class="btn btn-info w-100">Continue to Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded">
+            <div class="modal-header p-3">
+                <div class="position-relative w-100">
+                    <input type="text" class="form-control form-control-lg border-2" placeholder="Search for Toner..."
+                        autocomplete="off" id="search-options" value="">
+                    <span class="bi bi-search search-widget-icon fs-17"></span>
+                    <a href="javascript:void(0);"
+                        class="search-widget-icon fs-14 link-secondary text-decoration-underline search-widget-icon-close d-none"
+                        id="search-close-options">Clear</a>
+                </div>
+            </div>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 overflow-hidden" id="search-dropdown">
 
-    <!-- Modal -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content rounded">
-                <div class="modal-header p-3">
-                    <div class="position-relative w-100">
-                        <input type="text" class="form-control form-control-lg border-2"
-                               placeholder="Search for Toner..." autocomplete="off" id="search-options" value="">
-                        <span class="bi bi-search search-widget-icon fs-17"></span>
-                        <a href="javascript:void(0);"
-                           class="search-widget-icon fs-14 link-secondary text-decoration-underline search-widget-icon-close d-none"
-                           id="search-close-options">Clear</a>
+                <div class="dropdown-head rounded-top">
+                    <div class="p-3">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0 fs-14 text-muted fw-semibold"> RECENT SEARCHES </h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-item bg-transparent text-wrap">
+                        <a href="{% url 'dashboard:dashboard' %}" class="btn btn-soft-secondary btn-sm btn-rounded">how
+                            to setup <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
+                        <a href="{% url 'dashboard:dashboard' %}"
+                            class="btn btn-soft-secondary btn-sm btn-rounded">buttons
+                            <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
                     </div>
                 </div>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 overflow-hidden" id="search-dropdown">
 
-                    <div class="dropdown-head rounded-top">
-                        <div class="p-3">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h6 class="m-0 fs-14 text-muted fw-semibold"> RECENT SEARCHES </h6>
+                <div data-simplebar style="max-height: 300px;" class="pe-2 ps-3 my-3">
+                    <div class="list-group list-group-flush border-dashed">
+                        <div class="notification-group-list">
+                            <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
+                                Apps Pages</h5>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
+                                    class="bi bi-speedometer2 me-2"></i> <span>Analytics Dashboard</span></a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
+                                    class="bi bi-filetype-psd me-2"></i> <span>Toner.psd</span></a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
+                                    class="bi bi-ticket-detailed me-2"></i> <span>Support Tickets</span></a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
+                                    class="bi bi-file-earmark-zip me-2"></i> <span>Toner.zip</span></a>
+                        </div>
+
+                        <div class="notification-group-list">
+                            <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
+                                Links</h5>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
+                                    class="bi bi-link-45deg me-2 align-middle"></i> <span>www.themesbrand.com</span></a>
+                        </div>
+
+                        <div class="notification-group-list">
+                            <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
+                                People</h5>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="{% static 'images/users/avatar-1.jpg' %}" alt=""
+                                        class="avatar-xs rounded-circle flex-shrink-0 me-2">
+                                    <div>
+                                        <h6 class="mb-0">Ayaan Bowen</h6>
+                                        <span class="fs-12 text-muted">React Developer</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="dropdown-item bg-transparent text-wrap">
-                            <a href="{% url 'dashboard:dashboard' %}" class="btn btn-soft-secondary btn-sm btn-rounded">how
-                                to setup <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
-                            <a href="{% url 'dashboard:dashboard' %}" class="btn btn-soft-secondary btn-sm btn-rounded">buttons
-                                <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
-                        </div>
-                    </div>
-
-                    <div data-simplebar style="max-height: 300px;" class="pe-2 ps-3 my-3">
-                        <div class="list-group list-group-flush border-dashed">
-                            <div class="notification-group-list">
-                                <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
-                                    Apps Pages</h5>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
-                                        class="bi bi-speedometer2 me-2"></i> <span>Analytics Dashboard</span></a>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
-                                        class="bi bi-filetype-psd me-2"></i> <span>Toner.psd</span></a>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
-                                        class="bi bi-ticket-detailed me-2"></i> <span>Support Tickets</span></a>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
-                                        class="bi bi-file-earmark-zip me-2"></i> <span>Toner.zip</span></a>
-                            </div>
-
-                            <div class="notification-group-list">
-                                <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
-                                    Links</h5>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i
-                                        class="bi bi-link-45deg me-2 align-middle"></i> <span>www.themesbrand.com</span></a>
-                            </div>
-
-                            <div class="notification-group-list">
-                                <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
-                                    People</h5>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
-                                    <div class="d-flex align-items-center">
-                                        <img src="{% static 'images/users/avatar-1.jpg' %}" alt=""
-                                             class="avatar-xs rounded-circle flex-shrink-0 me-2">
-                                        <div>
-                                            <h6 class="mb-0">Ayaan Bowen</h6>
-                                            <span class="fs-12 text-muted">React Developer</span>
-                                        </div>
+                            </a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="{% static 'images/users/avatar-7.jpg' %}" alt=""
+                                        class="avatar-xs rounded-circle flex-shrink-0 me-2">
+                                    <div>
+                                        <h6 class="mb-0">Alexander Kristi</h6>
+                                        <span class="fs-12 text-muted">React Developer</span>
                                     </div>
-                                </a>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
-                                    <div class="d-flex align-items-center">
-                                        <img src="{% static 'images/users/avatar-7.jpg' %}" alt=""
-                                             class="avatar-xs rounded-circle flex-shrink-0 me-2">
-                                        <div>
-                                            <h6 class="mb-0">Alexander Kristi</h6>
-                                            <span class="fs-12 text-muted">React Developer</span>
-                                        </div>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="{% static 'images/users/avatar-5.jpg' %}" alt=""
+                                        class="avatar-xs rounded-circle flex-shrink-0 me-2">
+                                    <div>
+                                        <h6 class="mb-0">Alan Carla</h6>
+                                        <span class="fs-12 text-muted">React Developer</span>
                                     </div>
-                                </a>
-                                <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
-                                    <div class="d-flex align-items-center">
-                                        <img src="{% static 'images/users/avatar-5.jpg' %}" alt=""
-                                             class="avatar-xs rounded-circle flex-shrink-0 me-2">
-                                        <div>
-                                            <h6 class="mb-0">Alan Carla</h6>
-                                            <span class="fs-12 text-muted">React Developer</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- removeItemModal -->
-    <div id="removeItemModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            id="close-modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mt-2 text-center">
-                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                                   colors="primary:#f7b84b,secondary:#f06548"
-                                   style="width:100px;height:100px"></lord-icon>
-                        <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                            <h4>Are you sure ?</h4>
-                            <p class="text-muted mx-4 mb-0">Are you sure you want to remove this product ?</p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                        <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn w-sm btn-danger" id="remove-product">Yes, Delete It!</button>
-                    </div>
-                </div>
-
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="modal fade" id="subscribeModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-0">
-                <div class="modal-body p-0 bg-info-subtle rounded">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-lg-6">
-                            <div class="p-4 h-100">
-                                <span class="badge bg-info-subtle text-info fs-13">GET 10% SALE OFF</span>
-                                <h2 class="display-6 mt-2 mb-3">Subscribe & Get <b>50% Special</b> Discount On Email
-                                </h2>
-                                <p class="mb-4 pb-lg-2 fs-16">Join our newsletter to receive the latest updates and
-                                    promotion</p>
-                                <form action="#!">
-                                    <div class="position-relative ecommerce-subscript">
-                                        <input type="email" class="form-control rounded-pill border-0"
-                                               placeholder="Enter your email">
-                                        <button type="submit" class="btn btn-info btn-hover rounded-pill">Subscript
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="p-4 pb-0">
-                                <img src="{% static 'images/subscribe.png' %}" alt="" class="img-fluid">
-                            </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end modal -->
+</div>
 
-
-
-    <!--start back-to-top-->
-    <button onclick="topFunction()" class="btn btn-info btn-icon" style="bottom: 50px;" id="back-to-top">
-        <i class="ri-arrow-up-line"></i>
-    </button>
-    <!--end back-to-top-->
-
-    <a class="btn btn-danger shadow-lg chat-button rounded-bottom-0 d-none d-lg-block" data-bs-toggle="collapse"
-       href="#chatBot" aria-expanded="false" aria-controls="chatBot">Online Chat</a>
-    <div class="collapse chat-box" id="chatBot">
-        <div class="card shadow-lg border-0 rounded-bottom-0 mb-0">
-            <div class="card-header bg-success d-flex align-items-center border-0">
-                <h5 class="text-white fs-16 fw-medium flex-grow-1 mb-0">Hi, Raquel Murillo 👋</h5>
-                <button type="button" class="btn-close btn-close-white flex-shrink-0" onclick="chatBot()"
-                        data-bs-dismiss="collapse" aria-label="Close"></button>
+<!-- removeItemModal -->
+<div id="removeItemModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    id="close-modal"></button>
             </div>
-            <div class="card-body p-0">
-                <div id="users-chat-widget">
-                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 280px;">
-                        <ul class="list-unstyled chat-conversation-list chat-sm" id="users-conversation">
-                            <li class="chat-list left">
-                                <div class="conversation-list">
-                                    <div class="chat-avatar">
-                                        <img src="{% static 'images/logo-sm.png' %}" alt="">
-                                    </div>
-                                    <div class="user-chat-content">
-                                        <div class="ctext-wrap">
-                                            <div class="ctext-wrap-content">
-                                                <p class="mb-0 ctext-content">Welcome to Themesbrand. We are here to
-                                                    help you. You can also directly email us at Support@themesbrand.com
-                                                    to schedule a meeting with our Technology Consultant.</p>
-                                            </div>
-                                            <div class="dropdown align-self-start message-box-drop">
-                                                <a class="dropdown-toggle" href="#" role="button"
-                                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="ri-more-2-fill"></i>
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
-                                                    <a class="dropdown-item delete-item" href="#"><i
-                                                            class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="conversation-name"><small class="text-muted time">09:07 am</small>
-                                            <span class="text-success check-message-icon"><i
-                                                    class="ri-check-double-line align-bottom"></i></span></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- chat-list -->
-
-                            <li class="chat-list right">
-                                <div class="conversation-list">
-                                    <div class="user-chat-content">
-                                        <div class="ctext-wrap">
-                                            <div class="ctext-wrap-content">
-                                                <p class="mb-0 ctext-content">Good morning, How are you? What about our
-                                                    next meeting?</p>
-                                            </div>
-                                            <div class="dropdown align-self-start message-box-drop">
-                                                <a class="dropdown-toggle" href="#" role="button"
-                                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="ri-more-2-fill"></i>
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
-                                                    <a class="dropdown-item delete-item" href="#"><i
-                                                            class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="conversation-name"><small class="text-muted time">09:08 am</small>
-                                            <span class="text-success check-message-icon"><i
-                                                    class="ri-check-double-line align-bottom"></i></span></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- chat-list -->
-
-                            <li class="chat-list left">
-                                <div class="conversation-list">
-                                    <div class="chat-avatar">
-                                        <img src="{% static 'images/logo-sm.png' %}" alt="">
-                                    </div>
-                                    <div class="user-chat-content">
-                                        <div class="ctext-wrap">
-                                            <div class="ctext-wrap-content">
-                                                <p class="mb-0 ctext-content">Yeah everything is fine. Our next meeting
-                                                    tomorrow at 10.00 AM</p>
-                                            </div>
-                                            <div class="dropdown align-self-start message-box-drop">
-                                                <a class="dropdown-toggle" href="#" role="button"
-                                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="ri-more-2-fill"></i>
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
-                                                    <a class="dropdown-item delete-item" href="#"><i
-                                                            class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="conversation-name"><small class="text-muted time">09:10 am</small>
-                                            <span class="text-success check-message-icon"><i
-                                                    class="ri-check-double-line align-bottom"></i></span></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- chat-list -->
-
-                        </ul>
+            <div class="modal-body">
+                <div class="mt-2 text-center">
+                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                        colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                        <h4>Are you sure ?</h4>
+                        <p class="text-muted mx-4 mb-0">Are you sure you want to remove this product ?</p>
                     </div>
                 </div>
-                <div class="border-top border-top-dashed">
-                    <div class="row g-2 mt-2 mx-3 mb-3">
-                        <div class="col">
-                            <div class="position-relative">
-                                <input type="text" class="form-control border-light bg-light"
-                                       placeholder="Enter Message...">
-                            </div>
-                        </div><!-- end col -->
-                        <div class="col-auto">
-                            <button type="submit" class="btn btn-info"><i class="mdi mdi-send"></i></button>
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn w-sm btn-danger" id="remove-product">Yes, Delete It!</button>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="subscribeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0">
+            <div class="modal-body p-0 bg-info-subtle rounded">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-4 h-100">
+                            <span class="badge bg-info-subtle text-info fs-13">GET 10% SALE OFF</span>
+                            <h2 class="display-6 mt-2 mb-3">Subscribe & Get <b>50% Special</b> Discount On Email
+                            </h2>
+                            <p class="mb-4 pb-lg-2 fs-16">Join our newsletter to receive the latest updates and
+                                promotion</p>
+                            <form action="#!">
+                                <div class="position-relative ecommerce-subscript">
+                                    <input type="email" class="form-control rounded-pill border-0"
+                                        placeholder="Enter your email">
+                                    <button type="submit" class="btn btn-info btn-hover rounded-pill">Subscript
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 pb-0">
+                            <img src="{% static 'images/subscribe.png' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- end modal -->
+
+
+
+<!--start back-to-top-->
+<button onclick="topFunction()" class="btn btn-info btn-icon" style="bottom: 50px;" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+</button>
+<!--end back-to-top-->
+
+<a class="btn btn-danger shadow-lg chat-button rounded-bottom-0 d-none d-lg-block" data-bs-toggle="collapse"
+    href="#chatBot" aria-expanded="false" aria-controls="chatBot">Online Chat</a>
+<div class="collapse chat-box" id="chatBot">
+    <div class="card shadow-lg border-0 rounded-bottom-0 mb-0">
+        <div class="card-header bg-success d-flex align-items-center border-0">
+            <h5 class="text-white fs-16 fw-medium flex-grow-1 mb-0">Hi, Raquel Murillo 👋</h5>
+            <button type="button" class="btn-close btn-close-white flex-shrink-0" onclick="chatBot()"
+                data-bs-dismiss="collapse" aria-label="Close"></button>
+        </div>
+        <div class="card-body p-0">
+            <div id="users-chat-widget">
+                <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 280px;">
+                    <ul class="list-unstyled chat-conversation-list chat-sm" id="users-conversation">
+                        <li class="chat-list left">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="{% static 'images/logo-sm.png' %}" alt="">
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Welcome to Themesbrand. We are here to
+                                                help you. You can also directly email us at Support@themesbrand.com
+                                                to schedule a meeting with our Technology Consultant.</p>
+                                        </div>
+                                        <div class="dropdown align-self-start message-box-drop">
+                                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <i class="ri-more-2-fill"></i>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                                <a class="dropdown-item delete-item" href="#"><i
+                                                        class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name"><small class="text-muted time">09:07 am</small>
+                                        <span class="text-success check-message-icon"><i
+                                                class="ri-check-double-line align-bottom"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- chat-list -->
+
+                        <li class="chat-list right">
+                            <div class="conversation-list">
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Good morning, How are you? What about our
+                                                next meeting?</p>
+                                        </div>
+                                        <div class="dropdown align-self-start message-box-drop">
+                                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <i class="ri-more-2-fill"></i>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                                <a class="dropdown-item delete-item" href="#"><i
+                                                        class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name"><small class="text-muted time">09:08 am</small>
+                                        <span class="text-success check-message-icon"><i
+                                                class="ri-check-double-line align-bottom"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- chat-list -->
+
+                        <li class="chat-list left">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="{% static 'images/logo-sm.png' %}" alt="">
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Yeah everything is fine. Our next meeting
+                                                tomorrow at 10.00 AM</p>
+                                        </div>
+                                        <div class="dropdown align-self-start message-box-drop">
+                                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <i class="ri-more-2-fill"></i>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                                <a class="dropdown-item delete-item" href="#"><i
+                                                        class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name"><small class="text-muted time">09:10 am</small>
+                                        <span class="text-success check-message-icon"><i
+                                                class="ri-check-double-line align-bottom"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- chat-list -->
+
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-top-dashed">
+                <div class="row g-2 mt-2 mx-3 mb-3">
+                    <div class="col">
+                        <div class="position-relative">
+                            <input type="text" class="form-control border-light bg-light"
+                                placeholder="Enter Message...">
+                        </div>
+                    </div><!-- end col -->
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-info"><i class="mdi mdi-send"></i></button>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock topbar %}

@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .categories-list {
     display: block;
     -webkit-box-ordinal-group: -1;
@@ -88,7 +88,7 @@
     text-align: center;
     top: 0;
     --tw-content:
-            "";
+      "";
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0/var(--tw-bg-opacity));
     border-radius: 10px;
@@ -102,5 +102,308 @@
     color: #000;
     opacity: 0.75;
   }
+  /*nav bottom*/
+  .navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 82px;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    z-index: 99999;
+    max-width: 1024px;
+    background: #fff;
+    -webkit-box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.03);
+            box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.03);
+    border-radius: 0px;
+    padding: 8px 12px 8px 12px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar-bottom .action.nav-toggle1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    height: 65px;
+    margin: 0 !important;
+  }
+  .navbar-bottom .action.nav-toggle1 span {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+    margin-bottom: unset;
+    letter-spacing: -0.02em;
+  }
+  .navbar-bottom .action.nav-toggle {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    height: 65px;
+    margin: 0;
+  }
+  .navbar-bottom a.my-account {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    height: 65px;
+    margin: 0 !important;
+  }
+  .navbar-bottom .home {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    height: 65px;
+    margin: 0;
+  }
+  .navbar-bottom .home span {
+    color: #fdb20a;
+  }
+  .navbar-bottom .home span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000;
+    margin-bottom: unset;
+  }
+  .navbar-bottom .minicart-wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    height: 65px;
+    margin: 0;
+  }
+  .navbar-bottom .trackingorder {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    height: 65px;
+    margin: 0 !important;
+  }
+  .navbar-bottom .action.nav-toggle::before {
+    display: none;
+  }
+  .navbar-bottom .action.nav-toggle span {
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+    margin-bottom: unset;
+    letter-spacing: -0.02em;
+  }
+  .navbar-bottom .action.nav-toggle svg {
+    display: block;
+    margin: auto;
+    max-width: 24px;
+    max-height: 24px;
+    margin-bottom: 4px;
+  }
+  .navbar-bottom a.my-account svg {
+    display: block;
+    max-width: 24px;
+    max-height: 24px;
+    margin-bottom: 4px;
+  }
+  .navbar-bottom a.my-account span {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: unset;
+    letter-spacing: -0.02em;
+    color: #000;
+  }
+  .navbar-bottom .minicart-wrapper .showcart::after {
+    display: none;
+  }
+  .navbar-bottom .minicart-wrapper .showcart .text {
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+    margin-bottom: unset;
+    letter-spacing: -0.02em;
+  }
+  .navbar-bottom .minicart-wrapper .showcart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar-bottom .minicart-wrapper .showcart svg {
+    display: block;
+    margin: auto;
+    max-width: 24px;
+    max-height: 24px;
+    margin-bottom: 4px;
+  }
+  .navbar-bottom .trackingorder span {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+    margin-bottom: unset;
+    letter-spacing: -0.02em;
+  }
+  .navbar-bottom .trackingorder svg {
+    display: block;
+    max-width: 24px;
+    max-height: 24px;
+    margin-bottom: 4px;
+  }
+  .navbar-bottom .logo img {
+    max-width: 70px;
+    max-height: 70px;
+    margin: 0 auto;
+  }
+}
+/*Nav bottom*/
+.navbar-bottom {
+  display: none;
+}
+
+.navbar-bottom .trackingorder span {
+  color: #fdb20a;
+}
+
+.navbar-bottom .trackingorder svg path {
+  fill: #fdb20a !important;
+}
+
+.navbar-bottom .minicart-wrapper .showcart .text {
+  color: #fdb20a;
+}
+
+.navbar-bottom .minicart-wrapper .showcart svg path {
+  stroke: #fdb20a;
 }
 /*# sourceMappingURL=custommenu-rtl.min.css.map */
