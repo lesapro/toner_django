@@ -4,7 +4,10 @@ $(document).ready(function () {
     $('.nav-toggle1').click(function () {
         $('.menu-mobile2').show();
         $('html').addClass('show-menu');
-        $('.menu-mobile2 .navigation.sw-megamenu2 .sw-megamenu-mobile .parent.mobile-parent-active').click();
+        //$('.menu-mobile2 .navigation.sw-megamenu2 .sw-megamenu-mobile .parent').click();
+        $('ul.sw-megamenu-mobile li.ui-menu-item.level0.parent').first().trigger('click');
+        // $('ul.sw-megamenu-mobile li.ui-menu-item.level0.parent').click();
+        console.log('8');
     })
     $('.menu-mobile2 .right-menu-top svg').click(function () {
         $('.menu-mobile2').hide();

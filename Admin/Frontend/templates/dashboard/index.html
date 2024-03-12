@@ -1161,7 +1161,7 @@
     <div class="menu-top-section">
         <div class="left-menu-top">
             <strong class="logo home">
-                <img src="#" alt="Magento Commerce" width="111" height="44">
+                <img src="{% static 'images/logo.svg' %}" alt="Magento Commerce" width="111" height="44">
                 <span>Home</span>
             </strong>
             <div class="section-login">
@@ -1181,9 +1181,9 @@
     <nav class="navigation sw-megamenu2 " role="navigation">
         <ul class="sw-megamenu-mobile">
             {% for category in categories %}
-            <li class="ui-menu-item level0 fullwidth parent  mobile-parent-active" data-cateid="{{ category.id }}"><a
-                    href="" class="level-top" title="Phones &amp; Telecommunications"><img class="menu-thumb-icon"
-                        src="#" alt="Phones &amp; Telecommunications"><span>{{ category.title }}</span></a></li>
+            <li class="ui-menu-item level0 fullwidth parent" data-cateid="{{ category.id }}"><a href=""
+                    class="level-top" title="Phones &amp; Telecommunications"><img class="menu-thumb-icon" src="#"
+                        alt="Phones &amp; Telecommunications"><span>{{ category.title }}</span></a></li>
             {% endfor %}
         </ul>
         <div class="mobile-megamenu-parent">

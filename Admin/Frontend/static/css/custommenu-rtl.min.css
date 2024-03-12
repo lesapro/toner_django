@@ -467,7 +467,7 @@
         -ms-flex: 112px;
             flex: 112px;
     max-width: 30%;
-    max-height: calc(100svh - 30%);
+    max-height: calc(100svh - 135px);
     overflow-y: auto;
     padding-bottom: 2rem;
   }
@@ -679,6 +679,9 @@
     display: -ms-flexbox;
     display: flex;
     width: 100%;
+  }
+  .navigation .parent .level-top {
+    text-decoration: none;
   }
 }
 /*Nav bottom*/
