@@ -77,14 +77,14 @@
                                 <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
                                     <li>
                                         <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                            data-key="">{{ category.title }}{{ category.id }}
+                                            data-key="">{{ category.title }}
                                         </p>
                                         <ul class="dropdown-menu">
                                             {% for subcategory in category.subcategories.all %}
                                             {% if subcategory.category_id == category.id %}
                                             <li class="dropdown-submenu custommenu">
                                                 <a class="dropdown-item" data-key="">
-                                                    {{ subcategory.title }}{{ subcategory.category_id }}
+                                                    {{ subcategory.title }}
                                                 </a>
                                             </li>
                                             {% endif %}
