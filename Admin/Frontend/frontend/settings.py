@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6(&13zj@pcugg#&+88x41ak3s@iz8l0*2i24_*h4ox*#a3lf67
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
+    'compressor',
     'catalog',
     'dashboard',
     'shop',
@@ -110,8 +110,8 @@ DATABASES = {
         'NAME': 'toner1',
         'USER': 'root',
         'PASSWORD': 'Lamgiau@123!',
-        # 'HOST': '169.254.171.50',
-       'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+        'HOST': '169.254.171.50',
+       #'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
         'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
@@ -234,3 +234,10 @@ ACCOUNT_FORMS = {
     "reset_password": "frontend.forms.PasswordResetForm",
     "reset_password_from_key": "frontend.forms.PasswordResetKeyForm",
 }
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+COMPRESS_ROOT = os.path.join(BASE_DIR, 'compressfiles')
