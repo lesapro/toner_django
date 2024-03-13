@@ -79,188 +79,19 @@
                                         <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
                                             data-key="">{{ category.title }}
                                         </p>
-                                        <ul class="dropdown-menu">
-                                            {% for subcategory in category.subcategories.all %}
-                                            {% if subcategory.category_id == category.id %}
-                                            <li class="dropdown-submenu custommenu">
-                                                <a class="dropdown-item" data-key="">
-                                                    {{ subcategory.title }}
-                                                </a>
-                                            </li>
-                                            {% endif %}
-                                            {% endfor %}
-                                            <!--                                                    <li class="dropdown-submenu">-->
-                                            <!--                                                        <a class="dropdown-item" href="#">Danh mục con 1</a>-->
-                                            <!--                                                    </li>-->
-                                        </ul>
                                     </li>
                                     {% for subcategory in category.subcategories.all %}
                                     <li class="nav-item">
-                                        <a href="{% url 'catalog:clothing_view' %}" class="nav-link" data-key="">{{
-                                            subcategory.title }}{{subcategory.category_id}}
+                                        <a href="{% url 'catalog:clothing_view' %}" class="nav-link" data-key="">
+                                            {{ subcategory.title }}
                                         </a>
                                     </li>
                                     {% endfor %}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:clothing_view' %}" class="nav-link"
-                                            data-key="t-clothing">Clothing</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:watches_view' %}" class="nav-link"
-                                            data-key="t-watches">Watches</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:bag_luggage_view' %}" class="nav-link"
-                                            data-key="t-bags-Luggage">Bags & Luggage</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:footwear_view' %}" class="nav-link"
-                                            data-key="t-footwear">Footwear</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:innerwear_view' %}" class="nav-link"
-                                            data-key="t-innerwear">Innerwear</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:other_accessories_view' %}" class="nav-link"
-                                            data-key="t-other-accessories">Other Accessories</a>#}
-                                        {# </li>#}
+
                                 </ul>
                             </div>
                             {% endfor %}
-                            {# <div class="col-lg-2">#}
-                                {# <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
-                                    {# <li>#}
-                                        {# <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                            data-key="t-women">Women</p>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:western_wear_view' %}" class="nav-link"
-                                            data-key="t-western-wear">Western Wear</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:handbags_clutches_view' %}" class="nav-link"
-                                            data-key="t-handbags-clutches">Handbags & Clutches</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:lingerie_nightwear_view' %}" class="nav-link"
-                                            data-key="t-lingerie-nightwear">Lingerie & Nightwear</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:women_footwear_view' %}" class="nav-link"
-                                            data-key="t-footwear">Footwear</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:fashion_silver_Jewellery_view' %}" class="nav-link"
-                                            data-key="t-fashion-silver-jewellery">Fashion & Silver Jewellery</a>#}
-                                        {# </li>#}
-                                    {# </ul>#}
-                                {# </div>#}
-                            {# <div class="col-lg-2">#}
-                                {# <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
-                                    {# <li>#}
-                                        {# <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                            data-key="t-accessories-others">Accessories & Others</p>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:home_kitchen_pets_view' %}" class="nav-link"
-                                            data-key="t-home-kitchen-pets">Home, Kitchen, Pets</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:beauty_health_grocery_view' %}" class="nav-link"
-                                            data-key="t-beauty-health-grocery">Beauty, Health, Grocery</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:sports_fitness_bags_luggage_view' %}"
-                                            class="nav-link" data-key="t-sports-fitness-bags-luggage">Sports, Fitness,
-                                            Bags, Luggage</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:car_motorbike_industrial_view' %}" class="nav-link"
-                                            data-key="t-car-motorbike-industrial">Car, Motorbike, Industrial</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:books_view' %}" class="nav-link"
-                                            data-key="t-books">Books</a>#}
-                                        {# </li>#}
-                                    {# </ul>#}
-                                {# </div>#}
-                            {# <div class="col-lg-2">#}
-                                {# <ul class="dropdown-menu-list list-unstyled mb-0 py-3">#}
-                                    {# <li>#}
-                                        {# <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                            data-key="t-others">Others</p>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:sign_up_view' %}" class="nav-link"
-                                            data-key="t-sign-up">Sign Up</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:sign_in_view'%}" class="nav-link"
-                                            data-key="t-sign-in">Sign In</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:password_reset_view' %}" class="nav-link"
-                                            data-key="t-passowrd-reset">Reset Password</a>#}
-                                        {# </li>#}
-                                    {# <li class="nav-item">#}
-                                        {# <a href="{% url 'catalog:error404_view' %}" class="nav-link"
-                                            data-key="t-error-404">Error 404</a>#}
-                                        {# </li>#}
-                                    {# </ul>#}
-                                {# </div>#}
-                            {# <div class="col-lg-2 d-none d-lg-block">#}
-                                {# <div class="p-3">#}
-                                    {# <p class="mb-3 text-uppercase fs-11 fw-medium text-muted"
-                                        data-key="t-top-brands">Top Brands</p>#}
-                                    {# <div class="row g-2">#}
-                                        {# <div class="col-lg-4">#}
-                                            {# <a href="#!"
-                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                                {# <img src="{% static 'images/brands/img-8.png' %}" alt=""
-                                                    class="avatar-sm">#}
-                                                {# </a>#}
-                                            {# </div>#}
-                                        {# <div class="col-lg-4">#}
-                                            {# <a href="#!"
-                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                                {# <img src="{% static 'images/brands/img-2.png' %}" alt=""
-                                                    class="avatar-sm">#}
-                                                {# </a>#}
-                                            {# </div>#}
-                                        {# <div class="col-lg-4">#}
-                                            {# <a href="#!"
-                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                                {# <img src="{% static 'images/brands/img-3.png' %}" alt=""
-                                                    class="avatar-sm">#}
-                                                {# </a>#}
-                                            {# </div>#}
-                                        {# <div class="col-lg-4">#}
-                                            {# <a href="#!"
-                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                                {# <img src="{% static 'images/brands/img-4.png' %}" alt=""
-                                                    class="avatar-sm">#}
-                                                {# </a>#}
-                                            {# </div>#}
-                                        {# <div class="col-lg-4">#}
-                                            {# <a href="#!"
-                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                                {# <img src="{% static 'images/brands/img-5.png' %}" alt=""
-                                                    class="avatar-sm">#}
-                                                {# </a>#}
-                                            {# </div>#}
-                                        {# <div class="col-lg-4">#}
-                                            {# <a href="#!"
-                                                class="d-block p-2 border border-dashed text-center rounded-3">#}
-                                                {# <img src="{% static 'images/brands/img-6.png' %}" alt=""
-                                                    class="avatar-sm">#}
-                                                {# </a>#}
-                                            {# </div>#}
-                                        {# </div>#}
-                                    {# </div>#}
-                                {# </div>#}
-                            {#
-                        </div>#}
+                        </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown dropdown-hover">
