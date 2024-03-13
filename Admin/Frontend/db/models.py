@@ -183,7 +183,8 @@ class Product(models.Model):
     subcategory = models.ForeignKey(SubCategory, related_name='products', on_delete=models.CASCADE, null=True)
     #manufacturer_name = models.CharField(max_length=100, blank=True, null=True)
     #price = models.DecimalField(max_digits=12, decimal_places=2)
-    special_price = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    #special_price = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    name = models.ForeignKey('ProductName', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     stock = models.IntegerField(default=0, null=True)
     sold = models.IntegerField(default=0, null=True)
     colors = models.ManyToManyField(AttributeValue, related_name='products_colors', blank=True)
@@ -195,9 +196,28 @@ class Product(models.Model):
     stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='products_special_price')
-
+    price = models.ForeignKey('Price', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     def __str__(self):
         return f"Product {self.id}"
+class Price(models.Model):
+    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
+
+    def __str__(self):
+        return f"Price ID: {self.id} - Value: {self.value}"
+class ProductName(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super(ProductName, self).save(*args, **kwargs)
+
+    class Meta:
+        unique_together = (('name', 'slug'),)
 class Stock(models.Model):
     quantity = models.IntegerField(default=0, unique=True)
 
