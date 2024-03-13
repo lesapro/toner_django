@@ -193,6 +193,7 @@ class Product(models.Model):
     description = models.TextField(null=True)
     short_description = models.TextField(blank=True, null=True)
     stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='products_special_price')
 
     def __str__(self):
@@ -202,6 +203,11 @@ class Stock(models.Model):
 
     def __str__(self):
         return f"Stock ID: {self.id} - Quantity: {self.quantity}"
+
+class Sold(models.Model):
+     quantity = models.IntegerField(default=0, unique=True)
+     def __str__(self):
+         return f"Sold ID: {self.id} - Quantity: {self.quantity}"
 class SpecialPrice(models.Model):
     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
 
