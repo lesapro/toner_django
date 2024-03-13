@@ -16,6 +16,10 @@ from django.contrib.auth.models import User
 import secrets
 from django.db.models.constraints import UniqueConstraint
 
+<<<<<<< HEAD
+=======
+from decimal import Decimal
+>>>>>>> afdb5b346dba934a2e523c430d9b04dcb635cc21
 class Company(models.Model):
     address = models.TextField()
     postal_code = models.CharField(max_length=10)
@@ -377,6 +381,7 @@ class Product(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
     best_selling = models.BooleanField(default=False, null=True)
     featured = models.BooleanField(default=False, null=True)
+<<<<<<< HEAD
     name = models.ForeignKey('ProductName', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     product_sku = models.ForeignKey('ProductSKU', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     sku = models.CharField(max_length=255, unique=True, default='temporary_default_sku')
@@ -398,14 +403,51 @@ class Product(models.Model):
     #ALTER TABLE db_product ADD COLUMN detail_id INT;
     stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+=======
+    #title = models.CharField(max_length=255)
+    sku = models.CharField(max_length=100, null=False, unique=True, default='DEFAULT_SKU')
+    brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    #video_url = models.URLField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to='images/products/', blank=True, null=True)
+    gallery_image = models.ImageField(upload_to='images/products/', blank=True, null=True)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, related_name='products', on_delete=models.CASCADE, null=True)
+    #manufacturer_name = models.CharField(max_length=100, blank=True, null=True)
+    #price = models.DecimalField(max_digits=12, decimal_places=2)
+    special_price = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    stock = models.IntegerField(default=0, null=True)
+    sold = models.IntegerField(default=0, null=True)
+    colors = models.ManyToManyField(AttributeValue, related_name='products_colors', blank=True)
+    sizes = models.ManyToManyField(AttributeValue, related_name='products_sizes', blank=True)
+>>>>>>> afdb5b346dba934a2e523c430d9b04dcb635cc21
     publish_date = models.DateTimeField(null=True, blank=True)
     tags = models.CharField(max_length=255, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     short_description = models.TextField(blank=True, null=True)
+    stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='products_special_price')
 
     def __str__(self):
         return f"Product {self.id}"
+class Stock(models.Model):
+    quantity = models.IntegerField(default=0, unique=True)
 
+<<<<<<< HEAD
+=======
+    def __str__(self):
+        return f"Stock ID: {self.id} - Quantity: {self.quantity}"
+
+class Sold(models.Model):
+     quantity = models.IntegerField(default=0, unique=True)
+     def __str__(self):
+         return f"Sold ID: {self.id} - Quantity: {self.quantity}"
+class SpecialPrice(models.Model):
+    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
+
+    def __str__(self):
+        return f"Special Price ID: {self.id} - Value: {self.value}"
+>>>>>>> afdb5b346dba934a2e523c430d9b04dcb635cc21
 class ProductRelationship(models.Model):
     parent = models.ForeignKey('Product', related_name='parent_product', on_delete=models.CASCADE)
     child = models.ForeignKey('Product', related_name='child_products', on_delete=models.CASCADE)

@@ -111,7 +111,11 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'Lamgiau@123!',
         #'HOST': '169.254.171.50',
+<<<<<<< HEAD
         'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+=======
+       'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+>>>>>>> afdb5b346dba934a2e523c430d9b04dcb635cc21
         'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
