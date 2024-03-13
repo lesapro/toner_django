@@ -10,6 +10,12 @@ class DashboardView(TemplateView):
         # Truy vấn dữ liệu từ model của ứng dụng khác
         # context['products'] = Product.objects.all()
         context['categories']= Category.objects.all()
+        context['products']= Product.objects.all()
+
+        
+
+       
+        
         # print(context['categories'][0].subcategories.all()[0].title)
         return context
     pass

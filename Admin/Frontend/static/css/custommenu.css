@@ -7,8 +7,8 @@
   -webkit-box-ordinal-group: -1;
       -ms-flex-order: -2;
           order: -2;
-  padding-left: 12px;
   padding-right: 12px;
+  padding-left: 12px;
   width: 100%;
   margin: 14px 0 0;
 }
@@ -23,8 +23,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 5px;
   padding-right: 5px;
+  padding-left: 5px;
   margin-bottom: 4px;
 }
 
@@ -88,7 +88,7 @@
   color: #000;
   font-family: slick;
   font-size: 6px;
-  left: 0;
+  right: 0;
   line-height: 20px;
   opacity: 0.25;
   text-align: center;
@@ -116,8 +116,8 @@
     -webkit-box-ordinal-group: -1;
         -ms-flex-order: -2;
             order: -2;
-    padding-left: 12px;
     padding-right: 12px;
+    padding-left: 12px;
     width: 100%;
     margin: 14px 0 0;
   }
@@ -131,8 +131,8 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-left: 5px;
     padding-right: 5px;
+    padding-left: 5px;
     margin-bottom: 4px;
   }
   .categories-list .categories-items a img {
@@ -190,7 +190,7 @@
     color: #000;
     font-family: slick;
     font-size: 6px;
-    left: 0;
+    right: 0;
     line-height: 20px;
     opacity: 0.25;
     text-align: center;
@@ -498,7 +498,7 @@
     z-index: 111;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     background: #fff;
     width: 100%;
     height: 100%;
@@ -540,7 +540,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: 12px;
+    margin-right: 12px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -560,10 +560,10 @@
   }
   .menu-mobile2 .menu-top-section .right-menu-top {
     position: absolute;
-    right: 16px;
+    left: 16px;
     z-index: 5;
     top: 2.25rem;
-    text-align: right;
+    text-align: left;
   }
   .menu-mobile2 .navigation.sw-megamenu2 {
     -webkit-box-pack: justify;
@@ -592,8 +592,8 @@
         -ms-flex: 1 1 0%;
             flex: 1 1 0%;
     max-height: calc(100svh - 135px);
-    padding-left: 8px;
     padding-right: 8px;
+    padding-left: 8px;
     overflow-y: auto;
     padding-bottom: 2rem;
   }
@@ -604,8 +604,8 @@
     line-height: 18px;
     outline-width: 0;
     background: rgb(247, 248, 248);
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
   .menu-mobile2 .navigation.sw-megamenu2 .sw-megamenu-mobile .parent a {
     position: relative;
@@ -624,8 +624,8 @@
   .menu-mobile2 .navigation.sw-megamenu2 .sw-megamenu-mobile .parent a .menu-thumb-icon {
     width: 70px;
     height: 70px;
-    padding-left: 4px;
     padding-right: 4px;
+    padding-left: 4px;
     aspect-ratio: 1/1;
     margin: auto;
   }
@@ -641,7 +641,7 @@
   }
   .menu-mobile2 .navigation.sw-megamenu2 .sw-megamenu-mobile .parent.mobile-parent-active {
     background: rgba(253, 178, 10, 0.5);
-    border-left: 6px solid #fdb20a;
+    border-right: 6px solid #fdb20a;
   }
   .menu-mobile2 .navigation.sw-megamenu2 .sw-megamenu-mobile::-webkit-scrollbar,
   .menu-mobile2 .navigation.sw-megamenu2 .mobile-megamenu-parent::-webkit-scrollbar {
@@ -738,8 +738,8 @@
     text-transform: none !important;
   }
   .menu-mobile2 .navigation.sw-megamenu2 .mobile-megamenu-parent .ui-menu-item.parent .submenu-mobile .subchildmenu.mega-columns .ui-menu-item .menu-thumb-icon {
-    padding-left: 8px;
     padding-right: 8px;
+    padding-left: 8px;
     width: 100% !important;
     height: auto !important;
     margin: 0 !important;
@@ -766,7 +766,7 @@
     z-index: 99999;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     background: #fff;
   }
   nav.navigation.sw-megamenu2 ul {
@@ -811,5 +811,4 @@
 
 .navbar-bottom .minicart-wrapper .showcart svg path {
   stroke: #fdb20a;
-}
 }

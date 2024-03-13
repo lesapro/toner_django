@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log("2");
     $('.categories-list .nav-center-images-only').slick({
         rows: 2,
         dots: true,
