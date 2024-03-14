@@ -1,10 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-
+from db.models import Product
 # Create your views here.
 
 class PagesView(TemplateView):
-    pass 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        product_id = self.request.GET.get('id')
+        try:
+            context['product'] = Product.objects.get(id=product_id)
+            print(context['product'])
+        except:
+            pass
+        return context
  
 # products
 

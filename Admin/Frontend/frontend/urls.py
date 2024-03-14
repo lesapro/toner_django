@@ -50,4 +50,4 @@ urlpatterns = [
         login_required(MyPasswordSetView.as_view()),
         name="account_set_password",
     ),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
