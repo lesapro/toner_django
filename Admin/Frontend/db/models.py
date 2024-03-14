@@ -203,7 +203,7 @@ class Price(models.Model):
     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
 
     def __str__(self):
-        return f"Price ID: {self.id} - Value: {self.value}"
+        return f"{self.value}"
 class ProductName(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, blank=True)

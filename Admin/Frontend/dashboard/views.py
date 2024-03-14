@@ -3,22 +3,20 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from collections import defaultdict
 from db.models import Product, Category
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 class DashboardView(TemplateView):
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
        categories = Category.objects.all()
-       products = Product.objects.all()[:10]  # Eager Loading
-       category_products = defaultdict(list)
-       #print(products)
-       for product in products:
-           #print(product)
-           category = product.category
-          # print(category)
-           category_products[category].append(product)
+       products_by_category = {}
+       for category in categories:
+         #print(category.id)
+         products = Product.objects.filter(category_id=category.id)[:8]  # Limit to 10
+         products_by_category[category.id] = products
        context['categories'] = categories
-       context['category_products'] = category_products
+       context['products'] = products
        return context
    pass
 
