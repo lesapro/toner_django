@@ -217,7 +217,7 @@
                     <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival"
                         data-category="hot arrival">
 
-                        {% for category in categories %}
+                        {% for category, products in products_by_category %}
                         <h2>{{ category.title }}</h2>
 
                         {% for product in products %}

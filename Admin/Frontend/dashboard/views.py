@@ -10,13 +10,14 @@ class DashboardView(TemplateView):
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
        categories = Category.objects.all()
-       products_by_category = {}
+       products_by_category = []
        for category in categories:
          #print(category.id)
          products = Product.objects.filter(category_id=category.id)[:8]  # Limit to 10
-         products_by_category[category.id] = products
+         if products:  # Kiểm tra xem có sản phẩm nào hay không
+            products_by_category.append((category, products))
        context['categories'] = categories
-       context['products'] = products
+       context['products_by_category'] = products_by_category
        return context
    pass
 
