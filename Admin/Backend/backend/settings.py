@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-0hu17va3g=$dothz@_s3-l1---65oe7^31)3u5&6=i$*@46ou8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     'menu',
     'myaccounts',
+    'db',
     
     # all auth
     'allauth',
@@ -104,10 +105,11 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'toner2',
+        'NAME': 'toner1',
         'USER': 'root',
         'PASSWORD': 'Lamgiau@123!',
-        'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
+        # 'HOST': '169.254.171.50',
+       'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
         'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
