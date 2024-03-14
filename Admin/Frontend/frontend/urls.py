@@ -31,6 +31,8 @@ urlpatterns = [
     # catalog
     path('catalog/',include("catalog.urls")),
 
+
+
     # shop
     path('shop/',include("shop.urls")),
     

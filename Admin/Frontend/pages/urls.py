@@ -49,7 +49,7 @@ urlpatterns = [
     
 # products
 
-    path('products/product_details',view=product_details_view,name='products.product_details'),
+    path('pages/products/<slug:product_name_slug>/',view=product_details_view,name='products.product_details'),
 
     # grid-view
     path('products/gridview/defualt_grid',view=defualt_view,name='products.gridview.defualt_grid'),

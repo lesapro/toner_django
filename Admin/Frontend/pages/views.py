@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from collections import defaultdict
+from db.models import Product, Category
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
 class PagesView(TemplateView):
+    def product_details_view(request, product_name_slug=None):
+        product = get_object_or_404(Product, slug=product_name_slug)
+        context = {'product': product}
+        return render(request, 'product_details.html', context) 
     pass 
  
 # products
