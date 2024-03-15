@@ -48,7 +48,7 @@ class Category(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='images/categories/', blank=True, null=True)
+    image = models.ImageField(upload_to='static/images/categories/', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -58,7 +58,7 @@ class SubCategory(models.Model):
     title = models.CharField(max_length=255)
     slug = models.CharField(max_length=100, unique=True, default='default-slug')
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='images/categories/', blank=True, null=True)
+    image = models.ImageField(upload_to='static/images/categories/', blank=True, null=True)
 
     def __str__(self):
         return self.title
