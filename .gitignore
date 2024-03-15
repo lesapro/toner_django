@@ -1,5 +1,10 @@
 .idea/
 Admin/Backend/.idea/
 Admin/Frontend/.idea/
+Admin/Frontend/db/__pycache__/
+Admin/Frontend/products/__pycache__/
+Admin/Frontend/pages/__pycache__/
+Admin/Frontend/catalog/__pycache__/
+Admin/Frontend/dashboard/__pycache__/
 
 
