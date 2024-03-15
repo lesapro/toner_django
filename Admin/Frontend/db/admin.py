@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator
 from django.forms import CheckboxSelectMultiple
 from .models import (Company, Invoice, 
                      Category, SubCategory, PaymentDetail, CurrencyRate, 
-                     Product, ProductRelationship,
+                     Product, ProductRelationship,ProductName,
                      Seller, Shipment, Brand, EventOrder, 
                      Coupon, Review, ReviewImage, ReviewDetail, CustomUser,
                      Store, Stock, Sold, Price, SpecialPrice, Color, Size, Type, Option, Details,
@@ -40,11 +40,15 @@ class ProductRelationshipInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('get_product_name', 'sku', 'get_status', 'get_visibility', 'get_shipping_status', 'get_product_type')
+    raw_id_fields = ('name', 'price', 'stock', 'sold', 'brand', 'store', 'video', 'category', 'subcategory', 'color', 'size', 'type', 'option', 'details') 
+    autocomplete_fields = ['name']  # Add other fields if necessary
+    list_filter = ('status', 'visibility', 'product_type', 'shipping_status')
+    search_fields = ('name__name', 'sku')
 
     def get_product_name(self, obj):
         return obj.name.name if obj.name else "No name"
-    get_product_name.short_description = 'Name'
-    get_product_name.admin_order_field = 'name__name'  # Assuming 'name' is a foreign key to a model with a 'name' field
+    get_product_name.short_description = 'Product Name'
+    get_product_name.admin_order_field = 'name__name'
 
     def get_status(self, obj):
         return obj.status
@@ -62,11 +66,25 @@ class ProductAdmin(admin.ModelAdmin):
         return obj.product_type
     get_product_type.short_description = 'Product Type'
 
-    # If you want to allow filtering by these fields in the admin, add them to list_filter
-    list_filter = ('status', 'visibility', 'product_type', 'shipping_status')
+    def get_search_results(self, request, queryset, search_term):
+        queryset, use_distinct = super().get_search_results(request, queryset, search_term)
+        # Your custom filter logic can go here, if needed
+        return queryset, use_distinct
 
-    # If you want to enable search by these fields, add them to search_fields
-    search_fields = ('name__name', 'sku')
+@admin.register(ProductName)
+class ProductNameAdmin(admin.ModelAdmin):
+    search_fields = ['name']
+
+class StockAdmin(admin.ModelAdmin):
+    search_fields = ['quantity']
+
+@admin.register(Price)
+class PriceAdmin(admin.ModelAdmin):
+    search_fields = ['value']
+
+@admin.register(Stock)
+class StockAdmin(admin.ModelAdmin):
+    search_fields = ['quantity']
 
 
 class PaymentDetailAdmin(admin.ModelAdmin):
@@ -135,7 +153,9 @@ class NotificationAdmin(admin.ModelAdmin):
     list_display = ('message', 'user', 'created_at')
     search_fields = ('user__username', 'message')
 # Admin classes
-
+@admin.register(Sold)
+class SoldAdmin(admin.ModelAdmin):
+    search_fields = ['quantity']
 
 admin.site.register(Company)
 admin.site.register(Invoice)
@@ -157,9 +177,6 @@ admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(Notification)
 admin.site.register(Store)
-admin.site.register(Stock)
-admin.site.register(Sold)
-admin.site.register(Price)
 admin.site.register(SpecialPrice)
 admin.site.register(Color)
 admin.site.register(Size)
