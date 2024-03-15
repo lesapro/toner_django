@@ -190,11 +190,24 @@ File: Custom Bootstrap Css File
 }
 
 *,
+/* Selector cụ thể cho phần tử bạn muốn đặt chiều cao */
+.selector-cua-phan-tu {
+  height: 200px; /* Đặt chiều cao là 200px */
+}
+
+/* Nếu bạn muốn tất cả các phần tử có chiều cao 200px, bạn sẽ sử dụng '*' */
+* {
+  height: 200px;
+}
+
+/* Đảm bảo rằng việc sử dụng box-sizing không làm thay đổi kích thước mong muốn */
+*,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
