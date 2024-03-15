@@ -44,29 +44,6 @@ class Invoice(models.Model):
     notes = models.TextField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
 
-class Category(models.Model):
-    title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
-    description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='static/images/categories/', blank=True, null=True)
-
-    def __str__(self):
-        return self.title
-
-class SubCategory(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="subcategories")
-    title = models.CharField(max_length=255)
-    slug = models.CharField(max_length=100, unique=True, default='default-slug')
-    description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='static/images/categories/', blank=True, null=True)
-
-    def __str__(self):
-        return self.title
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super(SubCategory, self).save(*args, **kwargs)
 
 
 class Brand(models.Model):
@@ -212,11 +189,7 @@ class ProductName(models.Model):
 
     class Meta:
         unique_together = (('name', 'slug'),)
-class ProductSKU(models.Model):
-    sku = models.CharField(max_length=100, unique=True)  # Unique SKU for each product
-
-    def __str__(self):
-        return self.sku                   
+                 
 class Store(models.Model):
     name = models.CharField(max_length=255, unique=True)  # Ensure store names are unique
     location = models.CharField(max_length=255)
@@ -228,25 +201,24 @@ class Stock(models.Model):
     quantity = models.IntegerField(default=0, unique=True)
 
     def __str__(self):
-        return f"Stock ID: {self.id} - Quantity: {self.quantity}"
+        return f"{self.value}"
 
 class Sold(models.Model):
     quantity = models.IntegerField(default=0, unique=True)
 
     def __str__(self):
-        return f"Sold ID: {self.id} - Quantity: {self.quantity}"
+        return f"{self.value}"
 
 class Price(models.Model):
     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
 
     def __str__(self):
-        return f"Price ID: {self.id} - Value: {self.value}"
+        return f"{self.value}"
 
 class SpecialPrice(models.Model):
     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-
     def __str__(self):
-        return f"Special Price ID: {self.id} - Value: {self.value}"
+        return f"{self.value}"
 
 
 class Affiliate(models.Model):
@@ -345,6 +317,29 @@ class CustomUser(models.Model):
         return f"{self.name} - {self.email}"
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='static/images/categories/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+class SubCategory(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="subcategories")
+    title = models.CharField(max_length=255)
+    slug = models.CharField(max_length=100, unique=True, default='default-slug')
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='static/images/categories/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(SubCategory, self).save(*args, **kwargs)
 class Product(models.Model):
     STATUS_CHOICES = [
         ('Draft', 'Draft'),

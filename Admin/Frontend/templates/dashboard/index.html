@@ -250,12 +250,20 @@
                                 <!-- Kiểm tra xem product và product.name.slug có tồn tại -->
 
                                 <!-- Hiển thị một thông báo lỗi hoặc gì đó để bạn biết rằng product hoặc slug không tồn tại -->
-
                                 <div class="mt-3">
-                                    <span class="float-end">4.9 <i
-                                            class="ri-star-half-fill text-warning align-bottom"></i></span>
-                                    <h5 class="mb-0">{{product.price}}</h5>
+                                    <div>
+                                        <!-- Display the special price and strike-through the regular price if special price exists -->
+                                        {% if product.special_price %}
+                                            <h6 class="mb-0 text-muted" style="text-decoration: line-through;">${{ product.price.value }}</h6>
+                                            <h5 class="mb-0">${{ product.special_price.value }}</h5>
+                                        {% else %}
+                                            <!-- If no special price, just display the regular price -->
+                                            <h5 class="mb-0">${{ product.price.value }}</h5>
+                                        {% endif %}
+                                    </div>
+                                    <span class="float-end">4.9 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
