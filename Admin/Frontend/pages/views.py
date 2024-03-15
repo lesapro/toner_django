@@ -8,8 +8,9 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 
 class PagesView(TemplateView):
-    def product_details_view(request, product_name_slug=None):
-        product = get_object_or_404(Product, slug=product_name_slug)
+    def product_details_view(request, slug):
+        product = get_object_or_404(Product, name=lug)  # Giả sử 'name' là một trường ForeignKey hoặc OneToOneField và 'slug' là trường bạn muốn truy vấn
+        print(product)
         context = {'product': product}
         return render(request, 'product_details.html', context) 
     pass 

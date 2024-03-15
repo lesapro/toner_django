@@ -111,6 +111,9 @@
 }
 
 @media (max-width: 991px) {
+  .categories-list-pc{
+    display: none;
+  }
   .categories-list {
     display: block;
     -webkit-box-ordinal-group: -1;
