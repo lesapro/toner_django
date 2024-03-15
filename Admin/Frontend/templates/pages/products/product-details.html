@@ -10,6 +10,7 @@
 {% endblock extra_css %}
 
 {% block content %}
+{% for product in products %}
 <section class="section">
     <div class="container">
         <div class="row gx-2">
@@ -108,12 +109,13 @@
                             </div>
                             <span class="fw-medium"> (50 Review)</span>
                         </div>
-                        <h4 class="lh-base mb-1">Opinion Striped Round Neck Green T-shirt</h4>
+                        <h4 class="lh-base mb-1">{{product.name}}</h4>
                         <p class="text-muted mb-4">The best part about stripped t shirt denim & white sneakers or wear
                             it with a cool chinos and blazer to dress up <a href="javascript:void(0);"
                                 class="link-info">Read More</a></p>
-                        <h5 class="fs-24 mb-4">$185.79 <span class="text-muted fs-14"><del>$280.99</del></span> <span
-                                class="fs-14 ms-2 text-danger"> (50% off)</span></h5>
+                        <!-- <h5 class="fs-24 mb-4">$185.79 <span class="text-muted fs-14"><del>$280.99</del></span> <span
+                                class="fs-14 ms-2 text-danger"> (50% off)</span></h5> -->
+                        <h5 class="fs-24 mb-4">{{product.price}}</h5>
                         <ul class="list-unstyled vstack gap-2">
                             <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>In stock</li>
                             <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Free delivery
@@ -206,7 +208,7 @@
         </div><!--end row-->
     </div><!--end container-->
 </section>
-
+{% endfor %}
 <section class="section pt-0">
     <div class="container">
         <div class="row">
@@ -836,7 +838,7 @@
                                     for="product-color-113"></label></li>
                         </ul>
                         <a href="#">
-                            <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">Ninja Pro Max Smartwatch</h6>
+                            <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">{{product.name}}</h6>
                         </a>
                         <div class="mt-2">
                             <span class="float-end">3.5 <i
