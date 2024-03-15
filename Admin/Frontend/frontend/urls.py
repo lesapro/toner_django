@@ -32,7 +32,8 @@ urlpatterns = [
     path('catalog/',include("catalog.urls")),
 
 
-
+    #product
+    path('products/',include("products.urls")),
     # shop
     path('shop/',include("shop.urls")),
     
