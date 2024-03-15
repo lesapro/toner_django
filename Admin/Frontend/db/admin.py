@@ -69,7 +69,6 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('name__name', 'sku')
 
 
-
 class PaymentDetailAdmin(admin.ModelAdmin):
     list_display = ['payment_method', 'cardholder_name', 'total_pay', 'invoice']
     search_fields = ['payment_method']
