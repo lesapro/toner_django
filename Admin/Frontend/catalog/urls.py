@@ -31,7 +31,8 @@ app_name ='catalog'
 urlpatterns = [
     
     # men
-    path('clothing',view=clothing_view,name='clothing_view'),
+    #<slug:slug>/
+    path('<slug:slug>/',view=clothing_view,name='clothing_view'),
     path('watches',view=watches_view,name='watches_view'),
     path('bag_luggage',view=bag_luggage_view,name='bag_luggage_view'),
     path('footwear',view=footwear_view,name='footwear_view'),

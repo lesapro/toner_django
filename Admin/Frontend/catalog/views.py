@@ -1,11 +1,26 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from db.models import Product, Category,ProductName,SubCategory
+from django.urls import resolve
 # Create your views here.
-
-class catalog(LoginRequiredMixin,TemplateView):
-    pass
+#LoginRequiredMixin,
+class catalog(TemplateView):
+     def get_context_data(self, **kwargs):
+           context = super().get_context_data(**kwargs)
+           # Lấy current URL từ request
+           url = self.request.path_info
+            # Giải quyết URL
+           resolver_match = resolve(url)
+            # Lấy slug từ kwargs của resolver
+           catalog_slug = resolver_match.kwargs.get('slug')
+           subcategory = SubCategory.objects.get(slug=catalog_slug)
+           #print(product_name)
+           products = Product.objects.filter(subcategory=subcategory)
+           #print(product)
+           context['products'] = products
+           return context
+     pass
 
 # men
 clothing_view = catalog.as_view(template_name = 'catalog/product-grid-sidebar-banner.html')
