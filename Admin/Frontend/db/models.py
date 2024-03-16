@@ -74,41 +74,6 @@ def sell_product(request, product_id):
         else:
             return HttpResponse("Không thể bán sản phẩm này do thiếu thông tin kho hoặc số lượng bán.")               
 
-class Color(models.Model):
-    name = models.CharField(max_length=255)
-    hex = models.CharField(max_length=7)  # Removed unique=True from both
-
-    class Meta:
-        constraints = [
-            UniqueConstraint(fields=['name', 'hex'], name='unique_name_hex')
-        ]
-
-    def __str__(self):
-        return f"{self.name} ({self.hex})"
-
-class Size(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-
-    def __str__(self):
-        return self.name
-
-class Type(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-
-    def __str__(self):
-        return self.name
-
-class Option(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-
-    def __str__(self):
-        return self.name
-
-class Details(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-
-    def __str__(self):
-        return self.name
 
 
 class ShippingCountry(models.Model):
@@ -197,28 +162,6 @@ class Store(models.Model):
 
     def __str__(self):
         return self.name
-class Stock(models.Model):
-    quantity = models.IntegerField(default=0, unique=True)
-
-    def __str__(self):
-        return f"{self.value}"
-
-class Sold(models.Model):
-    quantity = models.IntegerField(default=0, unique=True)
-
-    def __str__(self):
-        return f"{self.value}"
-
-class Price(models.Model):
-    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-
-    def __str__(self):
-        return f"{self.value}"
-
-class SpecialPrice(models.Model):
-    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-    def __str__(self):
-        return f"{self.value}"
 
 
 class Affiliate(models.Model):
@@ -340,83 +283,119 @@ class SubCategory(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(SubCategory, self).save(*args, **kwargs)
+class Stock(models.Model):
+    quantity = models.IntegerField(default=0, unique=True)
+
+    def __str__(self):
+        return f"{self.value}"
+
+class Sold(models.Model):
+    quantity = models.IntegerField(default=0, unique=True)
+
+    def __str__(self):
+        return f"{self.value}"
+
+class Price(models.Model):
+    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
+
+    def __str__(self):
+        return f"{self.value}"
+
+class SpecialPrice(models.Model):
+    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
+    def __str__(self):
+        return f"{self.value}"
+
 class Product(models.Model):
     STATUS_CHOICES = [
         ('Draft', 'Draft'),
         ('Published', 'Published'),
-        ('Scheduled', 'Scheduled')
     ]
     VISIBILITY_CHOICES = [
         ('MainWebsite', 'Main Website'),
         ('Hidden', 'Hidden'),
-    ]
-    TYPE_CHOICES = [
-        ('Simple', 'Simple'),
-        ('Configurable', 'Configurable')
     ]
     SHIPPING_STATUS_CHOICES = [
         ('YES', 'Yes'),  # Available for shipping
         ('NO', 'No'),    # Not available for shipping
     ]
 
-    shipping_status = models.CharField(
-        max_length=3,
-        choices=SHIPPING_STATUS_CHOICES,
-        default='NO',  # Sets the default to "NO"
-        null=True,     # Allows database to store NULL if field is left blank
-        blank=True,    # Allows form to submit field as blank
-    )
-    
+    shipping_status = models.CharField(max_length=3, choices=SHIPPING_STATUS_CHOICES, default='NO', null=True, blank=True)
     visibility = models.CharField(max_length=12, choices=VISIBILITY_CHOICES, default='MainWebsite')
-    product_type = models.CharField(max_length=12, choices=TYPE_CHOICES, default='Simple')
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
     best_selling = models.BooleanField(default=False, null=True)
     featured = models.BooleanField(default=False, null=True)
-    name = models.ForeignKey('ProductName', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     sku = models.CharField(max_length=255, unique=True, default='temporary_default_sku')
+    name = models.ForeignKey(ProductName, on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     brand = models.ForeignKey('Brand', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     store = models.ForeignKey('Store', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    video = models.ForeignKey('Video', on_delete=models.SET_NULL, null=True, blank=True, related_name='products') 
+    video = models.ForeignKey('Video', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     image = models.CharField(max_length=255, blank=True, null=True)
     gallery_image = models.TextField(blank=True, null=True)
-    category = models.ForeignKey('Category', related_name='products', on_delete=models.CASCADE)
-    subcategory = models.ForeignKey('SubCategory', related_name='products', on_delete=models.CASCADE, null=True, blank=True)
+    category = models.ForeignKey('Category', related_name='parent_products', on_delete=models.CASCADE)
+    subcategory = models.ForeignKey('SubCategory', related_name='parent_products', on_delete=models.CASCADE, null=True, blank=True)
     manufacturer_name = models.CharField(max_length=100, blank=True, null=True)
-    price = models.ForeignKey('Price', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='products_special_price')
-    color = models.ForeignKey('Color', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    size = models.ForeignKey('Size', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    type = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    option = models.ForeignKey('Option', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    details = models.ForeignKey('Details', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    #ALTER TABLE db_product ADD COLUMN detail_id INT;
-    stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     publish_date = models.DateTimeField(null=True, blank=True)
     tags = models.CharField(max_length=255, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     short_description = models.TextField(blank=True, null=True)
 
-
     def __str__(self):
-        fields = [
+        return self.name if self.name else 'Unnamed Product'
 
-            f"Name: {self.name.name if self.name else 'None'}",
-
-
-        ]
-        return " | ".join(fields)
-
-class ProductRelationship(models.Model):
-    parent = models.ForeignKey('Product', related_name='parent_product', on_delete=models.CASCADE)
-    child = models.ForeignKey('Product', related_name='child_products', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.parent.title} -> {self.child.title}'
+class Color(models.Model):
+    name = models.CharField(max_length=255)
+    hex = models.CharField(max_length=7)  # Removed unique=True from both
 
     class Meta:
-        unique_together = (('parent', 'child'),)
+        constraints = [
+            UniqueConstraint(fields=['name', 'hex'], name='unique_name_hex')
+        ]
 
+    def __str__(self):
+        return f"{self.name} ({self.hex})"
+
+class Size(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class Type(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class Option(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class Details(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class ChildProduct(models.Model):
+    parent = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='child_products')
+    child_sku = models.CharField(max_length=255, unique=True)
+    image = models.CharField(max_length=255, blank=True, null=True)
+    price = models.ForeignKey('Price', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products_special_price')
+    color = models.ForeignKey('Color', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    size = models.ForeignKey('Size', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    type = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    option = models.ForeignKey('Option', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    details = models.ForeignKey('Details', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+    sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
+
+
+    def __str__(self):
+        return f"{self.parent.name} - {self.child_sku}"
 
 
 class PaymentDetail(models.Model):

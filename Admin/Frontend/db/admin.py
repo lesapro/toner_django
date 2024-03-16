@@ -2,9 +2,9 @@ from django.contrib import admin
 from decimal import Decimal
 from django.core.validators import MinValueValidator
 from django.forms import CheckboxSelectMultiple
-from .models import (Company, Invoice, 
+from .models import (Company, Invoice, ChildProduct,
                      Category, SubCategory, PaymentDetail, CurrencyRate, 
-                     Product, ProductRelationship,ProductName,
+                     Product, ProductName,
                      Seller, Shipment, Brand, EventOrder, 
                      Coupon, Review, ReviewImage, ReviewDetail, CustomUser,
                      Store, Stock, Sold, Price, SpecialPrice, Color, Size, Type, Option, Details,
@@ -30,46 +30,73 @@ class SubCategoryAdmin(admin.ModelAdmin):
     list_filter = ['category']
     prepopulated_fields = {'slug': ('title',)}
 
-class ProductRelationshipInline(admin.TabularInline):
-    model = ProductRelationship
-    fk_name = 'parent'  # Specify the foreign key used to relate to the parent Product
-    extra = 1  # How many rows to show by default
-    verbose_name = "Child Product"
-    verbose_name_plural = "Child Products"
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('get_product_name', 'sku', 'get_status', 'get_visibility', 'get_shipping_status', 'get_product_type')
-    raw_id_fields = ('name', 'price', 'stock', 'sold', 'brand', 'store', 'video', 'category', 'subcategory', 'color', 'size', 'type', 'option', 'details') 
-    autocomplete_fields = ['name']  # Add other fields if necessary
-    list_filter = ('status', 'visibility', 'product_type', 'shipping_status')
-    search_fields = ('name__name', 'sku')
+    list_display = ('name', 'sku', 'status', 'visibility', 'shipping_status', 'get_featured', 'get_best_selling', 'publish_date')
+    list_filter = ('status', 'visibility', 'shipping_status', 'best_selling', 'featured')
+    search_fields = ('name', 'sku', 'tags')
+    raw_id_fields = ('brand', 'store', 'video', 'category', 'subcategory')
+    date_hierarchy = 'publish_date'
 
-    def get_product_name(self, obj):
-        return obj.name.name if obj.name else "No name"
-    get_product_name.short_description = 'Product Name'
-    get_product_name.admin_order_field = 'name__name'
+    def get_featured(self, obj):
+        return "Yes" if obj.featured else "No"
+    get_featured.short_description = 'Featured'
+    get_featured.admin_order_field = 'featured'
 
-    def get_status(self, obj):
-        return obj.status
-    get_status.short_description = 'Status'
+    def get_best_selling(self, obj):
+        return "Yes" if obj.best_selling else "No"
+    get_best_selling.short_description = 'Best Selling'
+    get_best_selling.admin_order_field = 'best_selling'
 
-    def get_visibility(self, obj):
-        return obj.visibility
-    get_visibility.short_description = 'Visibility'
 
-    def get_shipping_status(self, obj):
-        return obj.shipping_status
-    get_shipping_status.short_description = 'Shipping Status'
 
-    def get_product_type(self, obj):
-        return obj.product_type
-    get_product_type.short_description = 'Product Type'
+class ChildProductAdmin(admin.ModelAdmin):
+    list_display = (
+        'child_sku', 'get_price', 'get_special_price', 'get_stock_quantity', 'get_sold_quantity',
+        'get_color', 'get_size', 'get_type', 'get_option', 'get_details'
+    )
+    list_filter = ('parent__status', 'parent__visibility')
+    search_fields = ('child_sku', 'parent__name', 'parent__sku')
+    raw_id_fields = ('parent', 'price', 'special_price', 'color', 'size', 'type', 'option', 'details', 'stock', 'sold')
 
-    def get_search_results(self, request, queryset, search_term):
-        queryset, use_distinct = super().get_search_results(request, queryset, search_term)
-        # Your custom filter logic can go here, if needed
-        return queryset, use_distinct
+    def get_price(self, obj):
+        return obj.price.value if obj.price else Decimal('0.00')
+    get_price.short_description = 'Price'
+
+    def get_special_price(self, obj):
+        return obj.special_price.value if obj.special_price else Decimal('0.00')
+    get_special_price.short_description = 'Special Price'
+
+    def get_stock_quantity(self, obj):
+        return obj.stock.quantity if obj.stock else 0
+    get_stock_quantity.short_description = 'Stock Quantity'
+
+    def get_sold_quantity(self, obj):
+        return obj.sold.quantity if obj.sold else 0
+    get_sold_quantity.short_description = 'Sold Quantity'
+
+    def get_color(self, obj):
+        return obj.color.name if obj.color else 'None'
+    get_color.short_description = 'Color'
+
+    def get_size(self, obj):
+        return obj.size.name if obj.size else 'None'
+    get_size.short_description = 'Size'
+
+    def get_type(self, obj):
+        return obj.type.name if obj.type else 'None'
+    get_type.short_description = 'Type'
+
+    def get_option(self, obj):
+        return obj.option.name if obj.option else 'None'
+    get_option.short_description = 'Option'
+
+    def get_details(self, obj):
+        return obj.details.name if obj.details else 'None'
+    get_details.short_description = 'Details'
+
+admin.site.register(ChildProduct, ChildProductAdmin)
 
 @admin.register(ProductName)
 class ProductNameAdmin(admin.ModelAdmin):
@@ -161,7 +188,6 @@ admin.site.register(Company)
 admin.site.register(Invoice)
 admin.site.register(Category)
 admin.site.register(SubCategory)
-admin.site.register(ProductRelationship)
 admin.site.register(PaymentDetail)
 admin.site.register(CurrencyRate)
 admin.site.register(Seller)
