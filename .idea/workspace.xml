@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="711b8cd3-5a99-43ed-8e56-e0620dba81a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/catalog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/catalog/product-grid-sidebar-banner.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/catalog/product-grid-sidebar-banner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Frontend/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/products/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Frontend/templates/products/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Frontend/templates/products/product-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +110,8 @@
       <workItem from="1709972373783" duration="10064000" />
       <workItem from="1710079581438" duration="7010000" />
       <workItem from="1710156093823" duration="16703000" />
+      <workItem from="1710571037650" duration="593000" />
+      <workItem from="1710592220358" duration="6560000" />
     </task>
     <servers />
   </component>
@@ -128,10 +130,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1264" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1710156139610">
+    <state x="-1264" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1710592451980">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1264" y="344" key="com.intellij.ide.util.TipDialog/0.0.1280.984/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1710156139610" />
+    <state x="-1264" y="344" key="com.intellij.ide.util.TipDialog/0.0.1280.984/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1710592451980" />
     <state x="-1264" y="252" width="607" height="536" key="find.popup" timestamp="1710087700597">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

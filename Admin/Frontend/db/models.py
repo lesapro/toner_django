@@ -380,7 +380,7 @@ class Details(models.Model):
         return self.name
 
 class ChildProduct(models.Model):
-    parent = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='child_products')
+    parent = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='child_products')
     child_sku = models.CharField(max_length=255, unique=True)
     image = models.CharField(max_length=255, blank=True, null=True)
     price = models.ForeignKey('Price', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
