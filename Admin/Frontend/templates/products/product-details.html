@@ -1,6 +1,7 @@
 {% extends "partials/base.html" %}
 
 {% load static %}
+
 {% block title %} Product Details {% endblock title %}
 
 {% block extra_css %}
@@ -19,31 +20,7 @@
                     <div class="col-md-2">
                         <div thumbsSlider="" class="swiper productSwiper mb-3 mb-lg-0">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-thumb rounded cursor-pointer">
-                                        <img src="{% static 'images/products/img-31.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-thumb rounded cursor-pointer">
-                                        <img src="{% static 'images/products/img-33.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-thumb rounded cursor-pointer">
-                                        <img src="{% static 'images/products/img-32.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-thumb rounded cursor-pointer">
-                                        <img src="{% static 'images/products/img-34.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-thumb rounded cursor-pointer">
-                                        <img src="{% static 'images/products/img-34.png' %}" class="img-fluid" />
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div><!--end col-->
@@ -55,21 +32,7 @@
                             </div>
                             <div class="swiper productSwiper2">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide ">
-                                        <img src="{% static 'images/products/img-31.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{% static 'images/products/img-33.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{% static 'images/products/img-32.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{% static 'images/products/img-34.png' %}" alt="" class="img-fluid" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{% static 'images/products/img-34.png' %}" alt="" class="img-fluid" />
-                                    </div>
+
                                 </div>
                                 <div class="swiper-button-next bg-transparent"></div>
                                 <div class="swiper-button-prev bg-transparent"></div>
@@ -110,11 +73,48 @@
                             <span class="fw-medium"> (50 Review)</span>
                         </div>
                         <h4 class="lh-base mb-1">{{product.name}}</h4>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                var galleryImages = "{{ product.gallery_image }}".split(',');
+                                var swiperWrapper = document.querySelector('.swiper-wrapper');
+
+                                // Sử dụng baseUrl đã được định nghĩa ở trên
+
+
+                                galleryImages.forEach(function (imageSrc) {
+                                    if (imageSrc.trim() !== '') {
+                                        var swiperSlide = document.createElement('div');
+                                        swiperSlide.className = 'swiper-slide';
+
+                                        var productThumb = document.createElement('div');
+                                        productThumb.className = 'product-thumb rounded cursor-pointer';
+
+                                        var imgElement = document.createElement('img');
+                                        imgElement.src = '/media/static/' + imageSrc; // Thêm baseUrl vào đây
+                                        imgElement.alt = '';
+                                        imgElement.className = 'img-fluid';
+
+                                        productThumb.appendChild(imgElement);
+                                        swiperSlide.appendChild(productThumb);
+                                        swiperWrapper.appendChild(swiperSlide);
+                                    }
+                                });
+                            });
+                        </script>
                         <p class="text-muted mb-4">{{product.short_description}}<a href="javascript:void(0);"
                                 class="link-info">Read More</a></p>
+                        <h4 class="lh-base mb-1">Sku : {{product.sku}}</h4>
+                        <h4 class="lh-base mb-1">Brand : {{product.brand.name}}</h4>
+                        <!-- <h4 class="lh-base mb-1">Stock : {{product.stock.value}}</h4> -->
+                        <h4 class="lh-base mb-1">Store : {{product.store.name}}</h4>
                         <!-- <h5 class="fs-24 mb-4">$185.79 <span class="text-muted fs-14"><del>$280.99</del></span> <span
                                 class="fs-14 ms-2 text-danger"> (50% off)</span></h5> -->
-                        <h5 class="fs-24 mb-4">{{product.price}}</h5>
+                        <!-- <h5 class="fs-24 mb-4">{{product.price}}</h5> -->
+                        <h5 class="fs-24 mb-4">${{product.price}} <span
+                                class="text-muted fs-14"><del>${{product.special_price}}</del></span> <span
+                                class="fs-14 ms-2 text-danger">
+                                (50% off)</span></h5>
                         <ul class="list-unstyled vstack gap-2">
                             <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>In stock</li>
                             <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Free delivery
@@ -162,8 +162,7 @@
                         <div class="col-md-6">
                             <div>
                                 <h6 class="fs-14 fw-medium text-muted">Sizes:</h6>
-                                {{product.size}}
-                                {{product.color}}
+
                                 <ul class="clothe-size list-unstyled hstack gap-2 mb-0 flex-wrap">
                                     <li> <input type="radio" name="sizes7" id="product-color-72"> <label
                                             class="avatar-xs btn btn-soft-primary text-uppercase p-0 fs-12 d-flex align-items-center justify-content-center rounded-circle"
@@ -230,7 +229,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content text-muted">
                     <div class="tab-pane active" id="home1" role="tabpanel">
-                        {{product.description}}
+                        {{ product.description|safe }}
                     </div>
                     <div class="tab-pane" id="profile1" role="tabpanel">
 
