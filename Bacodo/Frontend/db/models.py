@@ -330,6 +330,8 @@ class Product(models.Model):
     brand = models.ForeignKey('Brand', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     store = models.ForeignKey('Store', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     video = models.ForeignKey('Video', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    price = models.ForeignKey('Price', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     image = models.CharField(max_length=255, blank=True, null=True)
     gallery_image = models.TextField(blank=True, null=True)
     category = models.ForeignKey('Category', related_name='parent_products', on_delete=models.CASCADE)
