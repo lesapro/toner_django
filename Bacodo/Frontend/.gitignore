@@ -1,0 +1,13 @@
+.idea/
+staticfiles
+media/static/images/products
+shop/__pycache__
+products/migrations/__pycache__
+products/__pycache__
+pages/migrations/__pycache__
+pages/__pycache__
+db/__pycache__
+dashboard/migrations/__pycache__
+dashboard/__pycache__
+catalog/migrations/__pycache__
+catalog/__pycache__

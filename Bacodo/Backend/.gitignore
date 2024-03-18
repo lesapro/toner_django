@@ -1,0 +1,7 @@
+.idea/
+backend/__pycache__
+menu/migrations/__pycache__
+db/__pycache__
+db/migrations/__pycache__
+myaccounts/__pycache__
+myaccounts/migrations/__pycache__
