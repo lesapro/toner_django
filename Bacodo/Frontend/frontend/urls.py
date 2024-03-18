@@ -15,11 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path,include
 from django.contrib.auth.decorators import login_required
 from .views import MyPasswordChangeView, MyPasswordSetView
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.static import serve 
 
 
 urlpatterns = [
@@ -53,4 +56,5 @@ urlpatterns = [
         login_required(MyPasswordSetView.as_view()),
         name="account_set_password",
     ),
-]
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT})
+] + staticfiles_urlpatterns()

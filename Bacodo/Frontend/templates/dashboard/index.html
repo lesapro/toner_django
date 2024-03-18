@@ -212,8 +212,8 @@
                     <div class="card overflow-hidden">
                         <div class="bg-warning-subtle rounded-top py-4">
                             <div class="gallery-product">
-                                <img src="{% static 'images/products/img-6.png' %}" alt=""
-                                    style="max-height: 215px;max-width: 100%;" class="mx-auto d-block">
+                                <img src="/media/{{product.image}}" alt="" style="max-height: 215px;max-width: 100%;"
+                                    class="mx-auto d-block">
                             </div>
                             <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
                             </p>
@@ -254,16 +254,18 @@
                                     <div>
                                         <!-- Display the special price and strike-through the regular price if special price exists -->
                                         {% if product.special_price %}
-                                            <h6 class="mb-0 text-muted" style="text-decoration: line-through;">${{ product.price.value }}</h6>
-                                            <h5 class="mb-0">${{ product.special_price.value }}</h5>
+                                        <h6 class="mb-0 text-muted" style="text-decoration: line-through;">
+                                            ${{product.price }}</h6>
+                                        <h5 class="mb-0">${{ product.special_price }}</h5>
                                         {% else %}
-                                            <!-- If no special price, just display the regular price -->
-                                            <h5 class="mb-0">${{ product.price.value }}</h5>
+                                        <!-- If no special price, just display the regular price -->
+                                        <h5 class="mb-0">${{ product.price }}</h5>
                                         {% endif %}
                                     </div>
-                                    <span class="float-end">4.9 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                    <span class="float-end">4.9 <i
+                                            class="ri-star-half-fill text-warning align-bottom"></i></span>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
