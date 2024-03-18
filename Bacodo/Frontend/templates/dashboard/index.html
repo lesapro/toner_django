@@ -204,80 +204,82 @@
         <div class="col-lg-12">
             <div class="row gallery-wrapper mt-4 pt-2">
                 <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
-
-                    {% for category, products in products_by_category %}
-                    <h2>{{ category.title }}</h2>
-
-                    {% for product in products %}
-                    <div class="card overflow-hidden">
-                        <div class="bg-warning-subtle rounded-top py-4">
-                            <div class="gallery-product">
-                                <img src="/media/{{product.image}}" alt="" style="max-height: 215px;max-width: 100%;"
-                                    class="mx-auto d-block">
-                            </div>
-                            <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
-                            </p>
-                            <div class="gallery-product-actions">
-                                <div class="mb-2">
-                                    <button type="button" class="btn btn-danger btn-sm custom-toggle"
-                                        data-bs-toggle="button">
-                                        <span class="icon-on"><i
-                                                class="mdi mdi-heart-outline align-bottom fs-15"></i></span>
-                                        <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
-                                    </button>
-                                </div>
-
-                                <div>
-                                    <button type="button" class="btn btn-success btn-sm custom-toggle"
-                                        data-bs-toggle="button">
-                                        <span class="icon-on"><i
-                                                class="mdi mdi-eye-outline align-bottom fs-15"></i></span>
-                                        <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-btn px-3">
-                                <a href="{% url 'shop:shop_cart_view' %}" class="btn btn-primary btn-sm w-75 add-btn"><i
-                                        class="mdi mdi-cart me-1"></i>
-                                    Add to cart</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <a href="{% url 'products:products.product_details' slug=product.name.slug %}">
-                                    <h6 class="fs-15 lh-base text-truncate mb-0">{{product.name}}</h6>
-                                </a>
-                                <!-- Kiểm tra xem product và product.name.slug có tồn tại -->
-
-                                <!-- Hiển thị một thông báo lỗi hoặc gì đó để bạn biết rằng product hoặc slug không tồn tại -->
-                                <div class="mt-3">
-                                    <div>
-                                        <!-- Display the special price and strike-through the regular price if special price exists -->
-                                        {% if product.special_price %}
-                                        <h6 class="mb-0 text-muted" style="text-decoration: line-through;">
-                                            ${{product.price }}</h6>
-                                        <h5 class="mb-0">${{ product.special_price }}</h5>
-                                        {% else %}
-                                        <!-- If no special price, just display the regular price -->
-                                        <h5 class="mb-0">${{ product.price }}</h5>
-                                        {% endif %}
+                    <!-- <div class="container"> -->
+                        {% for category, products in products_by_category %}
+                        
+                        <h2>{{ category.title }}</h2>
+    
+    
+                        {% for product in products %}
+                            <div class="card overflow-hidden">
+                                <div class="bg-warning-subtle rounded-top py-4">
+                                    <div class="gallery-product">
+                                        <img src="/media/{{product.image}}" alt="" style="max-height: 215px;max-width: 100%;"
+                                            class="mx-auto d-block">
                                     </div>
-                                    <span class="float-end">4.9 <i
-                                            class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                    <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
+                                    </p>
+                                    <div class="gallery-product-actions">
+                                        <div class="mb-2">
+                                            <button type="button" class="btn btn-danger btn-sm custom-toggle" data-bs-toggle="button">
+                                                <span class="icon-on"><i class="mdi mdi-heart-outline align-bottom fs-15"></i></span>
+                                                <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
+                                            </button>
+                                        </div>
+                            
+                                        <div>
+                                            <button type="button" class="btn btn-success btn-sm custom-toggle" data-bs-toggle="button">
+                                                <span class="icon-on"><i class="mdi mdi-eye-outline align-bottom fs-15"></i></span>
+                                                <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-btn px-3">
+                                        <a href="{% url 'shop:shop_cart_view' %}" class="btn btn-primary btn-sm w-75 add-btn"><i
+                                                class="mdi mdi-cart me-1"></i>
+                                            Add to cart</a>
+                                    </div>
                                 </div>
-
+                                <div class="card-body">
+                                    <div>
+                                        <a href="{% url 'products:products.product_details' slug=product.name.slug %}">
+                                            <h6 class="fs-13 lh-base text-truncate mb-0">{{product.name}}</h6>
+                                        </a>
+                                        <!-- Kiểm tra xem product và product.name.slug có tồn tại -->
+                            
+                                        <!-- Hiển thị một thông báo lỗi hoặc gì đó để bạn biết rằng product hoặc slug không tồn tại -->
+                                        <div class="mt-3">
+                                            <div class='price_review'>
+                                                <!-- Display the special price and strike-through the regular price if special price exists -->
+                                                {% if product.special_price %}
+                                                <div>
+                                                    <h5 class="mb-0">${{ product.special_price }}</h5>
+                                                    <h6 class="mb-0 text-muted" style="text-decoration: line-through;">
+                                                        ${{product.price }} </h6>
+                                                </div>
+                                                
+                                                <span class="float-end">4.9 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                                {% else %}
+                                                <!-- If no special price, just display the regular price -->
+                                                <h5 class="mb-0">${{ product.price }}</h5>
+                                                {% endif %}
+                                            </div>
+                                            
+                                        </div>
+                            
+                                    </div>
+                                </div>
                             </div>
+                            {% endfor %}
+    
+                        {% endfor %}
+    
+                        <div class="mt-4 text-center">
+                            <a href="{% url 'pages:products.listview.defualt' %}"
+                                class="btn btn-soft-primary btn-hover">View
+                                All Products <i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
                         </div>
-                    </div>
-                    {% endfor %}
-
-                    {% endfor %}
-
-                    <div class="mt-4 text-center">
-                        <a href="{% url 'pages:products.listview.defualt' %}"
-                            class="btn btn-soft-primary btn-hover">View
-                            All Products <i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -650,7 +652,7 @@
     <div class="menu-top-section">
         <div class="left-menu-top">
             <strong class="logo home">
-                <img src="{% static 'images/logo.svg' %}" alt="Magento Commerce" width="111" height="44">
+                <img src="{% static 'images/logo-dark.png' %}" alt="Magento Commerce" width="111" height="44">
                 <span>Home</span>
             </strong>
             <div class="section-login">
@@ -670,8 +672,8 @@
     <nav class="navigation sw-megamenu2 " role="navigation">
         <ul class="sw-megamenu-mobile">
             {% for category in categories %}
-            <li class="ui-menu-item level0 fullwidth parent" data-cateid="{{ category.id }}"><a href=""
-                    class="level-top" title="Phones &amp; Telecommunications"><img class="menu-thumb-icon" src="#"
+            <li class="ui-menu-item level0 fullwidth parent" data-cateid="{{ category.id }}"><a href="#"
+                    class="level-top" title="Phones &amp; Telecommunications"><img class="menu-thumb-icon" src="{{ category.image }}"
                         alt="Phones &amp; Telecommunications"><span>{{ category.title }}</span></a></li>
             {% endfor %}
         </ul>
@@ -729,5 +731,6 @@
 <script src="{% static 'js/frontend/megamenu.js' %}"></script>
 <script src="{% static 'js/sw_megamenu.js' %}"></script>
 <script src="{% static 'js/customenu.js' %}"></script>
+<script src="{% static 'js/frontend/menu.js' %}"></script>
 
 {% endblock extra_js%}

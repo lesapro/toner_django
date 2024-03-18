@@ -12487,10 +12487,10 @@ span.flatpickr-weekday {
   width: 34px;
   height: 34px;
 }
-.element-item:hover .gallery-product img {
+/* .element-item:hover .gallery-product img {
   -webkit-transform: scale(1.08);
           transform: scale(1.08);
-}
+} */
 .element-item:hover .gallery-product-actions {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -13577,3 +13577,4 @@ span.flatpickr-weekday {
   min-height: 85vh;
   height: 400px;
 }
+

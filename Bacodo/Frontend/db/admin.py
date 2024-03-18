@@ -7,7 +7,7 @@ from .models import (Company, Invoice, ChildProduct,
                      Product, ProductName,
                      Seller, Shipment, Brand, EventOrder, 
                      Coupon, Review, ReviewImage, ReviewDetail, CustomUser,
-                     Store, Stock, Sold, Price, SpecialPrice, Color, Size, Type, Option, Details,
+                     Store, Color, Size, Type, Option, Details,
                      Order, OrderItem, Notification)
 
 class CompanyAdmin(admin.ModelAdmin):
@@ -29,78 +29,46 @@ class SubCategoryAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_filter = ['category']
     prepopulated_fields = {'slug': ('title',)}
-
-
+    
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'sku', 'status', 'visibility', 'shipping_status', 'get_featured', 'get_best_selling', 'publish_date')
-    list_filter = ('status', 'visibility', 'shipping_status', 'best_selling', 'featured')
-    search_fields = ('name', 'sku', 'tags')
-    raw_id_fields = ('brand', 'store', 'video', 'category', 'subcategory')
+    list_display = (
+        'get_product_name', 'sku', 'status', 'price', 'special_price',
+        'shipping_status','best_selling'
+    )
+    list_filter = ('status', 'visibility', 'shipping_status', 'featured', 'best_selling')
+    search_fields = ('name__name', 'sku', 'tags')
+    raw_id_fields = ('name', 'brand', 'store', 'video', 'category', 'subcategory')
     date_hierarchy = 'publish_date'
 
-    def get_featured(self, obj):
-        return "Yes" if obj.featured else "No"
-    get_featured.short_description = 'Featured'
-    get_featured.admin_order_field = 'featured'
-
-    def get_best_selling(self, obj):
-        return "Yes" if obj.best_selling else "No"
-    get_best_selling.short_description = 'Best Selling'
-    get_best_selling.admin_order_field = 'best_selling'
-
-
-
+    def get_product_name(self, obj):
+        return str(obj.name)
+    get_product_name.short_description = 'Name'
+    get_product_name.admin_order_field = 'name'
+@admin.register(ChildProduct)
 class ChildProductAdmin(admin.ModelAdmin):
     list_display = (
-        'child_sku',
-        
-        # 'child_sku', 'get_price', 'get_special_price', 'get_stock_quantity', 'get_sold_quantity',
-        # 'get_color', 'get_size', 'get_type', 'get_option', 'get_details'
-                
+        'child_sku', 'price', 'special_price',
+        'stock', 'sold'
     )
     list_filter = ('parent__status', 'parent__visibility')
+    search_fields = ('child_sku', 'parent__name__name', 'parent__sku')
+    raw_id_fields = ('parent', 'color', 'size', 'type', 'option', 'details', 'shipping_location')
+
+    def get_parent_name(self, obj):
+        return obj.parent.name
+    get_parent_name.short_description = 'Parent Name'
+
+class ChildProductAdmin(admin.ModelAdmin):
+    list_display = ('child_sku', 'price', 'special_price', 'stock', 'sold')
+    list_filter = ('parent__status', 'parent__visibility')
     search_fields = ('child_sku', 'parent__name', 'parent__sku')
-    raw_id_fields = ('parent', 'price', 'special_price', 'color', 'size', 'type', 'option', 'details', 'stock', 'sold')
+    raw_id_fields = ('parent', 'color', 'size', 'type', 'option', 'details')
 
-    # def get_price(self, obj):
-    #     return obj.price.value if obj.price else Decimal('0.00')
-    # get_price.short_description = 'Price'
-
-    # def get_special_price(self, obj):
-    #     return obj.special_price.value if obj.special_price else Decimal('0.00')
-    # get_special_price.short_description = 'Special Price'
-
-    # def get_stock_quantity(self, obj):
-    #     return obj.stock.quantity if obj.stock else 0
-    # get_stock_quantity.short_description = 'Stock Quantity'
-
-    # def get_sold_quantity(self, obj):
-    #     return obj.sold.quantity if obj.sold else 0
-    # get_sold_quantity.short_description = 'Sold Quantity'
-
-    # def get_color(self, obj):
-    #     return obj.color.name if obj.color else 'None'
-    # get_color.short_description = 'Color'
-
-    # def get_size(self, obj):
-    #     return obj.size.name if obj.size else 'None'
-    # get_size.short_description = 'Size'
-
-    # def get_type(self, obj):
-    #     return obj.type.name if obj.type else 'None'
-    # get_type.short_description = 'Type'
-
-    # def get_option(self, obj):
-    #     return obj.option.name if obj.option else 'None'
-    # get_option.short_description = 'Option'
-
-    # def get_details(self, obj):
-    #     return obj.details.name if obj.details else 'None'
-    # get_details.short_description = 'Details'
-
-admin.site.register(ChildProduct, ChildProductAdmin)
-
+    def get_parent_name(self, obj):
+        return obj.parent.name
+    get_parent_name.short_description = 'Parent Name'
+    
 @admin.register(ProductName)
 class ProductNameAdmin(admin.ModelAdmin):
     search_fields = ['name']
@@ -108,13 +76,6 @@ class ProductNameAdmin(admin.ModelAdmin):
 class StockAdmin(admin.ModelAdmin):
     search_fields = ['quantity']
 
-@admin.register(Price)
-class PriceAdmin(admin.ModelAdmin):
-    search_fields = ['value']
-
-@admin.register(Stock)
-class StockAdmin(admin.ModelAdmin):
-    search_fields = ['quantity']
 
 
 class PaymentDetailAdmin(admin.ModelAdmin):
@@ -183,9 +144,7 @@ class NotificationAdmin(admin.ModelAdmin):
     list_display = ('message', 'user', 'created_at')
     search_fields = ('user__username', 'message')
 # Admin classes
-@admin.register(Sold)
-class SoldAdmin(admin.ModelAdmin):
-    search_fields = ['quantity']
+
 
 admin.site.register(Company)
 admin.site.register(Invoice)
@@ -206,7 +165,6 @@ admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(Notification)
 admin.site.register(Store)
-admin.site.register(SpecialPrice)
 admin.site.register(Color)
 admin.site.register(Size)
 admin.site.register(Type)

@@ -283,28 +283,6 @@ class SubCategory(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(SubCategory, self).save(*args, **kwargs)
-class Stock(models.Model):
-    quantity = models.IntegerField(default=0, unique=True)
-
-    def __str__(self):
-        return f"{self.value}"
-
-class Sold(models.Model):
-    quantity = models.IntegerField(default=0, unique=True)
-
-    def __str__(self):
-        return f"{self.value}"
-
-class Price(models.Model):
-    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-
-    def __str__(self):
-        return f"{self.value}"
-
-class SpecialPrice(models.Model):
-    value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-    def __str__(self):
-        return f"{self.value}"
 
 class Product(models.Model):
     STATUS_CHOICES = [
@@ -327,10 +305,12 @@ class Product(models.Model):
     featured = models.BooleanField(default=False, null=True)
     sku = models.CharField(max_length=255, unique=True, default='temporary_default_sku')
     name = models.ForeignKey(ProductName, on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=False)
+    special_price = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=False)
     brand = models.ForeignKey('Brand', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     store = models.ForeignKey('Store', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     video = models.ForeignKey('Video', on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
-    image = models.CharField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to='media/images/products', blank=True, null=True, max_length=500)
     gallery_image = models.TextField(blank=True, null=True)
     category = models.ForeignKey('Category', related_name='parent_products', on_delete=models.CASCADE)
     subcategory = models.ForeignKey('SubCategory', related_name='parent_products', on_delete=models.CASCADE, null=True, blank=True)
@@ -341,7 +321,7 @@ class Product(models.Model):
     short_description = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.name if self.name else 'Unnamed Product'
+        return str(self.name.name, ) if self.name else 'Unnamed Product'
 
 class Color(models.Model):
     name = models.CharField(max_length=255)
@@ -378,26 +358,46 @@ class Details(models.Model):
 
     def __str__(self):
         return self.name
+# class Stock(models.Model):
+#     quantity = models.IntegerField(default=0, unique=True)
+
+#     def __str__(self):
+#         return f"{self.value}"
+
+# class Sold(models.Model):
+#     quantity = models.IntegerField(default=0, unique=True)
+
+#     def __str__(self):
+#         return f"{self.value}"
+
+# class Price(models.Model):
+#     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
+
+#     def __str__(self):
+#         return f"{self.value}"
+
+# class SpecialPrice(models.Model):
+#     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
+#     def __str__(self):
+#         return f"{self.value}"
 
 class ChildProduct(models.Model):
-    parent = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='child_products')
+    parent = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='child_products')
     child_sku = models.CharField(max_length=255, unique=True)
-    image = models.CharField(max_length=255, blank=True, null=True)
-    price = models.ForeignKey('Price', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
-    special_price = models.ForeignKey('SpecialPrice', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products_special_price')
+    image = models.ImageField(upload_to='media/images/products', blank=True, null=True, max_length=500)
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=False)
+    special_price = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=False)
+    stock = models.IntegerField(default=0, unique=False)
+    sold = models.IntegerField(default=0, unique=False)
     color = models.ForeignKey('Color', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
     size = models.ForeignKey('Size', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
     type = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
     option = models.ForeignKey('Option', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
     details = models.ForeignKey('Details', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
-    stock = models.ForeignKey('Stock', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
-    sold = models.ForeignKey('Sold', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
-
+    shipping_location = models.ForeignKey('ShippingLocation', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_products')
 
     def __str__(self):
         return f"{self.parent.name} - {self.child_sku}"
-
-
 class PaymentDetail(models.Model):
     payment_method = models.CharField(max_length=20)
     cardholder_name = models.CharField(max_length=100)
