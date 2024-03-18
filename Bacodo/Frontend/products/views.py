@@ -16,7 +16,7 @@ class ProducrsView(TemplateView):
        products = Product.objects.filter(name=product_name).prefetch_related(
            Prefetch(
                'child_products',
-               queryset=ChildProduct.objects.select_related('color','price','special_price', 'size', 'option', 'details')
+               queryset=ChildProduct.objects.select_related('color', 'size', 'option', 'details')[:1]
            )
        )
        context['products'] = products
