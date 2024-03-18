@@ -1,10 +1,11 @@
 .idea/
-Admin/Backend/.idea/
-Admin/Frontend/.idea/
-Admin/Frontend/db/__pycache__/
-Admin/Frontend/products/__pycache__/
-Admin/Frontend/pages/__pycache__/
-Admin/Frontend/catalog/__pycache__/
-Admin/Frontend/dashboard/__pycache__/
+Bacodo/Backend/.idea/
+Bacodo/Frontend/.idea/
+Bacodo/Frontend/db/__pycache__/
+Bacodo/Frontend/products/__pycache__/
+Bacodo/Frontend/pages/__pycache__/
+Bacodo/Frontend/catalog/__pycache__/
+Bacodo/Frontend/dashboard/__pycache__/
+Bacodo/Frontend/media/static/
 
 
