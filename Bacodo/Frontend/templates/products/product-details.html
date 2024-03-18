@@ -1,6 +1,7 @@
 {% extends "partials/base.html" %}
 
 {% load static %}
+{% load customfilter %}
 
 {% block title %} Product Details {% endblock title %}
 
@@ -113,7 +114,7 @@
                         <!-- <h5 class="fs-24 mb-4">{{product.price}}</h5> -->
                         {% for child_product in product.child_products.all %}
                         <h4 class="lh-base mb-1">Option : {{child_product.option.name}}</h4>
-      
+
                         <h5 class="fs-24 mb-4">${{child_product.price}} <span
                                 class="text-muted fs-14"><del>${{child_product.special_price}}</del></span> <span
                                 class="fs-14 ms-2 text-danger">
