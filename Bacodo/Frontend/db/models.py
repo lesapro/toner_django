@@ -358,28 +358,6 @@ class Details(models.Model):
 
     def __str__(self):
         return self.name
-# class Stock(models.Model):
-#     quantity = models.IntegerField(default=0, unique=True)
-
-#     def __str__(self):
-#         return f"{self.value}"
-
-# class Sold(models.Model):
-#     quantity = models.IntegerField(default=0, unique=True)
-
-#     def __str__(self):
-#         return f"{self.value}"
-
-# class Price(models.Model):
-#     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-
-#     def __str__(self):
-#         return f"{self.value}"
-
-# class SpecialPrice(models.Model):
-#     value = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'), validators=[MinValueValidator(Decimal('0.00'))], unique=True)
-#     def __str__(self):
-#         return f"{self.value}"
 
 class ChildProduct(models.Model):
     parent = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='child_products')

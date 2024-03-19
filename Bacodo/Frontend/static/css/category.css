@@ -1,0 +1,24 @@
+.pagi-btn {
+  padding: 6px 30px;
+  border-radius: 4px;
+  background: #4b93ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination .step-links {
+    display: flex;
+    align-items: center;
+    gap :10px;
+}
+.pagination {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.pagination .current {
+    border: 1px solid #4b93ff;
+    border-radius: 4px;
+    padding: 6px 20px;
+}

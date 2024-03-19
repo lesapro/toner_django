@@ -1,44 +1,61 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from db.models import Product, Category,ProductName,SubCategory
+from db.models import Product, Category, ProductName, SubCategory, ChildProduct, Color, Size, Type, Option, Details, ShippingLocation  
 from django.urls import resolve
-from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-# Create your views here.
-#LoginRequiredMixin,
+from django.db.models import Prefetch
+from django.db.models import Min, Max
+from decimal import Decimal
+from django.db.models import Q
+
+from db.models import Product, Category, SubCategory, Color, Size, Type, Option, Details, ShippingLocation
+
 class catalog(TemplateView):
-     def get_context_data(self, **kwargs):
+
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Lấy current URL từ request
         url = self.request.path_info
-        # Giải quyết URL
         resolver_match = resolve(url)
-        # Lấy slug từ kwargs của resolver
         catalog_slug = resolver_match.kwargs.get('slug')
-        
-        try:
+        parent_products = Product.objects.none()
+        child_products_qs = ChildProduct.objects.none()
+
+        # Determine if a catalog (category) or a subcategory based on URL
+        if SubCategory.objects.filter(slug=catalog_slug).exists():
             subcategory = SubCategory.objects.get(slug=catalog_slug)
-            products = Product.objects.filter(subcategory=subcategory)
-        except SubCategory.DoesNotExist:
-            category = get_object_or_404(Category, slug=catalog_slug)
-            products = Product.objects.filter(category=category)
+            parent_products = Product.objects.filter(subcategory=subcategory)
+            child_products_qs = ChildProduct.objects.filter(parent__subcategory=subcategory)
+        elif Category.objects.filter(slug=catalog_slug).exists():
+            category = Category.objects.get(slug=catalog_slug)
+            parent_products = Product.objects.filter(category=category)
+            child_products_qs = ChildProduct.objects.filter(parent__category=category)
 
-        # Phân trang
-        paginator = Paginator(products, 60)  # Hiển thị 10 sản phẩm trên mỗi trang
-        page = self.request.GET.get('page')  # Lấy tham số 'page' từ URL
+        # Your existing filtering logic here
 
+        # Update context with filtered attributes
+        context.update({
+            'products': self.get_paginated_products(parent_products, self.request.GET.get('page')),
+            'colors': Color.objects.filter(child_products__in=child_products_qs).distinct(),
+            'sizes': Size.objects.filter(child_products__in=child_products_qs).distinct(),
+            'types': Type.objects.filter(child_products__in=child_products_qs).distinct(),
+            'options': Option.objects.filter(child_products__in=child_products_qs).distinct(),
+            'details': Details.objects.filter(child_products__in=child_products_qs).distinct(),
+            'shipping_locations': ShippingLocation.objects.filter(child_products__in=child_products_qs).distinct(),
+        })
+
+        return context
+
+    def get_paginated_products(self, queryset, page):
+        paginator = Paginator(queryset, 60)  # Show 10 products per page
         try:
             products = paginator.page(page)
         except PageNotAnInteger:
-            products = paginator.page(1)  # Trang đầu tiên
+            products = paginator.page(1)
         except EmptyPage:
-            products = paginator.page(paginator.num_pages)  # Trang cuối
-
-        context['products'] = products
-        return context
-     pass
-
+            products = paginator.page(paginator.num_pages)
+        return products
 # men
 clothing_view = catalog.as_view(template_name = 'catalog/product-grid-sidebar-banner.html')
 watches_view = catalog.as_view(template_name = 'catalog/product-grid-right.html')

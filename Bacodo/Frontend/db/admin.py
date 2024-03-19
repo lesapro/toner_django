@@ -19,13 +19,16 @@ class InvoiceAdmin(admin.ModelAdmin):
     list_filter = ['payment_status']
     search_fields = ['invoice_number']
 
+
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['title', 'slug']
     search_fields = ['title']
     prepopulated_fields = {'slug': ('title',)}
 
+@admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category', 'slug']
+    list_display = ['title', 'category', 'slug']  # Ensure 'slug' is included here
     search_fields = ['title']
     list_filter = ['category']
     prepopulated_fields = {'slug': ('title',)}
@@ -148,8 +151,6 @@ class NotificationAdmin(admin.ModelAdmin):
 
 admin.site.register(Company)
 admin.site.register(Invoice)
-admin.site.register(Category)
-admin.site.register(SubCategory)
 admin.site.register(PaymentDetail)
 admin.site.register(CurrencyRate)
 admin.site.register(Seller)

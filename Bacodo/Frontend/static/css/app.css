@@ -13565,7 +13565,6 @@ span.flatpickr-weekday {
 .home-widgets {
   min-height: 85vh;
   height: 400px;
-}ht: calc(100% - 20px);
 }
 
 .trend-fashion-home {
@@ -13578,3 +13577,12 @@ span.flatpickr-weekday {
   height: 400px;
 }
 
+.pagi-next {
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #4b93ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

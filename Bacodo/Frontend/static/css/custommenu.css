@@ -81,9 +81,10 @@
 .dropdown-home.dropdown-toggle::after {
   display: none;
 }
+
 @media screen and (min-width: 769px) {
-  .header-right-mb {
-    display: none;
+  .d-flex.align-items-center.header-right-mb {
+    display: none !important;
   }
 }
 @media screen and (max-width: 768px) {
@@ -152,6 +153,7 @@
   #navbar .navbar-brand .logo-dark img {
     max-width: 100%;
     height: 90%;
+    max-height: 50px;
   }
 }
 
