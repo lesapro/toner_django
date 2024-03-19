@@ -3,36 +3,40 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from db.models import Product, Category,ProductName,SubCategory
 from django.urls import resolve
+from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 #LoginRequiredMixin,
 class catalog(TemplateView):
      def get_context_data(self, **kwargs):
-           context = super().get_context_data(**kwargs)
-           # Lấy current URL từ request
-           url = self.request.path_info
-            # Giải quyết URL
-           resolver_match = resolve(url)
-            # Lấy slug từ kwargs của resolver
-           catalog_slug = resolver_match.kwargs.get('slug')
-           subcategory = SubCategory.objects.get(slug=catalog_slug)
-           #print(product_name)
-           products = Product.objects.filter(subcategory=subcategory)
-           #print(product)
-           # Phân trang
-           paginator = Paginator(products, 10)  # Hiển thị 10 sản phẩm trên mỗi trang
+        context = super().get_context_data(**kwargs)
+        # Lấy current URL từ request
+        url = self.request.path_info
+        # Giải quyết URL
+        resolver_match = resolve(url)
+        # Lấy slug từ kwargs của resolver
+        catalog_slug = resolver_match.kwargs.get('slug')
+        
+        try:
+            subcategory = SubCategory.objects.get(slug=catalog_slug)
+            products = Product.objects.filter(subcategory=subcategory)
+        except SubCategory.DoesNotExist:
+            category = get_object_or_404(Category, slug=catalog_slug)
+            products = Product.objects.filter(category=category)
 
-           page = self.request.GET.get('page')  # Lấy tham số 'page' từ URL
+        # Phân trang
+        paginator = Paginator(products, 10)  # Hiển thị 10 sản phẩm trên mỗi trang
+        page = self.request.GET.get('page')  # Lấy tham số 'page' từ URL
 
-           try:
-               products = paginator.page(page)
-           except PageNotAnInteger:
-               products = paginator.page(1)  # Trang đầu tiên
-           except EmptyPage:
-               products = paginator.page(paginator.num_pages)  # Trang cuối
+        try:
+            products = paginator.page(page)
+        except PageNotAnInteger:
+            products = paginator.page(1)  # Trang đầu tiên
+        except EmptyPage:
+            products = paginator.page(paginator.num_pages)  # Trang cuối
 
-           context['products'] = products
-           return context
+        context['products'] = products
+        return context
      pass
 
 # men

@@ -162,7 +162,7 @@
                     <div class="nav-center-images-only">
                         {% for category in categories %}
                         <div class="categories-items">
-                            <a href="#">
+                            <a href="{% url 'catalog:clothing_view' slug=category.slug %}">
                                 <img src="{{ category.image }}" alt="{{ category.title }}">
                                 <div class="categories-name">{{ category.title }}</div>
                             </a>
@@ -690,7 +690,7 @@
                     <div class="open-children-toggle"></div>
                     <div class="top-section">
                         <div class="parent-menu-name"> {{ category.title }}</div><a class="parent-menu-link"
-                            href="#">View
+                            href="{% url 'catalog:clothing_view' slug=category.slug %}">View
                             all</a>
                     </div><span> {{ category.title }}</span>
                     <div class="level0 submenu-mobile">
@@ -698,7 +698,8 @@
                             <div class="row">
                                 <ul class="subchildmenu mega-columns columns4">
                                     {% for subcategory in category.subcategories.all %}
-                                    <li class="ui-menu-item level1 "><a class="menu-link" href="#"><img
+                                    <li class="ui-menu-item level1 "><a class="menu-link"
+                                            href="{% url 'catalog:clothing_view' slug=subcategory.slug %}"><img
                                                 class="menu-thumb-icon" src="{{ subcategory.image }}"
                                                 alt="  {{ subcategory.title }}"><span>
                                                 {{ subcategory.title }}</span></a>
