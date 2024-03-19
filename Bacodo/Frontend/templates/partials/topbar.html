@@ -85,7 +85,8 @@
                                     </li>
                                     {% for subcategory in category.subcategories.all %}
                                     <li class="nav-item">
-                                        <a href="{% url 'catalog:clothing_view' slug=subcategory.slug %}" class="nav-link" data-key="">
+                                        <a href="{% url 'catalog:clothing_view' slug=subcategory.slug %}"
+                                            class="nav-link" data-key="">
                                             {{ subcategory.title }}
                                         </a>
                                     </li>
@@ -334,6 +335,7 @@
                             class="bi bi-moon-stars align-middle me-2"></i> Auto (system defualt)</a>
                 </div>
             </div>
+            {% if user.is_authenticated %}
             <div class="dropdown header-item dropdown-hover-end">
                 <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -382,6 +384,9 @@
 
                 </div>
             </div>
+            {% else %}
+            <p>Bạn chưa đăng nhập. Vui lòng <a href="{% url 'pages:users.sign_in' %}">đăng nhập</a> để truy cập.</p>
+            {% endif %}
         </div>
     </div>
 </nav>
