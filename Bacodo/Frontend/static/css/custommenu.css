@@ -65,7 +65,19 @@
 .card.overflow-hidden:hover .gallery-product img {
   transform: scale(1.06)  !important
 }
-
+.dropdown-mega-full .dropdown-menu {
+  overflow-y: auto;
+  max-height: 100vh;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu > div {
+  padding: 10px;
+  padding-bottom: 140px;
+}
+.dropdown-menu-title-large span {
+  width: 80px;
+  display: flex;
+  aspect-ratio: 1/1;
+}
 @media screen and (max-width: 768px) {
   .seller.hot.arrival {
     grid-template-columns: repeat(2, 1fr);
@@ -98,7 +110,27 @@
   }
   .sw-megamenu-mobile {
     list-style: none;
-    padding-left: 10px;
+    padding-left: 0px;
+  }
+  nav.navigation.sw-megamenu2 ul {
+    padding-left: 0px;
+  }
+  .card.overflow-hidden .card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .element-item .gallery-product-actions {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  .element-item .gallery-product-actions button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  #navbar .container {
+    justify-content: flex-end;
   }
 }
 
