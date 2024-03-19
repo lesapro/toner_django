@@ -695,7 +695,8 @@
                                 <ul class="subchildmenu mega-columns columns4">
                                     {% for subcategory in category.subcategories.all %}
                                     <li class="ui-menu-item level1 "><a class="menu-link" href="#"><img
-                                                class="menu-thumb-icon" src="#" alt="  {{ subcategory.title }}"><span>
+                                                class="menu-thumb-icon" src="{{ subcategory.image }}"
+                                                alt="  {{ subcategory.title }}"><span>
                                                 {{ subcategory.title }}</span></a>
                                     </li>
                                     {% endfor %}
