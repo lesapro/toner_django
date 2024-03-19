@@ -31,3 +31,4 @@ class ProductsView(TemplateView):
         return context
 
 product_details_view = ProductsView.as_view()
+
