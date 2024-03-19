@@ -204,7 +204,6 @@
         <div class="col-lg-12">
             <div class="row gallery-wrapper mt-4 pt-2">
                 <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
-                    <!-- <div class="container"> -->
                     {% for category, products in products_by_category %}
 
                     <h2>{{ category.title }}</h2>
@@ -269,9 +268,7 @@
                                         <h5 class="mb-0">${{ product.price }}</h5>
                                         {% endif %}
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -284,7 +281,6 @@
                             class="btn btn-soft-primary btn-hover">View
                             All Products <i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
                     </div>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>

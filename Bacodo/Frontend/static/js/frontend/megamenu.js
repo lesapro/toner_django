@@ -16,8 +16,8 @@ $(document).ready(function () {
         arrows: false,
         infinite: false,
         speed: 300,
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         draggable: true
     })
 })
