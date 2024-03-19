@@ -519,7 +519,8 @@
                                         <li> <input type="radio" name="sizes1" id="product-color-15"> <label
                                                 class="avatar-xxs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle"
                                                 for="product-color-15"></label> </li>
-                                    </ul> <a href="#!">
+                                    </ul> <a
+                                        href="{% url 'products:products.product_details' slug=product.name.slug %}">
                                         <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">{{product.name}}
                                         </h6>
                                     </a>
