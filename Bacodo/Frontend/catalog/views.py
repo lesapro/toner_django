@@ -10,7 +10,6 @@ from django.db.models import Min, Max
 from decimal import Decimal
 from django.db.models import Q
 
-from db.models import Product, Category, SubCategory, Color, Size, Type, Option, Details, ShippingLocation
 
 class catalog(TemplateView):
 
@@ -25,14 +24,12 @@ class catalog(TemplateView):
         # Determine if a catalog (category) or a subcategory based on URL
         if SubCategory.objects.filter(slug=catalog_slug).exists():
             subcategory = SubCategory.objects.get(slug=catalog_slug)
-            parent_products = Product.objects.filter(subcategory=subcategory)
+            parent_products = Product.objects.filter(subcategory=subcategory).select_related('brand')
             child_products_qs = ChildProduct.objects.filter(parent__subcategory=subcategory)
         elif Category.objects.filter(slug=catalog_slug).exists():
             category = Category.objects.get(slug=catalog_slug)
-            parent_products = Product.objects.filter(category=category)
+            parent_products = Product.objects.filter(category=category).select_related('brand')
             child_products_qs = ChildProduct.objects.filter(parent__category=category)
-
-        # Your existing filtering logic here
 
         # Update context with filtered attributes
         context.update({

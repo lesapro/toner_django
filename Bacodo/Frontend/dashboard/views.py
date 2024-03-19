@@ -13,7 +13,7 @@ class DashboardView(TemplateView):
        products_by_category = []
        for category in categories:
          #print(category.id)
-         products = Product.objects.filter(category_id=category.id)[:4]  # Limit to 10
+         products = Product.objects.filter(category_id=category.id)[:10]  # Limit to 10
          if products:  # Kiểm tra xem có sản phẩm nào hay không
             products_by_category.append((category, products))
        context['categories'] = categories
@@ -26,7 +26,5 @@ dashboard_view = DashboardView.as_view(template_name = 'dashboard/index.html')
 watch_main_layout_view = DashboardView.as_view(template_name = 'dashboard/watch-main-layout.html')
 modern_fashion_view = DashboardView.as_view(template_name = 'dashboard/modern-fashion.html')
 trend_fashion_view = DashboardView.as_view(template_name = 'dashboard/trend-fashion.html')
-
-
 
 contact_us_view = DashboardView.as_view(template_name = 'dashboard/contact-us.html')

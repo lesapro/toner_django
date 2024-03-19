@@ -84,16 +84,12 @@
                         </div>
                         <h4 class="lh-base mb-1">{{product.name}}</h4>
 
-
                         <p class="text-muted mb-4">{{product.short_description}}<a href="javascript:void(0);"
                                 class="link-info">Read More</a></p>
                         <h4 class="lh-base mb-1">Sku : {{product.sku}}</h4>
                         <h4 class="lh-base mb-1">Brand : {{product.brand.name}}</h4>
                         <!-- <h4 class="lh-base mb-1">Stock : {{product.stock.value}}</h4> -->
                         <h4 class="lh-base mb-1">Store : {{product.store.name}}</h4>
-                        <!-- <h5 class="fs-24 mb-4">$185.79 <span class="text-muted fs-14"><del>$280.99</del></span> <span
-                                class="fs-14 ms-2 text-danger"> (50% off)</span></h5> -->
-                        <!-- <h5 class="fs-24 mb-4">{{product.price}}</h5> -->
                         {% if product.first_child_product.option.name %}
                         <h4 class="lh-base mb-1">Option : {{product.first_child_product.option.name}}</h4>
                         {% endif %}
@@ -101,20 +97,16 @@
                                 class="text-muted fs-14"><del>${{product.special_price}}</del></span> <span
                                 class="fs-14 ms-2 text-danger">
                                 (50% off)</span></h5>
-                        <ul class="list-unstyled vstack gap-2">
-                            {% if product.first_child_product.stock %}
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>In stock
-                                ({{product.first_child_product.stock}})
-                            </li>
-                            {% else %}
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Out of stock
-                            </li>
-                            {% endif %}
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Free delivery
-                                available</li>
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Sales 10% Off
-                                Use Code: <b>FASHION10</b></li>
-                        </ul>
+                                <ul class="list-unstyled vstack gap-2">
+                                    {% if product.total_stock > 0 %}
+                                    <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>In stock: {{product.total_stock}}</li>
+                                    {% else %}
+                                    <li class=""><i class="bi bi-x-circle me-2 align-middle text-danger"></i>Out of stock</li>
+                                    {% endif %}
+                                    <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Free delivery available</li>
+                                    <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Sales 10% Off</li>
+                                </ul>
+                                
                         <h6 class="fs-14 text-muted mb-3">Available offers :</h6>
                         <ul class="list-unstyled vstack gap-2 mb-0">
                             <li>
@@ -151,44 +143,84 @@
                             <button type="button" class="plus">+</button>
                         </div>
                     </div>
-                    <div class="row gy-3">
-                        <div class="col-md-6">
-                            <div>
-                                {% if product.first_child_product.size.name %}
-                                <h6 class="fs-14 fw-medium text-muted">Sizes:</h6>
-
-                                <ul class="clothe-size list-unstyled hstack gap-2 mb-0 flex-wrap">
-
-                                    <li> <input type="radio" name="sizes7" id="product-color-72"> <label
-                                            class="avatar-xs btn btn-soft-primary text-uppercase p-0 fs-12 d-flex align-items-center justify-content-center rounded-circle"
-                                            for="product-color-72">{{product.first_child_product.size.name}}</label>
-                                    </li>
-
-                                </ul>
-                                {% endif %}
-                            </div>
+                    <div class="product-attributes">
+                        <!-- Hiển thị màu sắc -->
+                        {% if product.child_attributes.colors %}
+                        <div class="product-colors">
+                            <h5>Color:</h5>
+                            {% for name, hex in product.child_attributes.colors %}
+                            <span title="{{ name }}" style="display: inline-block; width: 24px; height: 24px; background-color: {{ hex }};"></span>
+                            {% endfor %}
                         </div>
-                        <div class="col-md-6">
-                            {% if product.first_child_product.color.hex %}
-                            <h6 class="fs-14 fw-medium text-muted">Colors: </h6>
-                            <ul class="clothe-colors list-unstyled hstack gap-1 mb-0 flex-wrap ms-2">
-                                <li>
-                                    <input type="radio" name="sizes" id="product-color-2">
-                                    <label
-                                        style="background-color: {{ product.first_child_product.color.hex }}; border-color: {{ product.first_child_product.color.hex }};"
-                                        class="avatar-xs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle"
-                                        for="product-color-2"></label>
-                                </li>
-                            </ul>
-                            {% endif %}
+                        {% endif %}
+                    
+                        <!-- Hiển thị kích cỡ, loại, và tùy chọn như cũ -->
+                        {% if product.child_attributes.sizes %}
+                        <div class="product-sizes">
+                            <h5>Size:</h5>
+                            {% for size in product.child_attributes.sizes %}
+                            <span>{{ size }}</span>
+                            {% endfor %}
                         </div>
+                        {% endif %}
+                    
+                        {% if product.child_attributes.types %}
+                        <div class="product-types">
+                            <h5>Type:</h5>
+                            {% for type in product.child_attributes.types %}
+                            <span>{{ type }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    
+                        {% if product.child_attributes.options %}
+                        <div class="product-options">
+                            <h5>Option:</h5>
+                            {% for option in product.child_attributes.options %}
+                            <span>{{ option }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if product.child_attributes.details %}
+                        <div class="product-details">
+                            <h5>Details:</h5>
+                            {% for detail in product.child_attributes.details %}
+                            <span>{{ detail }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if product.child_attributes.shipping_locations %}
+                        <div class="product-shipping-locations">
+                            <h5>Shipping From:</h5>
+                            {% for location_name, location_code in product.child_attributes.shipping_locations %}
+                            <span>{{ location_name }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}                        
+                        {% for product in products %}
+                        <div class="product-shipping">
+                            <h5>Shipping Details:</h5>
+                            <select id="shippingMethod" onchange="updateShippingDetails(this)">
+                                {% for detail in product.shipping_details %}
+                                <option value="{{ forloop.counter0 }}" 
+                                        data-cost="{{ detail.cost }}" 
+                                        data-time="{{ detail.time }}">
+                                    {{ detail.method }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <p id="shippingCost">Cost: ${{ product.shipping_details.0.cost }}</p>
+                            <p id="shippingTime">Time: {{ product.shipping_details.0.time }}</p>
+                        </div>
+                        {% endfor %}
+                                                
                     </div>
-
                 </div>
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
-</section>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <section class="section pt-0">
     <div class="container">

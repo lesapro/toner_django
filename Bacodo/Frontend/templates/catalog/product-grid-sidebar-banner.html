@@ -11,129 +11,133 @@
 {% endblock extra_css %}
 
 {% block content %}
-<div class="position-relative section">
-    <form action="" method="get">
-        <!-- Thanh trượt lọc giá cả -->
-        <div class="form-group">
-            <label for="price-range">Price range:</label>
-            <input type="range" id="price-range" name="price" min="0" max="1000" onchange="document.getElementById('price-value').innerHTML = this.value">
-            <span id="price-value">500</span>
-        </div>
-        <!-- Lọc theo màu sắc -->
-        {% if colors %}
-        <div class="filter-options" id="color-options">
-            <label>Colors:</label>
-            {% with colors|slice:":60" as sliced_colors %}
-                {% for color in sliced_colors %}
-                    <button type="button" class="btn filter-btn" data-filter="color" data-value="{{ color.id }}" style="background-color: {{ color.hex }};"></button>
-                {% endfor %}
-            {% endwith %}
-            {% if colors|length > 6 %}
-                <button type="button" class="btn show-more" onclick="showMore('color')">Show more</button>
-            {% endif %}
-        </div>
-        {% endif %}
-        <!-- Lọc theo kích thước -->
-        {% if sizes %}
-        <div class="filter-options" id="size-options">
-            <label>Sizes:</label>
-            {% with sizes|slice:":10" as sliced_sizes %}
-                {% for size in sliced_sizes %}
-                    <button type="button" class="btn filter-btn" data-filter="size" data-value="{{ size.id }}">{{ size.name }}</button>
-                {% endfor %}
-            {% endwith %}
-            {% if sizes|length > 10 %}
-                <button type="button" class="btn show-more" onclick="showMore('size')">Show more</button>
-            {% endif %}
-        </div>
-        {% endif %}
-        <!-- Lọc theo loại sản phẩm -->
-        {% if types %}
-        <div class="filter-options" id="type-options">
-            <label>Types:</label>
-            {% with types|slice:":10" as sliced_types %}
-                {% for type in sliced_types %}
-                    <button type="button" class="btn filter-btn" data-filter="type" data-value="{{ type.id }}">{{ type.name }}</button>
-                {% endfor %}
-            {% endwith %}
-            {% if types|length > 10 %}
-                <button type="button" class="btn show-more" onclick="showMore('type')">Show more</button>
-            {% endif %}
-        </div>
-        {% endif %}
-        <!-- Lọc theo tùy chọn sản phẩm -->
-        {% if options %}
-        <div class="filter-options" id="option-options">
-            <label>Options:</label>
-            {% with options|slice:":10" as sliced_options %}
-                {% for option in sliced_options %}
-                    <button type="button" class="btn filter-btn" data-filter="option" data-value="{{ option.id }}">{{ option.name }}</button>
-                {% endfor %}
-            {% endwith %}
-            {% if options|length > 10 %}
-                <button type="button" class="btn show-more" onclick="showMore('option')">Show more</button>
-            {% endif %}
-        </div>
-        {% endif %}
-        <!-- Lọc theo chi tiết sản phẩm -->
-        {% if details %}
-        <div class="filter-options" id="detail-options">
-            <label>Details:</label>
-            {% with details|slice:":10" as sliced_details %}
-                {% for detail in sliced_details %}
-                    <button type="button" class="btn filter-btn" data-filter="details" data-value="{{ detail.id }}">{{ detail.name }}</button>
-                {% endfor %}
-            {% endwith %}
-            {% if details|length > 10 %}
-                <button type="button" class="btn show-more" onclick="showMore('detail')">Show more</button>
-            {% endif %}
-        </div>
-        {% endif %}
-        <!-- Lọc theo vị trí giao hàng -->
-        {% if shipping_locations %}
-        <div class="filter-options" id="shipping-location-options">
-            <label>Shipping Locations:</label>
-            {% with shipping_locations|slice:":10" as sliced_locations %}
-                {% for location in sliced_locations %}
-                    <button type="button" class="btn filter-btn" data-filter="shipping_location" data-value="{{ location.id }}">{{ location.name }}</button>
-                {% endfor %}
-            {% endwith %}
-            {% if shipping_locations|length > 10 %}
-                <button type="button" class="btn show-more" onclick="showMore('shipping_location')">Show more</button>
-            {% endif %}
-        </div>
-        {% endif %}
-        <button type="submit">Filter</button>
-    </form>
-</div>
+<div class="product-catelog">
+    <div class="row">
+        <div class="position-relative product-filter">
+            <form action="" method="get">
+                <!-- Thanh trượt lọc giá cả -->
+                <div class="form-group">
+                    <label for="price-range">Price range:</label>
+                    <div class="d-flex">
+                        <input type="range" id="price-range" name="price" min="0" max="100000"
+                            onchange="document.getElementById('price-value').innerHTML = this.value">
+                        <span id="price-value">500</span>
+                    </div>
+                </div>
+                <!-- Lọc theo màu sắc -->
+                {% if colors %}
+                <div class="filter-options" id="color-options">
+                    <label>Colors:</label>
+                    <div class="filter-color">
+                        {% with colors|slice:":60" as sliced_colors %}
+                            {% for color in sliced_colors %}
+                                <button type="button" class="btn filter-btn" data-filter="color" data-value="{{ color.id }}" style="background-color: {{ color.hex }};"></button>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    {% if colors|length > 6 %}
+                        <button type="button" class="btn show-more btn-filter-more">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Thêm sự kiện click cho tất cả các nút lọc
-        document.querySelectorAll('.filter-btn').forEach(function(button) {
-            button.addEventListener('click', function() {
-                var filterType = this.getAttribute('data-filter');
-                var filterValue = this.getAttribute('data-value');
-    
-                // Hiển thị thông tin lọc được chọn hoặc thực hiện hành động khác
-                console.log("Filter Type: " + filterType + ", Value: " + filterValue);
-            });
-        });
-    
-        // Xử lý sự kiện cho nút "Show more"
-        document.querySelectorAll('.show-more').forEach(function(button) {
-            button.addEventListener('click', function() {
-                // Trích xuất loại bộ lọc từ thuộc tính onclick của nút
-                var filterType = this.onclick.toString().match(/showMore\('(.+)'\)/)[1];
-                
-                // Hiển thị thêm các lựa chọn lọc hoặc tải thêm dữ liệu
-                console.log("Show more for filter type: " + filterType);
-            });
-        });
-    });
-    </script>
-</div>    
-    <div class="flex-grow-1" id="col-3-layout">
+                <!-- Lọc theo thương hiệu -->
+                {% if brands %}
+                <div class="filter-options" id="brand-options">
+                    <label>Brands:</label>
+                    <div class="options-list">
+                        {% for brand in brands %}
+                        <button type="button" class="btn filter-btn" data-filter="brand" data-value="{{ brand.id }}">{{ brand.name }}</button>
+                        {% endfor %}
+                    </div>
+                    {% if brands|length > 10 %}
+                    <button type="button" class="btn show-more btn-filter-">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}                
+                <!-- Lọc theo kích thước -->
+                {% if sizes %}
+                <div class="filter-options" id="size-options">
+                    <label>Sizes:</label>
+                    <div class="filter-size">
+                        {% with sizes|slice:":10" as sliced_sizes %}
+                            {% for size in sliced_sizes %}
+                                <button type="button" class="btn filter-btn" data-filter="size" data-value="{{ size.id }}">{{ size.name }}</button>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    {% if sizes|length > 10 %}
+                        <button type="button" class="btn show-more ">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <!-- Lọc theo loại sản phẩm -->
+                {% if types %}
+                <div class="filter-options" id="type-options">
+                    <label>Types:</label>
+                    <div class="options-list">
+                        {% with types|slice:":10" as sliced_types %}
+                            {% for type in sliced_types %}
+                                <button type="button" class="btn filter-btn" data-filter="type" data-value="{{ type.id }}">{{ type.name }}</button>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    {% if types|length > 10 %}
+                        <button type="button" class="btn show-more">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <!-- Lọc theo tùy chọn sản phẩm -->
+                {% if options %}
+                <div class="filter-options" id="option-options">
+                    <label>Options:</label>
+                    <div class="options-list">
+                    {% with options|slice:":10" as sliced_options %}
+                        {% for option in sliced_options %}
+                            <button type="button" class="btn filter-btn" data-filter="option" data-value="{{ option.id }}">{{ option.name }}</button>
+                        {% endfor %}
+                    {% endwith %}
+                    </div>
+                    {% if options|length > 10 %}
+                        <button type="button" class="btn show-more">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <!-- Lọc theo chi tiết sản phẩm -->
+                {% if details %}
+                <div class="filter-options" id="detail-options">
+                    <label>Details:</label>
+                    <div class="options-list">
+                        {% with details|slice:":10" as sliced_details %}
+                            {% for detail in sliced_details %}
+                                <button type="button" class="btn filter-btn" data-filter="details" data-value="{{ detail.id }}">{{ detail.name }}</button>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    {% if details|length > 10 %}
+                        <button type="button" class="btn show-more">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <!-- Lọc theo vị trí giao hàng -->
+                {% if shipping_locations %}
+                <div class="filter-options" id="shipping-location-options">
+                    <label>Shipping Locations:</label>
+                    <div class="options-list">
+                        {% with shipping_locations|slice:":10" as sliced_locations %}
+                            {% for location in sliced_locations %}
+                                <button type="button" class="btn filter-btn" data-filter="shipping_location" data-value="{{ location.id }}">{{ location.name }}</button>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    {% if shipping_locations|length > 10 %}
+                        <button type="button" class="btn show-more">Show more</button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <button type="submit" class="btn-filter">Filter</button>
+            </form>
+        </div>
         <div class="d-flex align-items-center gap-2 mb-4">
             <p class="text-muted flex-grow-1 mb-0">Showing results</p>
             <div class="flex-shrink-0">
@@ -150,11 +154,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> 
+    </div>
+    <div class="flex-grow-1" id="col-3-layout">
         <div class="row" id="product-grid">
             {% for product in products %}
-            <div class="col-xxl-3 col-lg-4 col-md-6">
+            <div class="col-xxl-3 col-lg-4 col-6">
                 <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden">
                     <div class="rounded position-relative product-image-category">
                         <img src="/media/{{product.image}}" alt="" style="max-width: 100%;aspect-ratio: 1/1;object-fit: cover;" class="mx-auto d-block rounded-2">
@@ -182,51 +187,52 @@
         </div>
         <div class="row" id="pagination-element">
             <div class="col-lg-12">
-              <div class="pagination">
+                <div class="pagination">
                 {% if products.has_previous %}
-                  <a href="?page={{ products.previous_page_number }}" class="page-link">&laquo;</a>
+                    <a href="?page={{ products.previous_page_number }}" class="page-link">&laquo;</a>
                 {% else %}
-                  <span class="page-link disabled">&laquo;</span>
+                    <span class="page-link disabled">&laquo;</span>
                 {% endif %}
-          
+            
                 {% if products.number > 4 %}
-                  <a href="?page=1" class="page-link">1</a>
-                  {% if products.number != 5 %}
+                    <a href="?page=1" class="page-link">1</a>
+                    {% if products.number != 5 %}
                     <span class="page-link">...</span>
-                  {% endif %}
-                {% endif %}
-          
-                {% for num in products.paginator.page_range %}
-                  {% if num >= products.number|add:'-3' and num <= products.number|add:'3' %}
-                    {% if num == products.number %}
-                      <a href="?page={{ num }}" class="page-link active">{{ num }}</a>
-                    {% else %}
-                      <a href="?page={{ num }}" class="page-link">{{ num }}</a>
                     {% endif %}
-                  {% endif %}
+                {% endif %}
+            
+                {% for num in products.paginator.page_range %}
+                    {% if num >= products.number|add:'-3' and num <= products.number|add:'3' %}
+                    {% if num == products.number %}
+                        <a href="?page={{ num }}" class="page-link active">{{ num }}</a>
+                    {% else %}
+                        <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+                    {% endif %}
+                    {% endif %}
                 {% endfor %}
-          
+            
                 {% if products.number < products.paginator.num_pages|add:'-3' %}
-                  {% if products.number < products.paginator.num_pages|add:'-4' %}
+                    {% if products.number < products.paginator.num_pages|add:'-4' %}
                     <span class="page-link">...</span>
-                  {% endif %}
-                  <a href="?page={{ products.paginator.num_pages }}" class="page-link">{{ products.paginator.num_pages }}</a>
+                    {% endif %}
+                    <a href="?page={{ products.paginator.num_pages }}" class="page-link">{{ products.paginator.num_pages }}</a>
                 {% endif %}
-          
+            
                 {% if products.has_next %}
-                  <a href="?page={{ products.next_page_number }}" class="page-link">&raquo;</a>
+                    <a href="?page={{ products.next_page_number }}" class="page-link">&raquo;</a>
                 {% else %}
-                  <span class="page-link disabled">&raquo;</span>
+                    <span class="page-link disabled">&raquo;</span>
                 {% endif %}
-          
+            
                 <span class="pagination-goto">Go to page</span>
                 <input type="number" class="pagination-input" placeholder="{{ products.number }}" min="1" max="{{ products.paginator.num_pages }}">
                 <span>/ {{ products.paginator.num_pages }}</span>
                 <button class="pagination-confirm">confirm</button>
-              </div>
+                </div>
             </div>
-          </div>
-          
+        </div>
+    </div>
+</div>
 
 <section class="section pt-0">
     <div class="container">

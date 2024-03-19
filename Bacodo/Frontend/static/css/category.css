@@ -22,3 +22,77 @@
     border-radius: 4px;
     padding: 6px 20px;
 }
+.product-catelog {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+.product-catelog > div {
+    margin: 0px;
+}
+.product-filter form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.product-filter form > div > label {
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.product-filter form > div > div {
+    gap: 10px;
+}
+.product-filter form > div > div > input {
+    flex: 1;
+}
+.product-filter .filter-color {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.product-filter .filter-color button {
+    min-height: 28px;
+}
+button.show-more, .btn-filter {
+    background: rgba(75, 147, 255);
+    color: white;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none; 
+    outline: none;
+}
+.btn-filter {
+        border-radius: 6px;
+    padding: 10px;
+}
+button.show-more:hover {
+    background: rgba(75, 147, 255);
+    color: white;
+}
+.filter-size {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.filter-size button{
+    border: 1px solid rgba(75, 147, 255);
+    padding: 2px;
+    min-height: 28px;
+}
+.options-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.options-list button {
+    border: 1px solid rgba(75, 147, 255);
+    padding: 5px 10px;
+}
+.filter-size button:hover, .options-list button:hover {
+    background: rgba(75, 147, 255);
+    color: white;
+}
+@media screen and (max-width: 768px) {
+    .product-catelog {
+        grid-template-columns: 1fr;
+    }
+}
