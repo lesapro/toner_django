@@ -86,7 +86,8 @@
                                     </li>
                                     {% for subcategory in category.subcategories.all %}
                                     <li class="nav-item">
-                                        <a href="{% url 'catalog:clothing_view' slug=subcategory.slug %}" class="nav-link" data-key="">
+                                        <a href="{% url 'catalog:clothing_view' slug=subcategory.slug %}"
+                                            class="nav-link" data-key="">
                                             {{ subcategory.title }}
                                         </a>
                                     </li>
@@ -383,7 +384,7 @@
             </div>
         </div>
 
-        
+
     </div>
 </nav>
 <!--nav bottom-->
