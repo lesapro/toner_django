@@ -1,10 +1,8 @@
 {% extends "partials/base.html" %}
 {% load static %}
 {% block title %} Product Sidebar with Banner {% endblock title %}
+
 {% block extra_css %}
-
-
-
 
 <!-- nouisliderribute css -->
 <link rel="stylesheet" href="{% static 'libs/nouislider/dist/nouislider.min.css' %}">
@@ -16,7 +14,7 @@
 <section class="section pb-0 mt-4">
     <div class="container-fluid">
         <div class="position-relative rounded-3"
-             style="background-image: url({% static 'images/ecommerce/banner.jpg' %});background-size: cover;background-position: center;">
+            style="background-image: url({% static 'images/ecommerce/banner.jpg' %});background-size: cover;background-position: center;">
             <div class="row justify-content-end">
                 <div class="col-xxl-4">
                     <div class="text-end py-4 px-5 mx-xxl-5">
@@ -24,7 +22,7 @@
                             sound listem to nature</h1>
                         <div>
                             <a href="#!" class="link-effect link-light">Show Collections <i
-                                class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                                    class="ri-arrow-right-line align-bottom ms-1"></i></a>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -49,7 +47,7 @@
                         </div>
                         <div class="search-box">
                             <input type="text" class="form-control" id="searchProductList" autocomplete="off"
-                                   placeholder="Search Products...">
+                                placeholder="Search Products...">
                             <i class="ri-search-line search-icon"></i>
                         </div>
                     </div>
@@ -136,24 +134,24 @@
 
                             <div id="product-price-range" data-slider-color="info"></div>
                             <div class="formCost d-flex gap-2 align-items-center mt-3">
-                                <input class="form-control form-control-sm" type="text" id="minCost" value="0"/> <span
-                                class="fw-semibold text-muted">to</span> <input class="form-control form-control-sm"
-                                                                                type="text" id="maxCost" value="1000"/>
+                                <input class="form-control form-control-sm" type="text" id="minCost" value="0" /> <span
+                                    class="fw-semibold text-muted">to</span> <input class="form-control form-control-sm"
+                                    type="text" id="maxCost" value="1000" />
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingColors">
                                 <button class="accordion-button bg-transparent shadow-none" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseColors"
-                                        aria-expanded="true" aria-controls="flush-collapseColors">
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseColors"
+                                    aria-expanded="true" aria-controls="flush-collapseColors">
                                     <span class="text-muted text-uppercase fs-12 fw-medium">Colors</span> <span
-                                    class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                        class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
                                 </button>
                             </h2>
 
                             <div id="flush-collapseColors" class="accordion-collapse collapse show"
-                                 aria-labelledby="flush-headingColors">
+                                aria-labelledby="flush-headingColors">
                                 <div class="accordion-body text-body pt-0">
                                     <ul class="clothe-colors list-unstyled hstack gap-3 mb-0 flex-wrap"
                                         id="color-filter">
@@ -214,15 +212,15 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingSize">
                                 <button class="accordion-button bg-transparent shadow-none" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSize"
-                                        aria-expanded="true" aria-controls="flush-collapseSize">
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseSize" aria-expanded="true"
+                                    aria-controls="flush-collapseSize">
                                     <span class="text-muted text-uppercase fs-12 fw-medium">Sizes</span> <span
-                                    class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                        class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
                                 </button>
                             </h2>
 
                             <div id="flush-collapseSize" class="accordion-collapse collapse show"
-                                 aria-labelledby="flush-headingSize">
+                                aria-labelledby="flush-headingSize">
                                 <div class="accordion-body text-body pt-0">
                                     <ul class="clothe-size list-unstyled hstack gap-3 mb-0 flex-wrap" id="size-filter">
                                         <li>
@@ -282,51 +280,51 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingBrands">
                                 <button class="accordion-button bg-transparent shadow-none" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseBrands"
-                                        aria-expanded="true" aria-controls="flush-collapseBrands">
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseBrands"
+                                    aria-expanded="true" aria-controls="flush-collapseBrands">
                                     <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span> <span
-                                    class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                        class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
                                 </button>
                             </h2>
 
                             <div id="flush-collapseBrands" class="accordion-collapse collapse show"
-                                 aria-labelledby="flush-headingBrands">
+                                aria-labelledby="flush-headingBrands">
                                 <div class="accordion-body text-body pt-0">
                                     <div class="search-box search-box-sm">
                                         <input type="text" class="form-control bg-light border-0" id="searchBrandsList"
-                                               placeholder="Search Brands...">
+                                            placeholder="Search Brands...">
                                         <i class="ri-search-line search-icon"></i>
                                     </div>
                                     <div class="d-flex flex-column gap-2 mt-3 filter-check">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="Boat"
-                                                   id="productBrandRadio5">
+                                                id="productBrandRadio5">
                                             <label class="form-check-label" for="productBrandRadio5">Boat</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="OnePlus"
-                                                   id="productBrandRadio4">
+                                                id="productBrandRadio4">
                                             <label class="form-check-label" for="productBrandRadio4">OnePlus</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="Realme"
-                                                   id="productBrandRadio3">
+                                                id="productBrandRadio3">
                                             <label class="form-check-label" for="productBrandRadio3">Realme</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="Sony"
-                                                   id="productBrandRadio2">
+                                                id="productBrandRadio2">
                                             <label class="form-check-label" for="productBrandRadio2">Sony</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="JBL"
-                                                   id="productBrandRadio1">
+                                                id="productBrandRadio1">
                                             <label class="form-check-label" for="productBrandRadio1">JBL</label>
                                         </div>
 
                                         <div>
                                             <button type="button"
-                                                    class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">
+                                                class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">
                                                 1,235
                                                 More
                                             </button>
@@ -340,52 +338,52 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingDiscount">
                                 <button class="accordion-button bg-transparent shadow-none collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseDiscount"
-                                        aria-expanded="true" aria-controls="flush-collapseDiscount">
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseDiscount"
+                                    aria-expanded="true" aria-controls="flush-collapseDiscount">
                                     <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span> <span
-                                    class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                        class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
                                 </button>
                             </h2>
                             <div id="flush-collapseDiscount" class="accordion-collapse collapse"
-                                 aria-labelledby="flush-headingDiscount">
+                                aria-labelledby="flush-headingDiscount">
                                 <div class="accordion-body text-body pt-1">
                                     <div class="d-flex flex-column gap-2 filter-check" id="discount-filter">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="50"
-                                                   id="productdiscountRadio6">
+                                                id="productdiscountRadio6">
                                             <label class="form-check-label" for="productdiscountRadio6">50% or
                                                 more</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="40"
-                                                   id="productdiscountRadio5">
+                                                id="productdiscountRadio5">
                                             <label class="form-check-label" for="productdiscountRadio5">40% or
                                                 more</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="30"
-                                                   id="productdiscountRadio4">
+                                                id="productdiscountRadio4">
                                             <label class="form-check-label" for="productdiscountRadio4">
                                                 30% or more
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="20"
-                                                   id="productdiscountRadio3">
+                                                id="productdiscountRadio3">
                                             <label class="form-check-label" for="productdiscountRadio3">
                                                 20% or more
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="10"
-                                                   id="productdiscountRadio2">
+                                                id="productdiscountRadio2">
                                             <label class="form-check-label" for="productdiscountRadio2">
                                                 10% or more
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="0"
-                                                   id="productdiscountRadio1">
+                                                id="productdiscountRadio1">
                                             <label class="form-check-label" for="productdiscountRadio1">
                                                 Less than 10%
                                             </label>
@@ -399,67 +397,67 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingRating">
                                 <button class="accordion-button bg-transparent shadow-none collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseRating"
-                                        aria-expanded="false" aria-controls="flush-collapseRating">
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseRating"
+                                    aria-expanded="false" aria-controls="flush-collapseRating">
                                     <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span> <span
-                                    class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                        class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
                                 </button>
                             </h2>
 
                             <div id="flush-collapseRating" class="accordion-collapse collapse"
-                                 aria-labelledby="flush-headingRating">
+                                aria-labelledby="flush-headingRating">
                                 <div class="accordion-body text-body">
                                     <div class="d-flex flex-column gap-2 filter-check" id="rating-filter">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="4"
-                                                   id="productratingRadio4">
+                                                id="productratingRadio4">
                                             <label class="form-check-label" for="productratingRadio4">
-                                                        <span class="text-muted">
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                        </span> 4 & Above
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span> 4 & Above
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="3"
-                                                   id="productratingRadio3">
+                                                id="productratingRadio3">
                                             <label class="form-check-label" for="productratingRadio3">
-                                                        <span class="text-muted">
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                        </span> 3 & Above
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span> 3 & Above
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="2"
-                                                   id="productratingRadio2">
+                                                id="productratingRadio2">
                                             <label class="form-check-label" for="productratingRadio2">
-                                                        <span class="text-muted">
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                        </span> 2 & Above
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span> 2 & Above
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="1"
-                                                   id="productratingRadio1">
+                                                id="productratingRadio1">
                                             <label class="form-check-label" for="productratingRadio1">
-                                                        <span class="text-muted">
-                                                            <i class="mdi mdi-star text-warning"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                            <i class="mdi mdi-star"></i>
-                                                        </span> 1
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span> 1
                                             </label>
                                         </div>
                                     </div>
@@ -490,84 +488,60 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row" id="product-grid">
-
-                </div> -->
-                <div class='row' id="product-grid-category">
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6">
-                        {% for category, products in products_by_category %}
-                    
-                        {% for product in products %}
-                        <div class="card overflow-hidden">
-                            <div class="bg-warning-subtle rounded-top py-4">
-                                <div class="gallery-product">
-                                    <img src="/media/{{product.image}}" alt="" style="max-height: 215px;max-width: 100%;"
-                                        class="mx-auto d-block">
-                                </div>
-                                <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
-                                </p>
-                                <div class="gallery-product-actions">
-                                    <div class="mb-2">
-                                        <button type="button" class="btn btn-danger btn-sm custom-toggle" data-bs-toggle="button">
-                                            <span class="icon-on"><i class="mdi mdi-heart-outline align-bottom fs-15"></i></span>
-                                            <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
-                                        </button>
-                                    </div>
-                    
-                                    <div>
-                                        <button type="button" class="btn btn-success btn-sm custom-toggle" data-bs-toggle="button">
-                                            <span class="icon-on"><i class="mdi mdi-eye-outline align-bottom fs-15"></i></span>
-                                            <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="product-btn px-3">
-                                    <a href="{% url 'shop:shop_cart_view' %}" class="btn btn-primary btn-sm w-75 add-btn"><i
-                                            class="mdi mdi-cart me-1"></i>
-                                        Add to cart</a>
+                <div class="row" id="product-grid">
+                    {% for product in products %}
+                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                        <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden">
+                            <div class="bg-light bg-opacity-50 rounded py-4 position-relative"> <img
+                                    src="/media/{{product.image}}" alt="" style="max-height: 200px;max-width: 100%;"
+                                    class="mx-auto d-block rounded-2">
+                                <div class="action vstack gap-2"> <button
+                                        class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action "
+                                        data-bs-toggle="button"> <span class="icon-on"><i
+                                                class="ri-heart-line"></i></span> <span class="icon-off"><i
+                                                class="ri-heart-fill"></i></span> </button> </div>
+                                <div class="avatar-xs label">
+                                    <div class="avatar-title bg-danger rounded-circle fs-11">25%</div>
                                 </div>
                             </div>
-                            <div class="card-body">
+                            <div class="pt-4">
                                 <div>
-                                    <a href="{% url 'products:products.product_details' slug=product.name.slug %}">
-                                        <h6 class="fs-13 lh-base text-truncate mb-0">{{product.name}}</h6>
+                                    <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap">
+                                        <li> <input type="radio" name="sizes1" id="product-color-12"> <label
+                                                class="avatar-xxs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-12"></label> </li>
+                                        <li> <input type="radio" name="sizes1" id="product-color-13"> <label
+                                                class="avatar-xxs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-13"></label> </li>
+                                        <li> <input type="radio" name="sizes1" id="product-color-14"> <label
+                                                class="avatar-xxs btn btn-warning p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-14"></label> </li>
+                                        <li> <input type="radio" name="sizes1" id="product-color-15"> <label
+                                                class="avatar-xxs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-15"></label> </li>
+                                    </ul> <a href="#!">
+                                        <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">{{product.name}}
+                                        </h6>
                                     </a>
-                                    <!-- Kiểm tra xem product và product.name.slug có tồn tại -->
-                    
-                                    <!-- Hiển thị một thông báo lỗi hoặc gì đó để bạn biết rằng product hoặc slug không tồn tại -->
-                                    <div class="mt-3">
-                                        <div class='price_review'>
-                                            <!-- Display the special price and strike-through the regular price if special price exists -->
-                                            {% if product.special_price %}
-                                            <div>
-                                                <h5 class="mb-0">${{ product.special_price }}</h5>
-                                                <h6 class="mb-0 text-muted" style="text-decoration: line-through;">
-                                                    ${{product.price }} </h6>
-                                            </div>
-                    
-                                            <span class="float-end">4.9 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
-                                            {% else %}
-                                            <!-- If no special price, just display the regular price -->
-                                            <h5 class="mb-0">${{ product.price }}</h5>
-                                            {% endif %}
-                                        </div>
+                                    <div class="mt-2"> <span class="float-end">4.9 <i
+                                                class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                        <h5 class="text-secondary mb-0">${{product.price}} <span
+                                                class="text-muted fs-12"><del>${{product.special_price}}</del></span>
+                                        </h5>
                                     </div>
+                                    <div class="tn mt-3"> <a href="#!"
+                                            class="btn btn-primary btn-hover w-100 add-btn"><i
+                                                class="mdi mdi-cart me-1"></i> Add To Cart</a> </div>
                                 </div>
                             </div>
-                        </div>
-                        {% endfor %}
-                    
-                        {% endfor %}
-                    
-                        <div class="mt-4 text-center">
-                            <a href="{% url 'pages:products.listview.defualt' %}" class="btn btn-soft-primary btn-hover">View
-                                All Products <i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
+
                 <div class="row" id="pagination-element">
                     <div class="col-lg-12">
-                        <div
+                        <!-- <div
                             class="pagination-block pagination pagination-separated justify-content-center justify-content-sm-end mb-sm-0">
                             <div class="page-item">
                                 <a href="javascript:void(0);" class="page-link" id="page-prev">Previous</a>
@@ -576,6 +550,23 @@
                             <div class="page-item">
                                 <a href="javascript:void(0);" class="page-link" id="page-next">Next</a>
                             </div>
+                        </div> -->
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if products.has_previous %}
+                                <a href="?page=1">&laquo; đầu tiên</a>
+                                <a href="?page={{ products.previous_page_number }}">trước</a>
+                                {% endif %}
+
+                                <span class="current">
+                                    Trang {{ products.number }} của {{ products.paginator.num_pages }}.
+                                </span>
+
+                                {% if products.has_next %}
+                                <a href="?page={{ products.next_page_number }}">tiếp theo</a>
+                                <a href="?page={{ products.paginator.num_pages }}">cuối cùng &raquo;</a>
+                                {% endif %}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -603,16 +594,19 @@
                         <div class="card-body">
                             <div class="px-5">
                                 <img src="{% static 'images/products/img-16.png' %}" alt=""
-                                     class="img-fluid d-block mx-auto">
+                                    class="img-fluid d-block mx-auto">
                             </div>
                             <div class="mt-4 text-center">
-                                <h4 class="text-dark mb-3">$63.00 <span class="text-muted fs-12"><del>$123.99</del></span>
+                                <h4 class="text-dark mb-3">$63.00 <span
+                                        class="text-muted fs-12"><del>$123.99</del></span>
                                 </h4>
-                                <a href="#!" class="stretched-link"><h5 class="mb-4">Ninja Pro Max Smartwatch</h5></a>
+                                <a href="#!" class="stretched-link">
+                                    <h5 class="mb-4">Ninja Pro Max Smartwatch</h5>
+                                </a>
                             </div>
                             <div class="progress animated-progress custom-progress">
                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-2">
                                 <div class="flex-grow-1 fw-medium fs-12">
@@ -625,7 +619,8 @@
                         </div>
                     </div>
                     <div class="offer-banner rounded-3"
-                         style="background-image: url({% static 'images/ecommerce/offer-banner.jpg' %});background-size: cover;background-position: center;"></div>
+                        style="background-image: url({% static 'images/ecommerce/offer-banner.jpg' %});background-size: cover;background-position: center;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -640,7 +635,7 @@
                     <h3 class="flex-grow-1 mb-0">Deals Of The Day</h3>
                     <div class="flex-shrink-0">
                         <a href="#!" class="link-effect link-success">All Deals <i
-                            class="ri-arrow-right-line ms-1 align-bottom"></i></a>
+                                class="ri-arrow-right-line ms-1 align-bottom"></i></a>
                     </div>
                 </div>
             </div><!--end col-->
@@ -651,7 +646,7 @@
                     <div class="card overflow-hidden mb-0">
                         <div class="gallery-product">
                             <img src="{% static 'images/ecommerce/img-5.jpg' %}" alt=""
-                                 class="mx-auto d-block object-fit-cover">
+                                class="mx-auto d-block object-fit-cover">
                         </div>
                     </div>
                     <div class="content mx-4">
@@ -664,15 +659,16 @@
                                     t-shirt</h6>
                             </a>
                             <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-half-fill text-warning align-bottom"></i> (4.9)</p>
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-half-fill text-warning align-bottom"></i> (4.9)</p>
                             <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">$124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
+                                <h5 class="text-secondary flex-grow-1 mb-0">$124.99 <span
+                                        class="text-muted fs-12"><del>$354.99</del></span>
                                 </h5>
                                 <a href="#!" class="btn btn-primary btn-sm"><i
-                                    class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                                        class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
                             </div>
                         </div>
                     </div>
@@ -683,7 +679,7 @@
                     <div class="card overflow-hidden mb-0">
                         <div class="gallery-product">
                             <img src="{% static 'images/ecommerce/img-3.jpg' %}" alt=""
-                                 class="mx-auto d-block object-fit-cover">
+                                class="mx-auto d-block object-fit-cover">
                         </div>
                     </div>
                     <div class="content mx-4">
@@ -695,15 +691,16 @@
                                 <h6 class="text-capitalize fs-16 lh-base text-truncate">Best Footwear Collections</h6>
                             </a>
                             <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-half-fill text-warning align-bottom"></i> (4.3)</p>
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-half-fill text-warning align-bottom"></i> (4.3)</p>
                             <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">$80.00 <span class="text-muted fs-12"><del>$180.00</del></span>
+                                <h5 class="text-secondary flex-grow-1 mb-0">$80.00 <span
+                                        class="text-muted fs-12"><del>$180.00</del></span>
                                 </h5>
                                 <a href="#!" class="btn btn-primary btn-sm"><i
-                                    class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                                        class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
                             </div>
                         </div>
                     </div>
@@ -714,7 +711,7 @@
                     <div class="card overflow-hidden mb-0">
                         <div class="gallery-product">
                             <img src="{% static 'images/ecommerce/img-1.jpg' %}" alt=""
-                                 class="mx-auto d-block object-fit-cover">
+                                class="mx-auto d-block object-fit-cover">
                         </div>
                     </div>
                     <div class="content mx-4">
@@ -727,15 +724,16 @@
                                     Dress</h6>
                             </a>
                             <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-fill text-warning align-bottom"></i> <i
-                                class="ri-star-half-fill text-warning align-bottom"></i> (5.0)</p>
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-fill text-warning align-bottom"></i> <i
+                                    class="ri-star-half-fill text-warning align-bottom"></i> (5.0)</p>
                             <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">$30.10 <span class="text-muted fs-12"><del>$121.99</del></span>
+                                <h5 class="text-secondary flex-grow-1 mb-0">$30.10 <span
+                                        class="text-muted fs-12"><del>$121.99</del></span>
                                 </h5>
                                 <a href="#!" class="btn btn-primary btn-sm"><i
-                                    class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                                        class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
                             </div>
                         </div>
                     </div>
@@ -746,7 +744,7 @@
 </section>
 
 <section class="section bg-light bg-opacity-25"
-         style="background-image: url({% static 'images/ecommerce/bg-effect.png' %});background-position: center; background-size: cover;">
+    style="background-image: url({% static 'images/ecommerce/bg-effect.png' %});background-position: center; background-size: cover;">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">
@@ -754,7 +752,8 @@
                     <p class="fs-15 text-uppercase fw-medium"><span class="fw-semibold text-danger">25% Up to</span> off
                         all Products</p>
                     <h1 class="lh-base text-capitalize mb-3">Stay home & get your daily needs from our shop</h1>
-                    <p class="fs-15 mb-4 pb-2">Start You'r Daily Shopping with <a href="#!" class="link-info fw-medium">Toner</a>
+                    <p class="fs-15 mb-4 pb-2">Start You'r Daily Shopping with <a href="#!"
+                            class="link-info fw-medium">Toner</a>
                     </p>
                     <form action="#!">
                         <div class="position-relative ecommerce-subscript">
@@ -833,7 +832,7 @@
 <script src="{% static 'libs/wnumb/wNumb.min.js' %}"></script>
 
 <!-- Product-grid init js -->
-    <script src="{% static 'js/frontend/product-grid.init.js' %}"></script>
+<!-- <script src="{% static 'js/frontend/product-grid.init.js' %}"></script> -->
 <!-- coming-soon -->
 <script src="{% static 'js/pages/coming-soon.init.js' %}"></script>
 
