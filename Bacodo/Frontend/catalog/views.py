@@ -25,7 +25,7 @@ class catalog(TemplateView):
             products = Product.objects.filter(category=category)
 
         # Phân trang
-        paginator = Paginator(products, 10)  # Hiển thị 10 sản phẩm trên mỗi trang
+        paginator = Paginator(products, 60)  # Hiển thị 10 sản phẩm trên mỗi trang
         page = self.request.GET.get('page')  # Lấy tham số 'page' từ URL
 
         try:

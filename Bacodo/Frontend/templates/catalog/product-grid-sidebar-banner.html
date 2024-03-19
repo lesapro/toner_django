@@ -489,12 +489,59 @@
                     </div>
                 </div>
                 <div class="row" id="product-grid">
-
+                    {% for product in products %}
+                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                        <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden">
+                            <div class="bg-light bg-opacity-50 rounded py-4 position-relative"> <img
+                                    src="/media/{{product.image}}" alt="" style="max-height: 200px;max-width: 100%;"
+                                    class="mx-auto d-block rounded-2">
+                                <div class="action vstack gap-2"> <button
+                                        class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action "
+                                        data-bs-toggle="button"> <span class="icon-on"><i
+                                                class="ri-heart-line"></i></span> <span class="icon-off"><i
+                                                class="ri-heart-fill"></i></span> </button> </div>
+                                <div class="avatar-xs label">
+                                    <div class="avatar-title bg-danger rounded-circle fs-11">25%</div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <div>
+                                    <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap">
+                                        <li> <input type="radio" name="sizes1" id="product-color-12"> <label
+                                                class="avatar-xxs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-12"></label> </li>
+                                        <li> <input type="radio" name="sizes1" id="product-color-13"> <label
+                                                class="avatar-xxs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-13"></label> </li>
+                                        <li> <input type="radio" name="sizes1" id="product-color-14"> <label
+                                                class="avatar-xxs btn btn-warning p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-14"></label> </li>
+                                        <li> <input type="radio" name="sizes1" id="product-color-15"> <label
+                                                class="avatar-xxs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle"
+                                                for="product-color-15"></label> </li>
+                                    </ul> <a href="#!">
+                                        <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">{{product.name}}
+                                        </h6>
+                                    </a>
+                                    <div class="mt-2"> <span class="float-end">4.9 <i
+                                                class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                        <h5 class="text-secondary mb-0">${{product.price}} <span
+                                                class="text-muted fs-12"><del>${{product.special_price}}</del></span>
+                                        </h5>
+                                    </div>
+                                    <div class="tn mt-3"> <a href="#!"
+                                            class="btn btn-primary btn-hover w-100 add-btn"><i
+                                                class="mdi mdi-cart me-1"></i> Add To Cart</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
 
                 <div class="row" id="pagination-element">
                     <div class="col-lg-12">
-                        <div
+                        <!-- <div
                             class="pagination-block pagination pagination-separated justify-content-center justify-content-sm-end mb-sm-0">
                             <div class="page-item">
                                 <a href="javascript:void(0);" class="page-link" id="page-prev">Previous</a>
@@ -503,6 +550,23 @@
                             <div class="page-item">
                                 <a href="javascript:void(0);" class="page-link" id="page-next">Next</a>
                             </div>
+                        </div> -->
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if products.has_previous %}
+                                <a href="?page=1">&laquo; đầu tiên</a>
+                                <a href="?page={{ products.previous_page_number }}">trước</a>
+                                {% endif %}
+
+                                <span class="current">
+                                    Trang {{ products.number }} của {{ products.paginator.num_pages }}.
+                                </span>
+
+                                {% if products.has_next %}
+                                <a href="?page={{ products.next_page_number }}">tiếp theo</a>
+                                <a href="?page={{ products.paginator.num_pages }}">cuối cùng &raquo;</a>
+                                {% endif %}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -768,7 +832,7 @@
 <script src="{% static 'libs/wnumb/wNumb.min.js' %}"></script>
 
 <!-- Product-grid init js -->
-<script src="{% static 'js/frontend/product-grid.init.js' %}"></script>
+<!-- <script src="{% static 'js/frontend/product-grid.init.js' %}"></script> -->
 <!-- coming-soon -->
 <script src="{% static 'js/pages/coming-soon.init.js' %}"></script>
 
