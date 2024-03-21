@@ -204,16 +204,16 @@
         <div class="col-lg-12">
             <div class="row gallery-wrapper mt-4 pt-2">
                 <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
-                    {% for category, products in products_by_category %}
+                    {% for api_data in api_datas %}
 
-                    <h2>{{ category.title }}</h2>
+                    <h2>{{ api_data.title }}</h2>
 
 
-                    {% for product in products %}
+                    {% for product in api_data.parent_products %}
                     <div class="card overflow-hidden">
                         <div class="bg-warning-subtle rounded-top py-4">
                             <div class="gallery-product">
-                                <img src="/media/{{product.image}}" alt="" style="max-height: 215px;max-width: 100%;"
+                                <img src="{{product.image}}" alt="" style="max-height: 215px;max-width: 100%;"
                                     class="mx-auto d-block">
                             </div>
                             <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
@@ -245,7 +245,8 @@
                         </div>
                         <div class="card-body">
                             <div>
-                                <a href="{% url 'products:products.product_details' slug=product.name.slug %}">
+
+                                <a href="#">
                                     <h6 class="fs-13 lh-base text-truncate mb-0">{{product.name}}</h6>
                                 </a>
                                 <!-- Kiểm tra xem product và product.name.slug có tồn tại -->
