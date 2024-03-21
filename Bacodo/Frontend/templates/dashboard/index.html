@@ -673,7 +673,7 @@
     </div>
     <nav class="navigation sw-megamenu2 " role="navigation">
         <ul class="sw-megamenu-mobile">
-            {% for category in categories %}
+            {% for category in category_api_datas.results %}
             <li class="ui-menu-item level0 fullwidth parent" data-cateid="{{ category.id }}"><a href="#"
                     class="level-top" title="Phones &amp; Telecommunications"><img class="menu-thumb-icon"
                         src="{{ category.image }}" alt="Phones &amp; Telecommunications"><span>
@@ -681,7 +681,7 @@
             {% endfor %}
         </ul>
         <div class="mobile-megamenu-parent">
-            {% for category in categories %}
+            {% for category in category_api_datas.results %}
             <ul class="mobile-megamenu-children submenu-cate-{{category.id}}" style="display: none">
                 <li class="ui-menu-item level0 fullwidth parent ">
                     <div class="open-children-toggle"></div>
@@ -694,7 +694,7 @@
                         <div class="container">
                             <div class="row">
                                 <ul class="subchildmenu mega-columns columns4">
-                                    {% for subcategory in category.subcategories.all %}
+                                    {% for subcategory in category.subcategories %}
                                     <li class="ui-menu-item level1 "><a class="menu-link"
                                             href="{% url 'catalog:clothing_view' slug=subcategory.slug %}"><img
                                                 class="menu-thumb-icon" src="{{ subcategory.image }}"
