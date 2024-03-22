@@ -8,27 +8,37 @@ import requests
 class DashboardView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        categories = Category.objects.all()
-        products_by_category = []
-
-        for category in categories:
-            products = Product.objects.filter(category_id=category.id)[:10] 
-            if products: 
-                products_by_category.append((category, products))
+        
 
         # Fetch data from the API
-        api_url = "http://103.190.38.50:8081/homepage/"
+        product_home_api_url = "http://103.190.38.50:8081/homepage/"
         try:
-            response = requests.get(api_url)
+            response = requests.get(product_home_api_url)
             response.raise_for_status()  # Raise an exception for error status codes
             api_data = response.json()
             context['api_datas'] = api_data
         except requests.exceptions.RequestException as e:
             # Handle potential API errors
             context['api_error'] = f"API Error: {e}" 
-
-        context['categories'] = categories
-        context['products_by_category'] = products_by_category
+         # Fetch data from the API
+        catagory_api_url = "http://103.190.38.50:8081/cataloghomepage/"
+        try:
+            response = requests.get(catagory_api_url)
+            response.raise_for_status()  # Raise an exception for error status codes
+            catagory_home_page_api_datas = response.json()
+            context['catagory_home_page_api_datas'] = catagory_home_page_api_datas
+        except requests.exceptions.RequestException as e:
+            # Handle potential API errors
+            context['api_error'] = f"API Error: {e}" 
+        catagory_menu_api_url = "http://103.190.38.50:8081/catalogdetails/"
+        try:
+            response = requests.get(catagory_menu_api_url)
+            response.raise_for_status()  # Raise an exception for error status codes
+            catagory_menu_api_datas = response.json()
+            context['catagory_menu_api_datas'] = catagory_menu_api_datas
+        except requests.exceptions.RequestException as e:
+            # Handle potential API errors
+            context['api_error'] = f"API Error: {e}" 
         return context
     pass  # Remove the unnecessary 'pass'
 dashboard_view = DashboardView.as_view(template_name = 'dashboard/index.html')

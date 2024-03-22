@@ -73,7 +73,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {% for category in category_api_datas.results %}
+                            {% for category in catagory_menu_api_datas.results %}
                             <div class="col-lg-2">
                                 <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
                                     <li class="dropdown-menu-title-large">
@@ -81,14 +81,14 @@
                                             <img src="{{ category.image }}" alt="">
                                         </span>
                                         <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title"
-                                            data-key="">{{ category.title }}
+                                            data-key="">{{ category.name }}
                                         </p>
                                     </li>
                                     {% for subcategory in category.subcategories %}
                                     <li class="nav-item">
                                         <a href="{% url 'catalog:clothing_view' slug=subcategory.slug %}"
                                             class="nav-link" data-key="">
-                                            {{ subcategory.title }}
+                                            {{ subcategory.name }}
                                         </a>
                                     </li>
                                     {% endfor %}

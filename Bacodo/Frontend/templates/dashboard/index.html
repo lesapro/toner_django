@@ -93,11 +93,11 @@
 </section>
 <div class="categories-list">
     <div class="nav-center-images-only">
-        {% for category in categories %}
+        {% for category in catagory_home_page_api_datas.results %}
         <div class="categories-items">
             <a href="#">
-                <img src="{{ category.image }}" alt="{{ category.title }}">
-                <div class="categories-name">{{ category.title }}</div>
+                <img src="{{ category.image }}" alt="{{ category.name }}">
+                <div class="categories-name">{{ category.name }}</div>
             </a>
         </div>
         {% endfor %}
@@ -160,11 +160,11 @@
             <div class="col-lg-12 categories-lists">
                 <div class="categories-list-pc">
                     <div class="nav-center-images-only">
-                        {% for category in categories %}
+                        {% for category in catagory_home_page_api_datas.results %}
                         <div class="categories-items">
                             <a href="{% url 'catalog:clothing_view' slug=category.slug %}">
-                                <img src="{{ category.image }}" alt="{{ category.title }}">
-                                <div class="categories-name">{{ category.title }}</div>
+                                <img src="{{ category.image }}" alt="{{ category.name }}">
+                                <div class="categories-name">{{ category.name }}</div>
                             </a>
                         </div>
                         {% endfor %}
