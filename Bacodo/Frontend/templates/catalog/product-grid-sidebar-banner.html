@@ -11,7 +11,7 @@
 {% endblock extra_css %}
 
 {% block content %}
-<div class="product-catelog">
+<div class="product-catalog">
     <div class="row">
         <div class="position-relative product-filter">
             <form action="" method="get">
@@ -20,7 +20,7 @@
                     <label for="price-range">Price range:</label>
                     <div class="d-flex">
                         <input type="range" id="price-range" name="price" min="0" max="100000"
-                            onchange="document.getElementById('price-value').innerHTML = this.value">
+                            onchange="document.getElementById('price-value').innerHTML = this.value; filterAttribute('price', this.value)">
                         <span id="price-value">500</span>
                     </div>
                 </div>
@@ -31,12 +31,12 @@
                     <div class="filter-color">
                         {% with colors|slice:":60" as sliced_colors %}
                             {% for color in sliced_colors %}
-                                <button type="button" class="btn filter-btn" data-filter="color" data-value="{{ color.id }}" style="background-color: {{ color.hex }};"></button>
+                                <button type="button" class="btn filter-btn" data-filter="color" data-value="{{ color.id }}" style="background-color: {{ color.hex }};" onclick="filterAttribute('color', '{{ color.id }}')"></button>
                             {% endfor %}
                         {% endwith %}
                     </div>
                     {% if colors|length > 6 %}
-                        <button type="button" class="btn show-more btn-filter-more">Show more</button>
+                        <button type="button" class="btn show-more btn-filter-color">Show more</button>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -47,14 +47,14 @@
                     <label>Brands:</label>
                     <div class="options-list">
                         {% for brand in brands %}
-                        <button type="button" class="btn filter-btn" data-filter="brand" data-value="{{ brand.id }}">{{ brand.name }}</button>
+                        <button type="button" class="btn filter-btn" data-filter="brand" data-value="{{ brand.id }}" onclick="filterAttribute('brand', '{{ brand.id }}')">{{ brand.name }}</button>
                         {% endfor %}
                     </div>
                     {% if brands|length > 10 %}
-                    <button type="button" class="btn show-more btn-filter-">Show more</button>
+                    <button type="button" class="btn show-more">Show more</button>
                     {% endif %}
                 </div>
-                {% endif %}                
+                {% endif %}
                 <!-- Lọc theo kích thước -->
                 {% if sizes %}
                 <div class="filter-options" id="size-options">
@@ -62,12 +62,12 @@
                     <div class="filter-size">
                         {% with sizes|slice:":10" as sliced_sizes %}
                             {% for size in sliced_sizes %}
-                                <button type="button" class="btn filter-btn" data-filter="size" data-value="{{ size.id }}">{{ size.name }}</button>
+                                <button type="button" class="btn filter-btn" data-filter="size" data-value="{{ size.id }}" onclick="filterAttribute('size', '{{ size.id }}')">{{ size.name }}</button>
                             {% endfor %}
                         {% endwith %}
                     </div>
                     {% if sizes|length > 10 %}
-                        <button type="button" class="btn show-more ">Show more</button>
+                        <button type="button" class="btn show-more btn-filter-size">Show more</button>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -75,15 +75,15 @@
                 {% if types %}
                 <div class="filter-options" id="type-options">
                     <label>Types:</label>
-                    <div class="options-list">
+                    <div class="options-list filter-type">
                         {% with types|slice:":10" as sliced_types %}
                             {% for type in sliced_types %}
-                                <button type="button" class="btn filter-btn" data-filter="type" data-value="{{ type.id }}">{{ type.name }}</button>
+                                <button type="button" class="btn filter-btn" data-filter="type" data-value="{{ type.id }}" onclick="filterAttribute('type', '{{ type.id }}')">{{ type.name }}</button>
                             {% endfor %}
                         {% endwith %}
                     </div>
                     {% if types|length > 10 %}
-                        <button type="button" class="btn show-more">Show more</button>
+                        <button type="button" class="btn show-more btn-filter-type">Show more</button>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -91,15 +91,15 @@
                 {% if options %}
                 <div class="filter-options" id="option-options">
                     <label>Options:</label>
-                    <div class="options-list">
+                    <div class="options-list filter-option">
                     {% with options|slice:":10" as sliced_options %}
                         {% for option in sliced_options %}
-                            <button type="button" class="btn filter-btn" data-filter="option" data-value="{{ option.id }}">{{ option.name }}</button>
+                            <button type="button" class="btn filter-btn" data-filter="option" data-value="{{ option.id }}" onclick="filterAttribute('option', '{{ option.id }}')">{{ option.name }}</button>
                         {% endfor %}
                     {% endwith %}
                     </div>
                     {% if options|length > 10 %}
-                        <button type="button" class="btn show-more">Show more</button>
+                        <button type="button" class="btn show-more btn-filter-option">Show more</button>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -107,15 +107,15 @@
                 {% if details %}
                 <div class="filter-options" id="detail-options">
                     <label>Details:</label>
-                    <div class="options-list">
+                    <div class="options-list filter-detail">
                         {% with details|slice:":10" as sliced_details %}
                             {% for detail in sliced_details %}
-                                <button type="button" class="btn filter-btn" data-filter="details" data-value="{{ detail.id }}">{{ detail.name }}</button>
+                                <button type="button" class="btn filter-btn" data-filter="details" data-value="{{ detail.id }}" onclick="filterAttribute('details', '{{ detail.id }}')">{{ detail.name }}</button>
                             {% endfor %}
                         {% endwith %}
                     </div>
                     {% if details|length > 10 %}
-                        <button type="button" class="btn show-more">Show more</button>
+                        <button type="button" class="btn show-more btn-filter-detail">Show more</button>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -126,7 +126,7 @@
                     <div class="options-list">
                         {% with shipping_locations|slice:":10" as sliced_locations %}
                             {% for location in sliced_locations %}
-                                <button type="button" class="btn filter-btn" data-filter="shipping_location" data-value="{{ location.id }}">{{ location.name }}</button>
+                                <button type="button" class="btn filter-btn" data-filter="shipping_location" data-value="{{ location.id }}" onclick="filterAttribute('shipping_location', '{{ location.id }}')">{{ location.name }}</button>
                             {% endfor %}
                         {% endwith %}
                     </div>
@@ -135,9 +135,10 @@
                     {% endif %}
                 </div>
                 {% endif %}
-                <button type="submit" class="btn-filter">Filter</button>
             </form>
         </div>
+    </div>
+    <div class="flex-grow-1" id="col-3-layout">
         <div class="d-flex align-items-center gap-2 mb-4">
             <p class="text-muted flex-grow-1 mb-0">Showing results</p>
             <div class="flex-shrink-0">
@@ -154,9 +155,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
-    </div>
-    <div class="flex-grow-1" id="col-3-layout">
+        </div>
         <div class="row" id="product-grid">
             {% for product in products %}
             <div class="col-xxl-3 col-lg-4 col-6">
@@ -225,8 +224,8 @@
                 {% endif %}
             
                 <span class="pagination-goto">Go to page</span>
-                <input type="number" class="pagination-input" placeholder="{{ products.number }}" min="1" max="{{ products.paginator.num_pages }}">
-                <span>/ {{ products.paginator.num_pages }}</span>
+                <input type="number" class="pagination-input" placeholder="" min="1" max="{{ products.paginator.num_pages }}">
+                <span class="number-last">/ {{ products.paginator.num_pages }}</span>
                 <button class="pagination-confirm">confirm</button>
                 </div>
             </div>
@@ -234,121 +233,6 @@
     </div>
 </div>
 
-<section class="section pt-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
-                    <h3 class="flex-grow-1 mb-0">Deals Of The Day</h3>
-                    <div class="flex-shrink-0">
-                        <a href="#!" class="link-effect link-success">All Deals <i
-                                class="ri-arrow-right-line ms-1 align-bottom"></i></a>
-                    </div>
-                </div>
-            </div><!--end col-->
-        </div><!--end row-->
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="ecommerce-deals-widgets">
-                    <div class="card overflow-hidden mb-0">
-                        <div class="gallery-product">
-                            <img src="{% static 'images/ecommerce/img-5.jpg' %}" alt=""
-                                class="mx-auto d-block object-fit-cover">
-                        </div>
-                    </div>
-                    <div class="content mx-4">
-                        <div class="countdown-deals mb-3">
-                            <div data-countdown="Oct 30, 2023" class="countdownlist"></div>
-                        </div>
-                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                            <a href="#!">
-                                <h6 class="text-capitalize fs-16 lh-base text-truncate">World's most expensive
-                                    t-shirt</h6>
-                            </a>
-                            <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-half-fill text-warning align-bottom"></i> (4.9)</p>
-                            <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">$124.99 <span
-                                        class="text-muted fs-12"><del>$354.99</del></span>
-                                </h5>
-                                <a href="#!" class="btn btn-primary btn-sm"><i
-                                        class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-            <div class="col-lg-4 col-md-6">
-                <div class="ecommerce-deals-widgets">
-                    <div class="card overflow-hidden mb-0">
-                        <div class="gallery-product">
-                            <img src="{% static 'images/ecommerce/img-3.jpg' %}" alt=""
-                                class="mx-auto d-block object-fit-cover">
-                        </div>
-                    </div>
-                    <div class="content mx-4">
-                        <div class="countdown-deals mb-3">
-                            <div data-countdown="Oct 23, 2023" class="countdownlist"></div>
-                        </div>
-                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                            <a href="#!">
-                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Best Footwear Collections</h6>
-                            </a>
-                            <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-half-fill text-warning align-bottom"></i> (4.3)</p>
-                            <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">$80.00 <span
-                                        class="text-muted fs-12"><del>$180.00</del></span>
-                                </h5>
-                                <a href="#!" class="btn btn-primary btn-sm"><i
-                                        class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-            <div class="col-lg-4 col-md-6">
-                <div class="ecommerce-deals-widgets">
-                    <div class="card overflow-hidden mb-0">
-                        <div class="gallery-product">
-                            <img src="{% static 'images/ecommerce/img-1.jpg' %}" alt=""
-                                class="mx-auto d-block object-fit-cover">
-                        </div>
-                    </div>
-                    <div class="content mx-4">
-                        <div class="countdown-deals mb-3">
-                            <div data-countdown="Oct 20, 2023" class="countdownlist"></div>
-                        </div>
-                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                            <a href="#!">
-                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Elegant Designer Western
-                                    Dress</h6>
-                            </a>
-                            <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-fill text-warning align-bottom"></i> <i
-                                    class="ri-star-half-fill text-warning align-bottom"></i> (5.0)</p>
-                            <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">$30.10 <span
-                                        class="text-muted fs-12"><del>$121.99</del></span>
-                                </h5>
-                                <a href="#!" class="btn btn-primary btn-sm"><i
-                                        class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
-</section>
 
 <section class="section bg-light bg-opacity-25"
     style="background-image: url({% static 'images/ecommerce/bg-effect.png' %});background-position: center; background-size: cover;">

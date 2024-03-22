@@ -27,7 +27,7 @@ from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+
     # dashboard
     path('',include("dashboard.urls")),
     

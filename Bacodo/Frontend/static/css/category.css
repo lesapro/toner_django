@@ -22,13 +22,13 @@
     border-radius: 4px;
     padding: 6px 20px;
 }
-.product-catelog {
+.product-catalog {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 20px;
     padding: 20px;
 }
-.product-catelog > div {
+.product-catalog > div {
     margin: 0px;
 }
 .product-filter form {
@@ -52,7 +52,8 @@
     grid-template-columns: repeat(6, 1fr);
 }
 .product-filter .filter-color button {
-    min-height: 28px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
 }
 button.show-more, .btn-filter {
     background: rgba(75, 147, 255);
@@ -91,6 +92,46 @@ button.show-more:hover {
     background: rgba(75, 147, 255);
     color: white;
 }
+.pagination-goto {
+   margin-left: 20px;
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+}
+.pagination-input {
+    text-align: center;
+}
+.pagination-input::placeholder {
+    color: black;
+    text-align: center;
+}
+.number-last {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px
+}
+.pagination-confirm {
+    background: #4b93ff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 20px;
+    margin-left: 10px;;
+}
+.filter-color button:active {
+    position: relative;
+}
+.filter-color button.active::before {
+    content: '🗸';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    background: white;
+}
+
 @media screen and (max-width: 768px) {
     .product-catelog {
         grid-template-columns: 1fr;

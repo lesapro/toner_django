@@ -1,16 +1,11 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.views.generic import ListView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from db.models import Product, Category, ProductName, SubCategory, ChildProduct, Color, Size, Type, Option, Details, ShippingLocation  
 from django.urls import resolve
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Prefetch
-from django.db.models import Min, Max
-from decimal import Decimal
-from django.db.models import Q
-
-
+from db.models import Product, Category, SubCategory, ChildProduct, Color, Size, Type, Option, Details, ShippingLocation  # Ensure correct import path
+from products.views import ProductsView
+from django.http import HttpResponse, JsonResponse
+from rest_framework.parsers import JSONParser
 class catalog(TemplateView):
 
     def get_context_data(self, **kwargs):
@@ -43,9 +38,41 @@ class catalog(TemplateView):
         })
 
         return context
+    def post(self, request, *args, **kwargs):
+        # Parse data từ AJAX request
+        data = JSONParser().parse(request)
+        filters = data.get('filters', {})
+
+        # Áp dụng bộ lọc
+        products_qs = self.filter_products(filters)
+
+        # Pagination (nếu cần)
+        page = data.get('page', 1)
+        paginated_products = self.get_paginated_products(products_qs, page)
+
+        # Chuyển đổi queryset sản phẩm thành JSON và trả về
+        products_json = serialize('json', paginated_products.object_list)
+        return JsonResponse({'products': products_json}, safe=False)
+
+    def filter_products(self, filters):
+        # Bắt đầu với một QuerySet mở rộng cho tất cả sản phẩm
+        products_qs = Product.objects.all()
+
+        # Vòng lặp qua dictionary filters và áp dụng các bộ lọc
+        for filter_type, filter_value in filters.items():
+            # Áp dụng bộ lọc dựa trên filter_type
+            if filter_type == 'color':
+                products_qs = products_qs.filter(color__id=filter_value)
+            elif filter_type == 'size':
+                products_qs = products_qs.filter(size__id=filter_value)
+            elif filter_type == 'type':
+                products_qs = products_qs.filter(type__id=filter_value)
+            # Thêm các điều kiện lọc khác tương tự ở đây
+
+        return products_qs
 
     def get_paginated_products(self, queryset, page):
-        paginator = Paginator(queryset, 60)  # Show 10 products per page
+        paginator = Paginator(queryset, 60)  # Adjust as needed
         try:
             products = paginator.page(page)
         except PageNotAnInteger:
@@ -53,7 +80,7 @@ class catalog(TemplateView):
         except EmptyPage:
             products = paginator.page(paginator.num_pages)
         return products
-# men
+product_details_view = ProductsView.as_view(template_name = 'products/product-details.html')
 clothing_view = catalog.as_view(template_name = 'catalog/product-grid-sidebar-banner.html')
 watches_view = catalog.as_view(template_name = 'catalog/product-grid-right.html')
 bag_luggage_view = catalog.as_view(template_name = 'catalog/product-list-left.html')

@@ -16,6 +16,10 @@ from django.contrib.auth.models import User
 import secrets
 from django.db.models.constraints import UniqueConstraint
 
+@receiver(post_save, sender=User)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
 class Company(models.Model):
     address = models.TextField()
     postal_code = models.CharField(max_length=10)

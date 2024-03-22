@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'rest_framework',
     'compressor',
     'catalog',
     'dashboard',
@@ -61,6 +60,8 @@ INSTALLED_APPS = [
     # Google Providers
     'allauth.socialaccount.providers.google',
     'multiselectfield',
+
+ 
     
 ]
 
@@ -73,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "allauth.account.middleware.AccountMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     
 ]
 
@@ -116,7 +118,14 @@ DATABASES = {
         'PORT': '5432',       # Cổng mặc định của PostgreSQL
     }
 }
+# Cấu hình thêm cho Django Rest Framework
+REST_FRAMEWORK = {
+    # Cấu hình xác thực
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',  # Xác thực bằng Token
+    ),
 
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -242,3 +251,10 @@ STATICFILES_FINDERS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 COMPRESS_ROOT = os.path.join(BASE_DIR, 'compressfiles')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3500",
+
+]
