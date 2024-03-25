@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     # Google Providers
     'allauth.socialaccount.providers.google',
     'multiselectfield',
+    'rest_framework',
+    'rest_framework.authtoken',
 
  
     
@@ -83,7 +85,7 @@ ROOT_URLCONF = 'frontend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': ['/mnt/bacodo/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,17 +109,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'toner1',
-        'USER': 'root',
-        'PASSWORD': 'Lamgiau@123!',
-        'HOST': '169.254.171.50',
-        #'HOST': '103.190.38.50',  # Hoặc địa chỉ IP của máy chủ cơ sở dữ liệu
-        'PORT': '5432',       # Cổng mặc định của PostgreSQL
-    }
-}
 # Cấu hình thêm cho Django Rest Framework
 REST_FRAMEWORK = {
     # Cấu hình xác thực
@@ -160,12 +151,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
-
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = '/mnt/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
