@@ -11,7 +11,7 @@ class DashboardView(TemplateView):
         
 
         # Fetch data from the API
-        product_home_api_url = "http://103.190.38.66:8080/homepage/homepage/"
+        product_home_api_url = "http://103.190.38.66:8080/homepage/"
         try:
             response = requests.get(product_home_api_url)
             response.raise_for_status()  # Raise an exception for error status codes
@@ -21,7 +21,7 @@ class DashboardView(TemplateView):
             # Handle potential API errors
             context['api_error'] = f"API Error: {e}" 
          # Fetch data from the API
-        catagory_api_url = "http://103.190.38.66:8080/homepage/catelogries_26/"
+        catagory_api_url = "http://103.190.38.66:8080/parent/"
         try:
             response = requests.get(catagory_api_url)
             response.raise_for_status()  # Raise an exception for error status codes

@@ -1,0 +1,471 @@
+[33mcommit c358b8e918332a64de859faaf48d4ae569abd74b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mtri[m[33m, [m[1;31morigin/tri[m[33m)[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 18:16:12 2024 +0700
+
+    Mô tả về các thay đổi của bạn
+
+[33mcommit a1502007792dab00ee0e6fea0e665ab8f87c0fdf[m[33m ([m[1;31morigin/lesa[m[33m, [m[1;32mmaster[m[33m, [m[1;32mlesa[m[33m)[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 14:11:19 2024 +0700
+
+    fix home page
+
+[33mcommit c63b78e35ed0dad486556450ba3c31ac799cca1f[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 14:08:20 2024 +0700
+
+    refactor
+
+[33mcommit 49cc875fe761da271162e2431fbd87e7b3503d1e[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 14:07:34 2024 +0700
+
+    refactor git
+
+[33mcommit c8c43a21fcd52f91a2fd2b7e258939a86e50d1d9[m
+Merge: 122846a2d a0bced8e1
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Mon Mar 18 13:40:05 2024 +0700
+
+    Merge branch 'lesa' into tuan
+
+[33mcommit a0bced8e15b4988c6416e317cd540752306aeda2[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 13:37:57 2024 +0700
+
+    Update .gitignore to exclude Bacodo/Frontend/media/static directory
+
+[33mcommit 122846a2d9dc3ae02a835b47335e9476bfb38307[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Mon Mar 18 11:57:01 2024 +0700
+
+    commit
+
+[33mcommit a4965f70b51cfc39e1b4715102241af8eead6e24[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Mon Mar 18 11:55:34 2024 +0700
+
+    remove cache
+
+[33mcommit 9b92c5e9d7104eedc34a9cf5285b8bf774340281[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 11:36:39 2024 +0700
+
+    fix product detail
+
+[33mcommit bea12d9d13fbd3ec79f8481e8815a1b332010d1f[m
+Merge: 3251a9f34 ebfc42830
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Mon Mar 18 09:00:30 2024 +0700
+
+    Merge branch 'tuan' into catalog_product
+
+[33mcommit ebfc42830f601b03b0334ec59e492655a45ab715[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 18 08:47:26 2024 +0700
+
+    loading image home page
+
+[33mcommit ca2ca77f79e7d25d6f1e86c1798fe8b0fd01a71a[m
+Author: root <root@localhost.localdomain>
+Date:   Sun Mar 17 23:39:46 2024 +0700
+
+    fix price home page
+
+[33mcommit a77a187d48ce987a1bf9ff8ea35fbb60ca4d01f5[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sun Mar 17 11:48:50 2024 +0700
+
+    python
+
+[33mcommit cebe31bb72e7d114a1c4936f3e43a11a9ed3ca70[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sun Mar 17 11:36:31 2024 +0700
+
+    python
+
+[33mcommit 4be41343eb0aef82b05b24fd57e71f42b1b08a86[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sun Mar 17 10:58:44 2024 +0700
+
+    sa
+
+[33mcommit 3ad94971e5634d2334e918c563cc6c171582cf89[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sun Mar 17 10:54:25 2024 +0700
+
+    new
+
+[33mcommit 3251a9f349cf2c206470f6e3660cae4bca802a5f[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Sat Mar 16 23:26:20 2024 +0700
+
+    fix product detail
+
+[33mcommit afc24e2961479c739f9c3f0c3103c0510a51c326[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sat Mar 16 19:54:32 2024 +0700
+
+    new db
+
+[33mcommit c2aeeba473ef79fe064becb3b1afbc3f7ea07f7a[m
+Merge: d914119d1 35d66204a
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sat Mar 16 12:59:53 2024 +0700
+
+    Merge branch 'megamenu_2' of https://github.com/lesapro/toner_django into megamenu_2
+
+[33mcommit d914119d1adfc8595903259fef252c13fd13daf0[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Sat Mar 16 12:59:18 2024 +0700
+
+    api
+
+[33mcommit 35d66204a1e55e1d95dd261c9975d975de8518cb[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Sat Mar 16 10:10:41 2024 +0700
+
+    fix product detail
+
+[33mcommit febd0285cf0169953532f8d39eed75707ca8a014[m
+Merge: 751ae352e 3dc350575
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Sat Mar 16 00:04:58 2024 +0700
+
+    Merge branch 'megamenu_2' into catalog_product
+
+[33mcommit 751ae352e5e9fe3209436de1571faa8babd212e7[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 23:33:17 2024 +0700
+
+    update product view
+
+[33mcommit 3dc35057505c5cb33d81bf35097b6b4367bffd69[m
+Merge: cacf3fab3 490fef4b2
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 22:48:03 2024 +0700
+
+    Merge branch 'megamenu_2' of https://github.com/lesapro/toner_django into megamenu_2
+
+[33mcommit cacf3fab3abbe6e469e79ee945dfe365621aa51d[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 22:47:17 2024 +0700
+
+    new
+
+[33mcommit 490fef4b226830ddcd21f7632db6ecf4a552af3b[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 22:31:17 2024 +0700
+
+    add product list to category
+
+[33mcommit 346adac1d5ec0fa765df6585cbca5a9033e390e8[m
+Merge: be47a011d 5c36c52d4
+Author: MAC M1 <macm1@MACs-MacBook-Air.local>
+Date:   Fri Mar 15 20:19:39 2024 +0700
+
+    update code
+
+[33mcommit be47a011d01aeb2102644d0530143a06efea3df2[m
+Author: MAC M1 <macm1@MACs-MacBook-Air.local>
+Date:   Fri Mar 15 20:16:04 2024 +0700
+
+    python venv
+
+[33mcommit eed6375eb5e011778eb8504763907eacab804f78[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 19:47:18 2024 +0700
+
+    new
+
+[33mcommit 5c36c52d45a5a7691d1516ef25de2d085dd27743[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 16:48:28 2024 +0700
+
+    fix category for pc
+
+[33mcommit 896fa9cc31efa66c20364692defd2ffd5400bec5[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 16:07:55 2024 +0700
+
+    update code
+
+[33mcommit 25b0ba25e36fef6cc00c0c06ebe9db6423717f86[m
+Merge: 7445678de 8d5be8a2f
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 16:07:18 2024 +0700
+
+    Merge branch 'megamenu_2' of https://github.com/lesapro/toner_django into megamenu_2
+
+[33mcommit 7445678dea8b5c5b63f83f62cf3a101e9357ab72[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 16:05:59 2024 +0700
+
+    new
+
+[33mcommit 8d5be8a2f4bb694361e7deaf158de48fa564ed8b[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 15:11:25 2024 +0700
+
+    fix gitgnore
+
+[33mcommit 7c9ecc031920ee00f2dc6f5e16b6037708565c18[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 15:09:51 2024 +0700
+
+    fix gitignore
+
+[33mcommit 1ec141c9304cca9006af875aa5072434d61815f0[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 14:31:55 2024 +0700
+
+    refactor cấu trúc products
+
+[33mcommit 12c86ec08af4fa3f5f56fb7ecbfb5123d1de9a17[m
+Merge: fc16661ac 7fe171361
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 14:16:52 2024 +0700
+
+    Merge branch 'megamenu_2' into catalog_product
+
+[33mcommit fc16661acbc59923a2040b5815ebf7ec801b633a[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 14:12:34 2024 +0700
+
+    add product detail
+
+[33mcommit 7fe171361d5da8e444dc9f0d56bd872a382a2332[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 13:13:41 2024 +0700
+
+    new_catelogry
+
+[33mcommit 723b624870854ea2c5142ae59e33fcfe75a085c9[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 12:08:31 2024 +0700
+
+    fix product detail
+
+[33mcommit e1830c82e016177160d7103820e08f1c6b40c125[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 11:19:44 2024 +0700
+
+    photo
+
+[33mcommit 70123aa7f5ffc7e24f1912d571bde57424df2ee9[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Fri Mar 15 11:04:57 2024 +0700
+
+    new
+
+[33mcommit 29ec8e8f83ee4045be8df0b9520feeaecd5a8c2d[m
+Merge: 8b5bd332b 7cb15d90c
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Fri Mar 15 09:07:31 2024 +0700
+
+    Merge branch 'megamenu_2' into catalog_product
+
+[33mcommit 7cb15d90cfe367044db0abc41f3e4a7aeea1d377[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Thu Mar 14 19:13:08 2024 +0700
+
+    new
+
+[33mcommit 8b5bd332bc0a8d3a643352bd64c2a8f2d1e2830b[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Thu Mar 14 14:35:39 2024 +0700
+
+    prepare data product detail
+
+[33mcommit 88b3adf206a2e6f64d81e27fb25b2effb2de0902[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Thu Mar 14 11:51:41 2024 +0700
+
+    fix load product by category
+
+[33mcommit 21b37d56dc4ad5763950d49dd5a13efc694a1eb0[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Thu Mar 14 10:24:51 2024 +0700
+
+    show product by categories
+
+[33mcommit a65f2a51d8b61735e4ea46628623cefb50ba36ff[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Thu Mar 14 01:48:35 2024 +0700
+
+    rewrite product theo catalog
+
+[33mcommit b274a0a2a59d1d96c8d6fa05ea78476d9cd83d8c[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Wed Mar 13 21:55:27 2024 +0700
+
+    update code
+
+[33mcommit f544b2e575713d0a998a3de26cdd3dcb9fa55bda[m
+Merge: 1b43100b1 afdb5b346
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Wed Mar 13 21:12:41 2024 +0700
+
+    new
+
+[33mcommit 1b43100b1cecb4042f19d83c6373cebbe1d96f20[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Wed Mar 13 21:02:58 2024 +0700
+
+    new
+
+[33mcommit afdb5b346dba934a2e523c430d9b04dcb635cc21[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Wed Mar 13 20:44:29 2024 +0700
+
+    fix models
+
+[33mcommit 47175d9aa39e226c235a27bc4e745029c12f8aea[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Wed Mar 13 17:05:34 2024 +0700
+
+    render product ra home page
+
+[33mcommit 03eb5379dfa7541546befc1730b1c7e59577d69f[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Wed Mar 13 15:27:51 2024 +0700
+
+    Render catalog list ra trang chủ
+
+[33mcommit 33c2b552b3a06ea544dd50b486800a8da6d959cc[m
+Author: root <root@localhost.localdomain>
+Date:   Wed Mar 13 12:09:45 2024 +0700
+
+    compressor
+
+[33mcommit 87bdee2b1d7a2bd2dec7d07c99490783cf9f8e2d[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Tue Mar 12 19:49:02 2024 +0700
+
+    sa_new
+
+[33mcommit 717ab9d59047210f847b6562ab7fbf532cad144b[m
+Author: MAC M1 <macm1@192.168.1.110>
+Date:   Tue Mar 12 19:35:18 2024 +0700
+
+    sa
+
+[33mcommit 739c566262e52dd23e89d91c37bc41a28033c12f[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Tue Mar 12 15:03:50 2024 +0700
+
+    fix chân menu
+
+[33mcommit a4d3430f44001c9e0aa49a46ea5e3d5b84804da8[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Tue Mar 12 11:50:03 2024 +0700
+
+    Add menu chân trang
+
+[33mcommit dc30e340a8564718a9e90a9b30717b5c886de98b[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Tue Mar 12 09:37:42 2024 +0700
+
+    update chân trang
+
+[33mcommit 8d9fbcae5a8f4e0c1389b61a91380bdde6611f6c[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Tue Mar 12 00:20:39 2024 +0700
+
+    Remove node_modules from version control
+
+[33mcommit 51922de6a06d22709cbf8fb889acd1bfbe380ed6[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Tue Mar 12 00:07:13 2024 +0700
+
+    add menu categories for mobiles
+
+[33mcommit 8d5f2eeec7c5493ce5188d1fb2abe098883a2c7c[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Sun Mar 10 23:25:10 2024 +0700
+
+    commit
+
+[33mcommit 32f62002c3d02399bd167235c4aee920f345ab05[m
+Author: Tuan Nguyen <ngoctuanit07@gmail.com>
+Date:   Sun Mar 10 22:46:04 2024 +0700
+
+    add megamenu
+
+[33mcommit b36370f1c0f9c87e71f5ca6c40775306d792326a[m
+Author: copv <19020235@vnu.edu.vn>
+Date:   Sat Mar 9 23:04:39 2024 +0700
+
+    change git ignore
+
+[33mcommit a254da0488e828cf61e2c1cfe7f92dddcced058b[m
+Author: copv <19020235@vnu.edu.vn>
+Date:   Sat Mar 9 23:00:31 2024 +0700
+
+    add category in tabbar and update render image and fix model error
+
+[33mcommit 93299a78d4d42e74363aab38869fa5ee24836b25[m
+Author: copv <19020235@vnu.edu.vn>
+Date:   Sat Mar 9 22:57:44 2024 +0700
+
+    add category in tabbar and update render image and fix model error
+
+[33mcommit b5e3347fd0c18b2f7470ed1eaf64e74274a1731e[m
+Author: copv <19020235@vnu.edu.vn>
+Date:   Sat Mar 9 22:50:51 2024 +0700
+
+    add category in tabbar and update render image and fix model error
+
+[33mcommit 5403f1a505e4ce6889a0113b50d33b0c1c9a9a7b[m
+Author: copv <19020235@vnu.edu.vn>
+Date:   Sat Mar 9 22:45:57 2024 +0700
+
+    add category in tabbar and update render image and fix model error
+
+[33mcommit 1e631b3c8d22f3059977ea4dc8d0fd29eba22dff[m
+Author: root <root@localhost.localdomain>
+Date:   Sat Mar 9 06:38:01 2024 -0500
+
+    new
+
+[33mcommit 310135176a7d93a125f90a738f575c5f6c4000e3[m
+Author: copv <19020235@vnu.edu.vn>
+Date:   Fri Mar 8 02:35:32 2024 +0700
+
+    subcategory
+
+[33mcommit 875dda354c60c41ff94a9674dfd74643a71e801f[m
+Author: p3nOnion <19020235@vnu.edu.vn>
+Date:   Thu Mar 7 11:30:09 2024 +0700
+
+    merge db
+
+[33mcommit df2a971e7bde4f4f2efeeba123d3e77e392acbd0[m
+Author: root <root@localhost.localdomain>
+Date:   Wed Mar 6 07:21:52 2024 -0500
+
+    new
+
+[33mcommit ad0557f0f32a5614272b030417e4141c7638af8e[m
+Author: root <root@localhost.localdomain>
+Date:   Wed Mar 6 07:20:33 2024 -0500
+
+    new
+
+[33mcommit 801fec1856842382da49b0658f389f8e6bc4aaf8[m
+Author: root <root@localhost.localdomain>
+Date:   Wed Mar 6 07:19:15 2024 -0500
+
+    devolop
+
+[33mcommit a01ee906a3e659808c34cdc878fb7a75e4fa9af3[m
+Author: root <root@localhost.localdomain>
+Date:   Tue Mar 5 04:27:59 2024 -0500
+
+    devolop
+
+[33mcommit 067b4002e030da2eb72722340ac99ad07bbfb3f6[m
+Author: root <root@localhost.localdomain>
+Date:   Mon Mar 4 07:29:50 2024 -0500
+
+    devolop
